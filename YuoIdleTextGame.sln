@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{cfaf01fa-de7f-72ae-ba5b-b4037850d0f8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YuoTools", "YuoTools.csproj", "{93924fd0-4aa4-eb4d-8174-3ebf85f1aaa5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sirenix.OdinInspector.Modules.UnityLocalization.Editor", "Sirenix.OdinInspector.Modules.UnityLocalization.Editor.csproj", "{bb7f515a-7aab-6d05-18e9-259c0e23f398}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{f884dc87-819a-8fb9-3857-6d3e8b8db4da}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-firstpass", "Assembly-CSharp-firstpass.csproj", "{e008b576-4402-49d4-88d5-2fc7a4b36933}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YuoTools.ECS", "YuoTools.ECS.csproj", "{200726d1-fbca-2fd2-8760-7dfbaccea4dd}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sirenix.OdinInspector.Modules.Unity.Addressables", "Sirenix.OdinInspector.Modules.Unity.Addressables.csproj", "{ae3b1e30-76ba-901f-9269-7df644569548}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor-firstpass", "Assembly-CSharp-Editor-firstpass.csproj", "{1ef7a9a2-0052-2c49-5c37-dd58e898f240}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kcp", "Kcp.csproj", "{95378a82-b5e9-6797-57ee-2e798ce7336d}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sirenix.OdinInspector.Modules.UnityMathematics", "Sirenix.OdinInspector.Modules.UnityMathematics.csproj", "{dccd7043-6c1d-8f16-6068-a53739ca4c3e}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sirenix.OdinInspector.Modules.UnityLocalization", "Sirenix.OdinInspector.Modules.UnityLocalization.csproj", "{39142ea4-d433-c039-436e-54e40135e53a}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{cfaf01fa-de7f-72ae-ba5b-b4037850d0f8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{cfaf01fa-de7f-72ae-ba5b-b4037850d0f8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93924fd0-4aa4-eb4d-8174-3ebf85f1aaa5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93924fd0-4aa4-eb4d-8174-3ebf85f1aaa5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{bb7f515a-7aab-6d05-18e9-259c0e23f398}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{bb7f515a-7aab-6d05-18e9-259c0e23f398}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{f884dc87-819a-8fb9-3857-6d3e8b8db4da}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{f884dc87-819a-8fb9-3857-6d3e8b8db4da}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{e008b576-4402-49d4-88d5-2fc7a4b36933}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{e008b576-4402-49d4-88d5-2fc7a4b36933}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{200726d1-fbca-2fd2-8760-7dfbaccea4dd}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{200726d1-fbca-2fd2-8760-7dfbaccea4dd}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ae3b1e30-76ba-901f-9269-7df644569548}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ae3b1e30-76ba-901f-9269-7df644569548}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1ef7a9a2-0052-2c49-5c37-dd58e898f240}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1ef7a9a2-0052-2c49-5c37-dd58e898f240}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95378a82-b5e9-6797-57ee-2e798ce7336d}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95378a82-b5e9-6797-57ee-2e798ce7336d}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{dccd7043-6c1d-8f16-6068-a53739ca4c3e}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{dccd7043-6c1d-8f16-6068-a53739ca4c3e}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39142ea4-d433-c039-436e-54e40135e53a}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39142ea4-d433-c039-436e-54e40135e53a}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
