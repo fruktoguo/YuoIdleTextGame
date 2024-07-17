@@ -1,0 +1,750 @@
+Using pre-set license
+Built from 'trunk' branch; Version is '6000.0.9f1 (1490908003ac) revision 1347728'; Using compiler version '193933523'; Build Type 'Release'
+OS: 'Windows 10  (10.0.19045) 64bit Professional' Language: 'zh' Physical Memory: 65261 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\6000.0.9f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker6
+-projectPath
+C:/Users/Admin/Documents/GitHub/YuoIdleTextGame
+-logFile
+Logs/AssetImportWorker6.log
+-srvPort
+2463
+-job-worker-count
+7
+-background-job-worker-count
+8
+-asset-garbage-collectors
+1
+Successfully changed project path to: C:/Users/Admin/Documents/GitHub/YuoIdleTextGame
+C:/Users/Admin/Documents/GitHub/YuoIdleTextGame
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [38324]  Target information:
+
+Player connection [38324]  * "[IP] 192.168.31.93 [Port] 0 [Flags] 2 [Guid] 1112639822 [EditorId] 1112639822 [Version] 1048832 [Id] WindowsEditor(7,78YNYQ3-TWW) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [38324] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [38324] Host joined alternative multi-casting on [225.0.0.222:34997]...
+JobSystem: Creating JobQueue using job-worker-count value 7
+Library Redirect Path: Library/
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+Refreshing native plugins compatible for Editor in 5.89 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 6000.0.9f1 (1490908003ac)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.0.9f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/Admin/Documents/GitHub/YuoIdleTextGame/Assets
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 3070 (ID=0x2488)
+    Vendor:   NVIDIA
+    VRAM:     8018 MB
+    Driver:   31.0.15.5241
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.0.9f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.0.9f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.0.9f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56860
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.0.9f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.0.9f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.007996 seconds.
+- Loaded All Assemblies, in  0.566 seconds
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.496 seconds
+Domain Reload Profiling: 1055ms
+	BeginReloadAssembly (171ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (1ms)
+	RebuildCommonClasses (72ms)
+	RebuildNativeTypeToScriptingClass (20ms)
+	initialDomainReloadingComplete (108ms)
+	LoadAllAssembliesAndSetupDomain (187ms)
+		LoadAssemblies (166ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (183ms)
+			TypeCache.Refresh (180ms)
+				TypeCache.ScanAssembly (159ms)
+			BuildScriptInfoCaches (0ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (496ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (425ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (39ms)
+			SetLoadedEditorAssemblies (4ms)
+			BeforeProcessingInitializeOnLoad (5ms)
+			ProcessInitializeOnLoadAttributes (200ms)
+			ProcessInitializeOnLoadMethodAttributes (177ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+========================================================================
+Worker process is ready to serve import requests
+Import Worker Mode flag is 0x00
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  1.166 seconds
+Refreshing native plugins compatible for Editor in 3.26 ms, found 5 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Package Manager log level set to [2]
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.01 seconds
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.332 seconds
+Domain Reload Profiling: 2489ms
+	BeginReloadAssembly (413ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (6ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (32ms)
+	RebuildCommonClasses (38ms)
+	RebuildNativeTypeToScriptingClass (12ms)
+	initialDomainReloadingComplete (45ms)
+	LoadAllAssembliesAndSetupDomain (649ms)
+		LoadAssemblies (460ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (286ms)
+			TypeCache.Refresh (202ms)
+				TypeCache.ScanAssembly (184ms)
+			BuildScriptInfoCaches (72ms)
+			ResolveRequiredComponents (9ms)
+	FinalizeReload (1333ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (1093ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (3ms)
+			SetLoadedEditorAssemblies (4ms)
+			BeforeProcessingInitializeOnLoad (75ms)
+			ProcessInitializeOnLoadAttributes (601ms)
+			ProcessInitializeOnLoadMethodAttributes (401ms)
+			AfterProcessingInitializeOnLoad (9ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (5ms)
+Refreshing native plugins compatible for Editor in 3.19 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 247 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6092 unused Assets / (4.8 MB). Loaded Objects now: 6974.
+Memory consumption went from 219.8 MB to 214.9 MB.
+Total: 19.327000 ms (FindLiveObjects: 0.603000 ms CreateObjectMapping: 0.585000 ms MarkObjects: 16.188600 ms  DeleteObjects: 1.948900 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 17240.608530 seconds.
+  path: Assets/Samples/Shader Graph/17.0.3/Production Ready Shaders/Environment/Details/Grass/grass_bladeNoLOD30.FBX
+  artifactKey: Guid(e8ead712cfe5f664a9cde9e89700d3a1)
+Start importing Assets/Samples/Shader Graph/17.0.3/Production Ready Shaders/Environment/Details/Grass/grass_bladeNoLOD30.FBX using Guid(e8ead712cfe5f664a9cde9e89700d3a1) (FBXImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '1ee93f365312d6c0c183ddcb6743c31b') in 0.0509229 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Samples/Shader Graph/17.0.3/Production Ready Shaders/Environment/Details/Grass/grass_bladeNoLOD15.FBX
+  artifactKey: Guid(3a519f2f85547704b912369977394109)
+Start importing Assets/Samples/Shader Graph/17.0.3/Production Ready Shaders/Environment/Details/Grass/grass_bladeNoLOD15.FBX using Guid(3a519f2f85547704b912369977394109) (FBXImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'dcde127f68944a419ef3ff0a5af47149') in 0.0176643 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 6.33 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 17 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6084 unused Assets / (4.2 MB). Loaded Objects now: 6989.
+Memory consumption went from 178.6 MB to 174.4 MB.
+Total: 32.204100 ms (FindLiveObjects: 0.845700 ms CreateObjectMapping: 1.214900 ms MarkObjects: 27.027600 ms  DeleteObjects: 3.113900 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 3.128438 seconds.
+  path: Assets/Samples/Shader Graph/Common/Textures/Explosion02_5x5.png
+  artifactKey: Guid(921d05de964e0d147b1ae83b021bff21)
+Start importing Assets/Samples/Shader Graph/Common/Textures/Explosion02_5x5.png using Guid(921d05de964e0d147b1ae83b021bff21) (TextureImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'f711d3a5cb8284b5c86d9e7b9fa978b1') in 0.0495699 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Samples/Shader Graph/Common/Textures/terrain/dry_soil/dry_soil_c.png
+  artifactKey: Guid(11583115ae4b80d46844c0ac5c5f8db2)
+Start importing Assets/Samples/Shader Graph/Common/Textures/terrain/dry_soil/dry_soil_c.png using Guid(11583115ae4b80d46844c0ac5c5f8db2) (TextureImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '592ec8d58e2528aaa32abb135c15ddf2') in 0.0094386 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Samples/Shader Graph/Common/Textures/Rock_Projection_01.png
+  artifactKey: Guid(908f2f635c08bb5428cfe513edbada43)
+Start importing Assets/Samples/Shader Graph/Common/Textures/Rock_Projection_01.png using Guid(908f2f635c08bb5428cfe513edbada43) (TextureImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+crunched in 1.047070
+ -> (artifact id: 'f134bf98438dd8363ca84f3f9f8fe065') in 1.0754239 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Samples/Shader Graph/Common/Textures/terrain/ground_rockgrass_fellsdirty/ground_rockgrass_fellsdirty_c.png
+  artifactKey: Guid(ada3ffebc706aac4788bfcfeee5377dc)
+Start importing Assets/Samples/Shader Graph/Common/Textures/terrain/ground_rockgrass_fellsdirty/ground_rockgrass_fellsdirty_c.png using Guid(ada3ffebc706aac4788bfcfeee5377dc) (TextureImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '44d82cda61e27dd36a03a2c03a3ede53') in 0.2289571 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Samples/Shader Graph/Common/Textures/cobblestones_n.png
+  artifactKey: Guid(7be741f9449557c488d643ae307fe1ab)
+Start importing Assets/Samples/Shader Graph/Common/Textures/cobblestones_n.png using Guid(7be741f9449557c488d643ae307fe1ab) (TextureImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'c136dae7ce99b0853eb7660f8a61431d') in 0.3201146 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Samples/Shader Graph/Common/Textures/SmallNoiseMask.tga
+  artifactKey: Guid(2fe31a8312ab8524ebd8601be367f0c8)
+Start importing Assets/Samples/Shader Graph/Common/Textures/SmallNoiseMask.tga using Guid(2fe31a8312ab8524ebd8601be367f0c8) (TextureImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '6b8440a1c890c8f0ae07e90c8afacc57') in 0.0091279 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Samples/Shader Graph/Common/Textures/cobblestones_e.png
+  artifactKey: Guid(30aa7858588e65c46a862620e7246016)
+Start importing Assets/Samples/Shader Graph/Common/Textures/cobblestones_e.png using Guid(30aa7858588e65c46a862620e7246016) (TextureImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '6aa41115512e831667ce2e29dcb84335') in 0.042736 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Samples/Shader Graph/Common/Textures/terrain/dry_soil/dry_soil_n.png
+  artifactKey: Guid(d40931f90ff26874ba4d0445cd22289b)
+Start importing Assets/Samples/Shader Graph/Common/Textures/terrain/dry_soil/dry_soil_n.png using Guid(d40931f90ff26874ba4d0445cd22289b) (TextureImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '3a0d60eaa23001115d39e1d6b446bf4f') in 0.1992758 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Samples/Shader Graph/Common/Textures/terrain/ground_grass_fells_mossy/ground_grass_fells_mossy_n.png
+  artifactKey: Guid(0581c75cc1dfbe84d8159132007f8849)
+Start importing Assets/Samples/Shader Graph/Common/Textures/terrain/ground_grass_fells_mossy/ground_grass_fells_mossy_n.png using Guid(0581c75cc1dfbe84d8159132007f8849) (TextureImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'd89522820877f12306bc546a3f4153b6') in 0.3051591 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Samples/Shader Graph/Common/Textures/sunset_sky_02.png
+  artifactKey: Guid(7c14f77be07c53a4d91d4addd94e6722)
+Start importing Assets/Samples/Shader Graph/Common/Textures/sunset_sky_02.png using Guid(7c14f77be07c53a4d91d4addd94e6722) (TextureImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'bb62c4188d4fe9d6a76fa7cd66296710') in 0.0147361 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 10.272859 seconds.
+  path: Assets/Samples/Core RP Library/Common/Models/Lion.fbx
+  artifactKey: Guid(1861ee8c598c57a4aa81c86f3324429d)
+Start importing Assets/Samples/Core RP Library/Common/Models/Lion.fbx using Guid(1861ee8c598c57a4aa81c86f3324429d) (FBXImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '07376918546e1f5edeca068c16a41523') in 0.1244899 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Samples/Core RP Library/Common/Models/platform_Turntable.fbx
+  artifactKey: Guid(66732f118f518ab4bb46b5916acc7a02)
+Start importing Assets/Samples/Core RP Library/Common/Models/platform_Turntable.fbx using Guid(66732f118f518ab4bb46b5916acc7a02) (FBXImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '787d16e90805b54e79252f5806e8caad') in 0.0329535 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/Samples/Core RP Library/Common/Models/Panel.fbx
+  artifactKey: Guid(b89a6265faae8034d8dfb2e812ab689e)
+Start importing Assets/Samples/Core RP Library/Common/Models/Panel.fbx using Guid(b89a6265faae8034d8dfb2e812ab689e) (FBXImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '312d55c134bbb6940832155f20eab2dd') in 0.1190854 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Samples/Core RP Library/Common/Models/FrameCorner.fbx
+  artifactKey: Guid(9625ac777d70ea648a19cdbbe169b438)
+Start importing Assets/Samples/Core RP Library/Common/Models/FrameCorner.fbx using Guid(9625ac777d70ea648a19cdbbe169b438) (FBXImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '1bf57d6f7973c1af72db3282d9aa5d52') in 0.0281997 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Samples/Shader Graph/Common/Meshes/Particles/ParticleStack100.FBX
+  artifactKey: Guid(7d25145bc7e96ba4ca168b17060b38b4)
+Start importing Assets/Samples/Shader Graph/Common/Meshes/Particles/ParticleStack100.FBX using Guid(7d25145bc7e96ba4ca168b17060b38b4) (FBXImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'ca565dc7e6949fce437bdb7afe35e524') in 0.0540692 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/Samples/Core RP Library/Common/Models/SamplesSpotlightModel.fbx
+  artifactKey: Guid(2acc7de351f16524395e7e9239e010f4)
+Start importing Assets/Samples/Core RP Library/Common/Models/SamplesSpotlightModel.fbx using Guid(2acc7de351f16524395e7e9239e010f4) (FBXImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '67d706d59f2366671255242e5227d387') in 0.0486132 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Samples/Core RP Library/Common/Models/SamplesFloorSpotlight.fbx
+  artifactKey: Guid(c53fc8b4cd945b340b42e6f4df418356)
+Start importing Assets/Samples/Core RP Library/Common/Models/SamplesFloorSpotlight.fbx using Guid(c53fc8b4cd945b340b42e6f4df418356) (FBXImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '72f68e34866ee836fdcfadd3f2e9f334') in 0.024358 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  1.027 seconds
+Refreshing native plugins compatible for Editor in 7.22 ms, found 5 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  2.234 seconds
+Domain Reload Profiling: 3256ms
+	BeginReloadAssembly (237ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (13ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (71ms)
+	RebuildCommonClasses (41ms)
+	RebuildNativeTypeToScriptingClass (13ms)
+	initialDomainReloadingComplete (41ms)
+	LoadAllAssembliesAndSetupDomain (690ms)
+		LoadAssemblies (477ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (315ms)
+			TypeCache.Refresh (17ms)
+				TypeCache.ScanAssembly (7ms)
+			BuildScriptInfoCaches (277ms)
+			ResolveRequiredComponents (17ms)
+	FinalizeReload (2235ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (1714ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (4ms)
+			SetLoadedEditorAssemblies (4ms)
+			BeforeProcessingInitializeOnLoad (119ms)
+			ProcessInitializeOnLoadAttributes (1019ms)
+			ProcessInitializeOnLoadMethodAttributes (550ms)
+			AfterProcessingInitializeOnLoad (16ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (24ms)
+Refreshing native plugins compatible for Editor in 6.29 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 17 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6102 unused Assets / (4.1 MB). Loaded Objects now: 6994.
+Memory consumption went from 185.9 MB to 181.7 MB.
+Total: 27.034900 ms (FindLiveObjects: 1.047000 ms CreateObjectMapping: 1.538200 ms MarkObjects: 21.918700 ms  DeleteObjects: 2.529500 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 17.914614 seconds.
+  path: Assets/Samples/Shader Graph/Common/Textures/cobblestones_n.png
+  artifactKey: Guid(7be741f9449557c488d643ae307fe1ab)
+Start importing Assets/Samples/Shader Graph/Common/Textures/cobblestones_n.png using Guid(7be741f9449557c488d643ae307fe1ab) (TextureImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'ef9d39a18a082a59543bd6baad10ed00') in 0.5178274 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 32.610600 seconds.
+  path: Assets/Samples/Shader Graph/17.0.3/Production Ready Shaders/Prefabs/Environment.prefab
+  artifactKey: Guid(f7c7a5713aea4674687a2e04cb27fd40) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Samples/Shader Graph/17.0.3/Production Ready Shaders/Prefabs/Environment.prefab using Guid(f7c7a5713aea4674687a2e04cb27fd40) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'a29b7191e70e97783b84e8955d21dfe1') in 0.5866173 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 190
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/Samples/Shader Graph/17.0.3/Production Ready Shaders/PostProcess/Shader Graphs_PostProcessHalfTone.mat
+  artifactKey: Guid(eaa20f31aaff26f43b1c98f55142fe91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Samples/Shader Graph/17.0.3/Production Ready Shaders/PostProcess/Shader Graphs_PostProcessHalfTone.mat using Guid(eaa20f31aaff26f43b1c98f55142fe91) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'c356af7152470807dc2590b8b735fcd2') in 0.3019372 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000052 seconds.
+  path: Assets/Samples/Shader Graph/17.0.3/Production Ready Shaders/Prefabs/PlatformWater.prefab
+  artifactKey: Guid(4b5b943a52f196d44b90c97eab8cff16) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Samples/Shader Graph/17.0.3/Production Ready Shaders/Prefabs/PlatformWater.prefab using Guid(4b5b943a52f196d44b90c97eab8cff16) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'a11c551f81936c4cdc17d197cdc36452') in 2.5734963 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 349
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Samples/Shader Graph/17.0.3/Production Ready Shaders/Prefabs/PlatformRock.prefab
+  artifactKey: Guid(d1818a8f54a69484aa96d6dbc78b1a08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Samples/Shader Graph/17.0.3/Production Ready Shaders/Prefabs/PlatformRock.prefab using Guid(d1818a8f54a69484aa96d6dbc78b1a08) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '85ab002eb1bb0f3bc20cdafd7390ea44') in 0.0512061 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 405
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/Samples/Shader Graph/17.0.3/Production Ready Shaders/Lit/HDRPLit.mat
+  artifactKey: Guid(09ae5d715c7044b419a24ce61751188f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Samples/Shader Graph/17.0.3/Production Ready Shaders/Lit/HDRPLit.mat using Guid(09ae5d715c7044b419a24ce61751188f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '3a3d1b621ab5a69702945a30dd47202c') in 0.0359202 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Samples/Shader Graph/17.0.3/Production Ready Shaders/Prefabs/PlatformWeather.prefab
+  artifactKey: Guid(3d457408248a2e149aca0338c309adb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Samples/Shader Graph/17.0.3/Production Ready Shaders/Prefabs/PlatformWeather.prefab using Guid(3d457408248a2e149aca0338c309adb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '18a730873c5ba3d3ebd575d80d53453a') in 0.908794 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 387
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 6.67 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 20 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6085 unused Assets / (5.3 MB). Loaded Objects now: 7176.
+Memory consumption went from 196.9 MB to 191.7 MB.
+Total: 50.485100 ms (FindLiveObjects: 1.055900 ms CreateObjectMapping: 1.344800 ms MarkObjects: 35.556500 ms  DeleteObjects: 12.525800 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  1.080 seconds
+Refreshing native plugins compatible for Editor in 3.55 ms, found 5 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  2.575 seconds
+Domain Reload Profiling: 3647ms
+	BeginReloadAssembly (320ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (31ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (112ms)
+	RebuildCommonClasses (46ms)
+	RebuildNativeTypeToScriptingClass (14ms)
+	initialDomainReloadingComplete (38ms)
+	LoadAllAssembliesAndSetupDomain (654ms)
+		LoadAssemblies (512ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (256ms)
+			TypeCache.Refresh (17ms)
+				TypeCache.ScanAssembly (6ms)
+			BuildScriptInfoCaches (225ms)
+			ResolveRequiredComponents (10ms)
+	FinalizeReload (2576ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (2173ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (5ms)
+			SetLoadedEditorAssemblies (6ms)
+			BeforeProcessingInitializeOnLoad (91ms)
+			ProcessInitializeOnLoadAttributes (1270ms)
+			ProcessInitializeOnLoadMethodAttributes (788ms)
+			AfterProcessingInitializeOnLoad (13ms)
+			EditorAssembliesLoaded (1ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (18ms)
+Refreshing native plugins compatible for Editor in 3.46 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 17 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6103 unused Assets / (4.7 MB). Loaded Objects now: 7070.
+Memory consumption went from 191.7 MB to 187.0 MB.
+Total: 18.313900 ms (FindLiveObjects: 0.603700 ms CreateObjectMapping: 0.539100 ms MarkObjects: 14.991900 ms  DeleteObjects: 2.177200 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 54.892718 seconds.
+  path: Assets/Samples/Shader Graph/Common/Subgraphs/AltitudeMask.shadersubgraph
+  artifactKey: Guid(abbcdeccd7794fa41bbf43795c19c464) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Samples/Shader Graph/Common/Subgraphs/AltitudeMask.shadersubgraph using Guid(abbcdeccd7794fa41bbf43795c19c464) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '77b92ecd2ce644fe42ddde6317cafc5c') in 0.0348402 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Samples/Shader Graph/Common/Subgraphs/ExpandVec4.shadersubgraph
+  artifactKey: Guid(37cc838fad35ff0498cb8e57de65b223) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Samples/Shader Graph/Common/Subgraphs/ExpandVec4.shadersubgraph using Guid(37cc838fad35ff0498cb8e57de65b223) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '266e3c270a396d50e77d830d1ba705b6') in 0.0019606 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Samples/Shader Graph/Common/Subgraphs/ExpandVec2.shadersubgraph
+  artifactKey: Guid(f60b8acf7000dd44db1091c19b913d50) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Samples/Shader Graph/Common/Subgraphs/ExpandVec2.shadersubgraph using Guid(f60b8acf7000dd44db1091c19b913d50) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '7b88e4d1c7cc6cd9f0842c2e6dea0f82') in 0.0014897 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Samples/Shader Graph/Common/Subgraphs/Billboard.shadersubgraph
+  artifactKey: Guid(c4d56d46ea6e8414984dd9f58e0619f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Samples/Shader Graph/Common/Subgraphs/Billboard.shadersubgraph using Guid(c4d56d46ea6e8414984dd9f58e0619f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '6fb242950c0d239bd8b9521f1a0f401b') in 0.0018112 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Samples/Shader Graph/Common/Subgraphs/DepthFade.shadersubgraph
+  artifactKey: Guid(8bbfe621c0368244b80a10cdd14cd70e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Samples/Shader Graph/Common/Subgraphs/DepthFade.shadersubgraph using Guid(8bbfe621c0368244b80a10cdd14cd70e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '779dc54cc74bde21f7b6485b26270b3e') in 0.0022165 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.784012 seconds.
+  path: Assets/Samples/Shader Graph/Common/Meshes/Rock.mat
+  artifactKey: Guid(4ebdecb45e1ff4941b8a2446368dcce4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Samples/Shader Graph/Common/Meshes/Rock.mat using Guid(4ebdecb45e1ff4941b8a2446368dcce4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '1f5abd80634dc1895afc2408eda8c8de') in 0.4612746 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 9
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Samples/Shader Graph/Common/Meshes/teapot.fbx
+  artifactKey: Guid(5f4db48dcd00239458dc5a33e79548b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Samples/Shader Graph/Common/Meshes/teapot.fbx using Guid(5f4db48dcd00239458dc5a33e79548b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '1d57c934da619f96ff69038dddba8c9d') in 0.6675123 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 7
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 3.96 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 17 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6083 unused Assets / (4.8 MB). Loaded Objects now: 7203.
+Memory consumption went from 195.1 MB to 190.3 MB.
+Total: 22.757500 ms (FindLiveObjects: 0.647300 ms CreateObjectMapping: 0.555000 ms MarkObjects: 19.127700 ms  DeleteObjects: 2.425700 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  1.023 seconds
+Refreshing native plugins compatible for Editor in 3.28 ms, found 5 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.487 seconds
+Domain Reload Profiling: 2501ms
+	BeginReloadAssembly (294ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (28ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (96ms)
+	RebuildCommonClasses (38ms)
+	RebuildNativeTypeToScriptingClass (18ms)
+	initialDomainReloadingComplete (46ms)
+	LoadAllAssembliesAndSetupDomain (618ms)
+		LoadAssemblies (485ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (250ms)
+			TypeCache.Refresh (19ms)
+				TypeCache.ScanAssembly (8ms)
+			BuildScriptInfoCaches (217ms)
+			ResolveRequiredComponents (11ms)
+	FinalizeReload (1487ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (1132ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (4ms)
+			SetLoadedEditorAssemblies (4ms)
+			BeforeProcessingInitializeOnLoad (94ms)
+			ProcessInitializeOnLoadAttributes (686ms)
+			ProcessInitializeOnLoadMethodAttributes (335ms)
+			AfterProcessingInitializeOnLoad (9ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (13ms)
+Refreshing native plugins compatible for Editor in 3.23 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 17 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6101 unused Assets / (4.7 MB). Loaded Objects now: 7097.
+Memory consumption went from 192.9 MB to 188.3 MB.
+Total: 18.748100 ms (FindLiveObjects: 0.610400 ms CreateObjectMapping: 0.560700 ms MarkObjects: 15.520200 ms  DeleteObjects: 2.055600 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 82.087708 seconds.
+  path: Assets/Samples/Shader Graph/17.0.3/Node Reference/Textures/array_mask.png
+  artifactKey: Guid(84b6bd16b9550c44f99d0fec6a735bad)
+Start importing Assets/Samples/Shader Graph/17.0.3/Node Reference/Textures/array_mask.png using Guid(84b6bd16b9550c44f99d0fec6a735bad) (TextureImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '04180b6046450afbfa6f224a4768d005') in 0.0444597 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Samples/Shader Graph/17.0.3/Node Reference/Textures/test_texture.png
+  artifactKey: Guid(ade6c320c9b59a94d9bb43c5a437e2ef)
+Start importing Assets/Samples/Shader Graph/17.0.3/Node Reference/Textures/test_texture.png using Guid(ade6c320c9b59a94d9bb43c5a437e2ef) (TextureImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '825dc71ab20fec0a3f7345515885c422') in 0.0215335 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Samples/Shader Graph/17.0.3/Node Reference/Textures/cobblestones_n.png
+  artifactKey: Guid(d7aa8e05f3b6118478e7caf71b9232c2)
+Start importing Assets/Samples/Shader Graph/17.0.3/Node Reference/Textures/cobblestones_n.png using Guid(d7aa8e05f3b6118478e7caf71b9232c2) (TextureImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'eb67fa35e0f44197a3a2222cc171df69') in 0.0271407 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/Samples/Shader Graph/17.0.3/Node Reference/Textures/WorleyNoise32RGB.png
+  artifactKey: Guid(ec156c314b242914dbb706f73ad78cf2)
+Start importing Assets/Samples/Shader Graph/17.0.3/Node Reference/Textures/WorleyNoise32RGB.png using Guid(ec156c314b242914dbb706f73ad78cf2) (TextureImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '3069e5f8bbd3071dff446036a60a050b') in 0.0055136 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Samples/Shader Graph/17.0.3/Node Reference/Textures/rain_ripples.png
+  artifactKey: Guid(35cfe3df8fbb7aa46adb76215627f2e9)
+Start importing Assets/Samples/Shader Graph/17.0.3/Node Reference/Textures/rain_ripples.png using Guid(35cfe3df8fbb7aa46adb76215627f2e9) (TextureImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '54111bfa23d740e3e2d6bc10cddbf38e') in 0.0112473 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Samples/Shader Graph/17.0.3/Node Reference/Textures/gold_d.png
+  artifactKey: Guid(f795ef393a172cd418f83132fadab39d)
+Start importing Assets/Samples/Shader Graph/17.0.3/Node Reference/Textures/gold_d.png using Guid(f795ef393a172cd418f83132fadab39d) (TextureImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '3cd009a5f5ed3149c98dd447ef48c42e') in 0.0093776 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0

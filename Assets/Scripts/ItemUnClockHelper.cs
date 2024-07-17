@@ -4,7 +4,7 @@ public class ItemUnClockHelper
 {
     public static bool IsUnClock(JSONObject item)
     {
-        JSONArray unClock = item[N.Ask] as JSONArray;
+        JSONArray unClock = item[a.Ask] as JSONArray;
         if (unClock == null) return false;
 
         foreach (var (key, condition) in unClock)
@@ -17,15 +17,20 @@ public class ItemUnClockHelper
 
     public static bool Check(JSONNode node)
     {
-        var type = node[N.Type].ToString();
+        var type = node[a.Type].ToString();
         switch (type)
         {
-            case N.Item:
-                var askNum = node[N.Num].AsInt;
-                var itemNum = ItemHelper.GetItemNum(node[N.Name]);
+            case a.Item:
+                var askNum = node[a.Num].AsInt;
+                var itemNum = ItemHelper.GetItemNum(node[a.Name]);
                 return itemNum >= askNum;
             default:
                 return true;
         }
+    }
+
+    public static bool CheckItem(string itemName, int num)
+    {
+        return ItemHelper.GetItemNum(itemName) >= num;
     }
 }

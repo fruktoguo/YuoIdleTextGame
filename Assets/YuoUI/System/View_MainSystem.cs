@@ -1,4 +1,7 @@
 ﻿using DG.Tweening;
+using SimpleJSON;
+using UnityEditor.ShaderGraph.Serialization;
+using UnityEngine;
 using YuoTools.Extend.Helper;
 using YuoTools.Main.Ecs;
 
@@ -16,6 +19,19 @@ namespace YuoTools.UI
         {
             view.FindAll();
             //关闭窗口的事件注册,名字不同请自行更
+
+            var text = FileHelper.ReadAllText($"{Application.dataPath}/Resources/Build.json");
+            var build = JSONNode.Parse(text);
+            if (build != null)
+            {
+                foreach (var (_, node) in build)
+                {
+                    var item = view.AddChildAndInstantiate(view.Child_Item);
+                    item.Init(node);
+                }
+            }
+
+            view.FlowLayout_Content.ArrangeChildren();
         }
     }
 

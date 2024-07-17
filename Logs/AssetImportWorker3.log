@@ -1,0 +1,1910 @@
+Using pre-set license
+Built from 'trunk' branch; Version is '6000.0.9f1 (1490908003ac) revision 1347728'; Using compiler version '193933523'; Build Type 'Release'
+OS: 'Windows 10  (10.0.19045) 64bit Professional' Language: 'zh' Physical Memory: 65261 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\6000.0.9f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker3
+-projectPath
+C:/Users/Admin/Documents/GitHub/YuoIdleTextGame
+-logFile
+Logs/AssetImportWorker3.log
+-srvPort
+2463
+-job-worker-count
+7
+-background-job-worker-count
+8
+-asset-garbage-collectors
+1
+Successfully changed project path to: C:/Users/Admin/Documents/GitHub/YuoIdleTextGame
+C:/Users/Admin/Documents/GitHub/YuoIdleTextGame
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [2940]  Target information:
+
+Player connection [2940]  * "[IP] 192.168.31.93 [Port] 0 [Flags] 2 [Guid] 221570849 [EditorId] 221570849 [Version] 1048832 [Id] WindowsEditor(7,78YNYQ3-TWW) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [2940] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [2940] Host joined alternative multi-casting on [225.0.0.222:34997]...
+JobSystem: Creating JobQueue using job-worker-count value 7
+Library Redirect Path: Library/
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+Refreshing native plugins compatible for Editor in 7.83 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 6000.0.9f1 (1490908003ac)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.0.9f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/Admin/Documents/GitHub/YuoIdleTextGame/Assets
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 3070 (ID=0x2488)
+    Vendor:   NVIDIA
+    VRAM:     8018 MB
+    Driver:   31.0.15.5241
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.0.9f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.0.9f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.0.9f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56096
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.0.9f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.0.9f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.006108 seconds.
+- Loaded All Assemblies, in  0.561 seconds
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.569 seconds
+Domain Reload Profiling: 1125ms
+	BeginReloadAssembly (171ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (1ms)
+	RebuildCommonClasses (45ms)
+	RebuildNativeTypeToScriptingClass (16ms)
+	initialDomainReloadingComplete (75ms)
+	LoadAllAssembliesAndSetupDomain (248ms)
+		LoadAssemblies (165ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (244ms)
+			TypeCache.Refresh (241ms)
+				TypeCache.ScanAssembly (223ms)
+			BuildScriptInfoCaches (0ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (569ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (489ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (48ms)
+			SetLoadedEditorAssemblies (9ms)
+			BeforeProcessingInitializeOnLoad (5ms)
+			ProcessInitializeOnLoadAttributes (206ms)
+			ProcessInitializeOnLoadMethodAttributes (220ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+========================================================================
+Worker process is ready to serve import requests
+Import Worker Mode flag is 0x00
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  1.669 seconds
+Refreshing native plugins compatible for Editor in 3.79 ms, found 5 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Package Manager log level set to [2]
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.01 seconds
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  2.033 seconds
+Domain Reload Profiling: 3686ms
+	BeginReloadAssembly (590ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (8ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (41ms)
+	RebuildCommonClasses (54ms)
+	RebuildNativeTypeToScriptingClass (18ms)
+	initialDomainReloadingComplete (69ms)
+	LoadAllAssembliesAndSetupDomain (923ms)
+		LoadAssemblies (656ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (419ms)
+			TypeCache.Refresh (305ms)
+				TypeCache.ScanAssembly (277ms)
+			BuildScriptInfoCaches (94ms)
+			ResolveRequiredComponents (15ms)
+	FinalizeReload (2033ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (1627ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (5ms)
+			SetLoadedEditorAssemblies (8ms)
+			BeforeProcessingInitializeOnLoad (110ms)
+			ProcessInitializeOnLoadAttributes (920ms)
+			ProcessInitializeOnLoadMethodAttributes (569ms)
+			AfterProcessingInitializeOnLoad (14ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (7ms)
+Refreshing native plugins compatible for Editor in 8.30 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 246 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6090 unused Assets / (5.0 MB). Loaded Objects now: 6971.
+Memory consumption went from 221.0 MB to 216.0 MB.
+Total: 43.483700 ms (FindLiveObjects: 0.858800 ms CreateObjectMapping: 1.436600 ms MarkObjects: 34.285600 ms  DeleteObjects: 6.900300 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 1890.332333 seconds.
+  path: Assets/YuoTools/Extend/UI/Extend/Item/YuoHorizontalSelector.cs
+  artifactKey: Guid(b7f2fd9f7243cee4396eca4697321c28) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/Extend/UI/Extend/Item/YuoHorizontalSelector.cs using Guid(b7f2fd9f7243cee4396eca4697321c28) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '206febc305791d9985388ae89f42fb42') in 0.2816728 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/YuoTools/YuoRender/Shaders/UI/UI_Additive.shader
+  artifactKey: Guid(769273073de44a64badc1d70aaffd5d1) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/YuoRender/Shaders/UI/UI_Additive.shader using Guid(769273073de44a64badc1d70aaffd5d1) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'ae190a83441ed67febc5b7b159d88df7') in 0.0120273 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderEmpty.png
+  artifactKey: Guid(8db54efcce998554c86b796b37a7cdfa) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderEmpty.png using Guid(8db54efcce998554c86b796b37a7cdfa) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'afc7849e239d2e7f7e12503e06e85f4c') in 0.062178 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/YuoTools/Extend/CallBack/Physical2D
+  artifactKey: Guid(732d869930444e21b2ff85950836aea4) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/Extend/CallBack/Physical2D using Guid(732d869930444e21b2ff85950836aea4) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '00f86aec45f185de77d068d66adba6b6') in 0.0083271 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_cog.png
+  artifactKey: Guid(fb605a2688b31194887f2e7a6769235b) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_cog.png using Guid(fb605a2688b31194887f2e7a6769235b) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'ecc24e412ef7a1e51ce757930303ecc7') in 0.0154963 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Plugins
+  artifactKey: Guid(6aacddde3cee90049933884089c4e915) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/Plugins using Guid(6aacddde3cee90049933884089c4e915) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '0f6c5cade6caed9a00e5b6fd71648420') in 0.0063298 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000056 seconds.
+  path: Assets/YuoTools/YuoRender/Shaders/SubShader/STex.shadersubgraph
+  artifactKey: Guid(3b93eb0e75a98fc41b59578337cab84c) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/YuoRender/Shaders/SubShader/STex.shadersubgraph using Guid(3b93eb0e75a98fc41b59578337cab84c) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'bfbe58a101730a846bf861889eb3e75e') in 0.0589558 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/YuoTools/Extend/Helper/Network/HttpHelper.cs
+  artifactKey: Guid(645e07d52883454fab2bcc89b75d06b2) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/Extend/Helper/Network/HttpHelper.cs using Guid(645e07d52883454fab2bcc89b75d06b2) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '23749e81dbf6f7d2577bd2fd1b37ba7d') in 0.0183762 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/YuoTools/YuoRender/Shaders/SubShader/Procedural Patterns/BacteriaSmoothstep.shadersubgraph
+  artifactKey: Guid(e3991c0bfe9e06945833b46fb6e56055) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/YuoRender/Shaders/SubShader/Procedural Patterns/BacteriaSmoothstep.shadersubgraph using Guid(e3991c0bfe9e06945833b46fb6e56055) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'd160fad1fa09523bacbd38a015103ca3') in 0.0361867 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/YuoTools/Extend/UI/Extend/Item/YuoImage.cs
+  artifactKey: Guid(b2ee118898aeb9b448ae408a04bec343) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/Extend/UI/Extend/Item/YuoImage.cs using Guid(b2ee118898aeb9b448ae408a04bec343) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '4b83a0561fc53c025b65ecde17cafea9') in 0.0096995 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/YuoTools/ConfigEnum.cs
+  artifactKey: Guid(8ff05e2948a13ca4a8897f6292194e97) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/ConfigEnum.cs using Guid(8ff05e2948a13ca4a8897f6292194e97) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'b3ec32abd702c283ddc9ada48bdfe52d') in 0.0075438 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/YuoTools/Editor/Texture/World.png
+  artifactKey: Guid(4eed562d98bdd1346be9ca4d7a758f7f) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/Editor/Texture/World.png using Guid(4eed562d98bdd1346be9ca4d7a758f7f) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'c6b621e5ad1ffae80d47ef887e9d5e81') in 0.029089 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/YuoTools/Extend/UI/UIEventSystemManager.cs
+  artifactKey: Guid(a229d8b955e8235469cc213f3e99dd89) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/Extend/UI/UIEventSystemManager.cs using Guid(a229d8b955e8235469cc213f3e99dd89) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '16b4721d287089716af36fd8ee8183b5') in 0.009834 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/YuoTools/Core/PortableTools/Plugins/System.Runtime.CompilerServices.Unsafe.dll
+  artifactKey: Guid(6ba9302132919f24d882940d30bcc3c7) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/Core/PortableTools/Plugins/System.Runtime.CompilerServices.Unsafe.dll using Guid(6ba9302132919f24d882940d30bcc3c7) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '2bb6a678973905d47dd95ea02d3b337b') in 0.0119891 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Plugins/Sirenix/Odin Validator/Editor/Config/AutomationConfig.asset
+  artifactKey: Guid(d5e683ea459d5394cbff9c7f12f6f050) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/Plugins/Sirenix/Odin Validator/Editor/Config/AutomationConfig.asset using Guid(d5e683ea459d5394cbff9c7f12f6f050) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '3867d6012692d71db8e820927e8175a4') in 0.0215172 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_end.png
+  artifactKey: Guid(a248c8288afb9184f953d9aa07a696b0) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_end.png using Guid(a248c8288afb9184f953d9aa07a696b0) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '57620d3b9ddf46f765394bc583242606') in 0.0134387 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/YuoTools/Extend/Classes/YuoToolClass.cs
+  artifactKey: Guid(d71d58e486afd8649b7bf88eaa50a40f) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/Extend/Classes/YuoToolClass.cs using Guid(d71d58e486afd8649b7bf88eaa50a40f) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'f57bda3ba57aeeb48b7660129b34dc93') in 0.0084821 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/YuoTools/Editor/YuoScriptTemp.cs.txt
+  artifactKey: Guid(06a7da91620e5134298cd9906acbfa18) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/Editor/YuoScriptTemp.cs.txt using Guid(06a7da91620e5134298cd9906acbfa18) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '3f75d98b6e04e6e41c1e0ffb23ee5261') in 0.0091109 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/YuoTools/YuoRender/Shaders/SubShader/Procedural Patterns/Smooth Wave.shadersubgraph
+  artifactKey: Guid(f450689a19af5fd4a98b097aa9136722) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/YuoRender/Shaders/SubShader/Procedural Patterns/Smooth Wave.shadersubgraph using Guid(f450689a19af5fd4a98b097aa9136722) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '3dfc345301a0e441c17f6a9e348cdc16') in 0.018754 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Plugins/Sirenix/Odin Validator/Readme.txt
+  artifactKey: Guid(151ca3ac64d79f9478810af1f27c4c57) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/Plugins/Sirenix/Odin Validator/Readme.txt using Guid(151ca3ac64d79f9478810af1f27c4c57) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'b8e89d324ab82b063ccff000a1eda437') in 0.0117223 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000066 seconds.
+  path: Assets/Plugins/Sirenix/Odin Inspector/Config/Editor/ColorPaletteManager.asset
+  artifactKey: Guid(bb99d649319ed4644a2c0fdd7303d49b) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/Plugins/Sirenix/Odin Inspector/Config/Editor/ColorPaletteManager.asset using Guid(bb99d649319ed4644a2c0fdd7303d49b) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '6370e1d6b9e1f1adc1f9bb7325ddec64') in 0.0179937 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/YuoTools/Core/PortableTools/Singleton
+  artifactKey: Guid(89d68c749ba3fee439c4cbd4f797fb45) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/Core/PortableTools/Singleton using Guid(89d68c749ba3fee439c4cbd4f797fb45) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'c489fd6e46f608de3beabf1150678847') in 0.0106192 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000100 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core
+  artifactKey: Guid(03513cf143bb144409fbb3a51ec77b1b) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core using Guid(03513cf143bb144409fbb3a51ec77b1b) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '08336319830c999c0d1ac61217193dba') in 0.0088537 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignB.png
+  artifactKey: Guid(8b6b31f71cd528243b053cfc488e73f5) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignB.png using Guid(8b6b31f71cd528243b053cfc488e73f5) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '7ce6d72b9d2c54933e9248fab4db3f86') in 0.0204449 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Plugins/Demigiant/DOTween/Editor/DOTweenEditor.dll
+  artifactKey: Guid(45d5034162d6cf04dbe46da84fc7d074) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/Plugins/Demigiant/DOTween/Editor/DOTweenEditor.dll using Guid(45d5034162d6cf04dbe46da84fc7d074) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '0b7ba9473a6754d73a0b0404555247b9') in 0.0178019 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/YuoTools/Core/Ecs/YuoWorld.cs
+  artifactKey: Guid(ff8bdca42860b7a499a134fbfa56c90b) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/Core/Ecs/YuoWorld.cs using Guid(ff8bdca42860b7a499a134fbfa56c90b) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'd722bb9387eb40fd07efc5765d8ebe90') in 0.0094902 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Plugins/Demigiant/DOTween/readme.txt
+  artifactKey: Guid(fccfc62abf2eb0a4db614853430894fd) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/Plugins/Demigiant/DOTween/readme.txt using Guid(fccfc62abf2eb0a4db614853430894fd) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'ea761e456ece7f2003c42d81f4a184bb') in 0.0092285 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/YuoTools/Extend/UI/Extend/Resources/YuoUI/Item/色轮/YuoHira_UIColorPickSV.mat
+  artifactKey: Guid(e97c2d215133ee14d9dae1f50c25d08e) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/Extend/UI/Extend/Resources/YuoUI/Item/色轮/YuoHira_UIColorPickSV.mat using Guid(e97c2d215133ee14d9dae1f50c25d08e) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '90d87ced1eac1eb8469af99603851d32') in 0.3622839 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 7
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Plugins/Sirenix
+  artifactKey: Guid(f8b16eeee739e52448b12de8c6e054fd) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/Plugins/Sirenix using Guid(f8b16eeee739e52448b12de8c6e054fd) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'e129dbded886b76294ed26d40f0fda8c') in 0.0096219 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleUtils.cs
+  artifactKey: Guid(7bcaf917d9cf5b84090421a5a2abe42e) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleUtils.cs using Guid(7bcaf917d9cf5b84090421a5a2abe42e) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'ee2c2b23e474d4faae33a9ec9bf8edc1') in 0.0084209 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/YuoTools/YuoRender/Material/Shader Graphs_随机顶点动画.mat
+  artifactKey: Guid(46191de2f170ee147a0d1ba86b0850d4) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/YuoRender/Material/Shader Graphs_随机顶点动画.mat using Guid(46191de2f170ee147a0d1ba86b0850d4) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'cb6c7d62f1fd9453234f2815a21af69c') in 0.0128253 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/YuoTools/YuoRender/Shaders/SubShader/Procedural Patterns/Bacteria.shadersubgraph
+  artifactKey: Guid(804c76ccbe9643147a24f07885bb47ba) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/YuoRender/Shaders/SubShader/Procedural Patterns/Bacteria.shadersubgraph using Guid(804c76ccbe9643147a24f07885bb47ba) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '8f470780c3ae031a595ed04532fabf68') in 0.0218077 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderThickEmpty.png
+  artifactKey: Guid(c456d5ac01d2aa843a63985497b04931) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderThickEmpty.png using Guid(c456d5ac01d2aa843a63985497b04931) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '86f4af9067a3e02d77852f9fcd55a707') in 0.012278 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/YuoTools/Extend/OtherTools/SingleSerializedMono.cs
+  artifactKey: Guid(e56aa59e98035d040aff75657429b96f) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/Extend/OtherTools/SingleSerializedMono.cs using Guid(e56aa59e98035d040aff75657429b96f) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'd8eb7fe503133165a7ba93bccf184e96') in 0.0064096 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_doing.png
+  artifactKey: Guid(4dd24a9f658e7a3438d4fa08fb85aba3) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_doing.png using Guid(4dd24a9f658e7a3438d4fa08fb85aba3) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'f5a8d50540cc31be20b5eca477297e9a') in 0.0153545 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/YuoTools/Extend/UI
+  artifactKey: Guid(9fe6abed1eed6604388ec9bc2c08b8b3) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/Extend/UI using Guid(9fe6abed1eed6604388ec9bc2c08b8b3) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '77dd0a67466733fe8145d123c6eacfc8') in 0.0064053 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderAlpha15.png
+  artifactKey: Guid(dfd33662d9f6f3849bd92f6e159ca226) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderAlpha15.png using Guid(dfd33662d9f6f3849bd92f6e159ca226) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '5ced4870ca08c422e218d96eab1ca9e8') in 0.0164612 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/YuoTools/Core/PortableTools/PCSystem/YuoSystemTool.cs
+  artifactKey: Guid(34d12dbc2b183424a87fda8b67551fa7) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/Core/PortableTools/PCSystem/YuoSystemTool.cs using Guid(34d12dbc2b183424a87fda8b67551fa7) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'dd8a901aad0ee7d9a9e6847d19b8dad3') in 0.0070476 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/YuoTools/YuoRender/Material/默认2D材质.mat
+  artifactKey: Guid(95fa45b55741fe54ba087c827820581c) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/YuoRender/Material/默认2D材质.mat using Guid(95fa45b55741fe54ba087c827820581c) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '379c1a58e5a502a0540b9ef3fa209542') in 0.010476 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignCR.png
+  artifactKey: Guid(6f504a3fa8848264bb4fb9bb7d582dd5) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignCR.png using Guid(6f504a3fa8848264bb4fb9bb7d582dd5) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '4a88a269213d8b5e17ae829d18222b27') in 0.0180414 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/YuoTools/Extend/Helper/UnityEditorHelper.cs
+  artifactKey: Guid(c6ec8771c94d4ef6818b7402a1036c70) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/Extend/Helper/UnityEditorHelper.cs using Guid(c6ec8771c94d4ef6818b7402a1036c70) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '7fd234f38fb5a1fe7a257eb94e65231a') in 0.0106948 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/blackSquareAlpha25.png
+  artifactKey: Guid(f7ff421f40d548444864a01cd7f47112) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/blackSquareAlpha25.png using Guid(f7ff421f40d548444864a01cd7f47112) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'e6ea8b31a317f76aadd81849fda0aa2c') in 0.0316547 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/YuoTools/Extend/Helper/CoordinateAxesConversionHelper.cs
+  artifactKey: Guid(5073123a332049438494b1f15f213163) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/Extend/Helper/CoordinateAxesConversionHelper.cs using Guid(5073123a332049438494b1f15f213163) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'abb272adcb0d3e1ad4c5ebf1dea7e9ae') in 0.0114503 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignL.png
+  artifactKey: Guid(d18ceface0c20014b8db4bba05a41b83) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_alignL.png using Guid(d18ceface0c20014b8db4bba05a41b83) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '46f36aba9b37020c8ef8f591428c8645') in 0.0191379 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/YuoTools/Extend/UI/Extend/Resources/YuoUI/Item/色轮/ColorInputFiled.prefab
+  artifactKey: Guid(449e43e9299253640af1ccf7cbbe6483) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/Extend/UI/Extend/Resources/YuoUI/Item/色轮/ColorInputFiled.prefab using Guid(449e43e9299253640af1ccf7cbbe6483) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'a1492948ddf0caee95e9cc9e76f8af62') in 0.0608353 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 27
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/YuoTools/Editor/Texture/Animation2DClip.png
+  artifactKey: Guid(1ba8d14baca2d4f4290bd7e42f942d6c) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/Editor/Texture/Animation2DClip.png using Guid(1ba8d14baca2d4f4290bd7e42f942d6c) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'e54134b5d61acc54d8cf8fd12c4d8dbe') in 0.0200026 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/YuoTools/Extend/Classes/SerializableDictionary.cs
+  artifactKey: Guid(e7ceaf0731b2467ba50e00be4d11bd83) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/Extend/Classes/SerializableDictionary.cs using Guid(e7ceaf0731b2467ba50e00be4d11bd83) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '14f36d5062f15db20adfd1f6459896f4') in 0.0098883 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/YuoTools/Core/Ecs/ISystemTag.cs
+  artifactKey: Guid(eb7f13fc044b41a9a8eb8d0090f7711a) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/Core/Ecs/ISystemTag.cs using Guid(eb7f13fc044b41a9a8eb8d0090f7711a) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'bfeb8db933713de8e865d90721077fe0') in 0.0088778 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/YuoTools/Extend/UI/SpawnUICodeConfig.cs
+  artifactKey: Guid(a68744a46d1442daa5d0a0b70aa3d9e0) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/Extend/UI/SpawnUICodeConfig.cs using Guid(a68744a46d1442daa5d0a0b70aa3d9e0) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'cb621fce4d816e78d5701063ca704821') in 0.013144 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_visibility.png
+  artifactKey: Guid(55c2b426022dac44f9b25f0cba28aa45) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_visibility.png using Guid(55c2b426022dac44f9b25f0cba28aa45) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'b52c08f63c94ee8f5275e984f91f3dc2') in 0.0205088 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/YuoTools/YuoRender/Shaders/SubShader/Procedural Patterns/Grid.shadersubgraph
+  artifactKey: Guid(f2ff61a18444547458ea8849584f6bec) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/YuoRender/Shaders/SubShader/Procedural Patterns/Grid.shadersubgraph using Guid(f2ff61a18444547458ea8849584f6bec) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '44eda3ad000c21fb28b2a24fb01016cc') in 0.0123607 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/YuoTools/Extend/UI/Extend/Resources/Fonts/ResourceHanRounded
+  artifactKey: Guid(ee33a35994637494b93f1de4a4d23708) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/Extend/UI/Extend/Resources/Fonts/ResourceHanRounded using Guid(ee33a35994637494b93f1de4a4d23708) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'bb3f57d513733e17b52a2881dbe2249d') in 0.0088772 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/YuoTools/Extend/Network/IKcpTransport.cs
+  artifactKey: Guid(61b5219f722a89741b75f3c828cdacc7) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/Extend/Network/IKcpTransport.cs using Guid(61b5219f722a89741b75f3c828cdacc7) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '17e76b1c3d6b6746987651fa95fa98a0') in 0.0072411 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/YuoTools/Extend/UI/Anima/Animation
+  artifactKey: Guid(9ce5655685f22454e9f4df7c1a3ecdac) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/Extend/UI/Anima/Animation using Guid(9ce5655685f22454e9f4df7c1a3ecdac) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '8eb1bc6df8bdf37db1329e11e11750c8') in 0.0076201 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/YuoTools/Extend/UI/Extend/Item/YuoDropDown.cs
+  artifactKey: Guid(c0545e1918ef77145aa56ca56dc65f3d) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/Extend/UI/Extend/Item/YuoDropDown.cs using Guid(c0545e1918ef77145aa56ca56dc65f3d) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '78cc000f6ed60642e59f3d8e791530db') in 0.009017 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/YuoTools/YuoRender/Shaders/SubShader/Edge.shadersubgraph
+  artifactKey: Guid(b98b812f9df173f41a7289ea7ecc5c22) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/YuoRender/Shaders/SubShader/Edge.shadersubgraph using Guid(b98b812f9df173f41a7289ea7ecc5c22) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '5c9d215eefbbcef73add5f8f9ac06b75') in 0.0130946 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/YuoTools/Editor/Toolbar/ToolboxEditorToolbar.cs
+  artifactKey: Guid(98a53f591ead05546a6f80de82e9b53f) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/Editor/Toolbar/ToolboxEditorToolbar.cs using Guid(98a53f591ead05546a6f80de82e9b53f) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'e8cfa64f2dbc54a5f1864c2938377486') in 0.0074661 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/YuoTools/Editor/Resources/snap_vertical_edges.png
+  artifactKey: Guid(4c5fb0d4d54d1914da15bd0ab78811bd) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/Editor/Resources/snap_vertical_edges.png using Guid(4c5fb0d4d54d1914da15bd0ab78811bd) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '40e8986facce329998ebe8fd736bab58') in 0.0161971 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/YuoTools/Editor/Texture/SoundManager.png
+  artifactKey: Guid(b5d9cc163f402d248b4c787746f0a01e) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/Editor/Texture/SoundManager.png using Guid(b5d9cc163f402d248b4c787746f0a01e) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '7f896eaa5624f4ca914ce8080df942d1') in 0.0238044 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/YuoTools/YuoRender/Shaders/SubShader/Tex2D4X.shadersubgraph
+  artifactKey: Guid(75bdabfbeffb53141b5515efa33c87d1) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/YuoRender/Shaders/SubShader/Tex2D4X.shadersubgraph using Guid(75bdabfbeffb53141b5515efa33c87d1) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '8ee5cab4fc218ebcac9a485232d3c00b') in 0.0251995 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/YuoTools/Core/PortableTools/ThirdParty/ETTask/AsyncETVoidMethodBuilder.cs
+  artifactKey: Guid(1be7ccdeaf3ba3b40bcb559f0d0c6901) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/Core/PortableTools/ThirdParty/ETTask/AsyncETVoidMethodBuilder.cs using Guid(1be7ccdeaf3ba3b40bcb559f0d0c6901) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'd9223a163554011b3a9eb8e5eb0835c8') in 0.0097751 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/YuoTools/YuoRender/Shaders/Effect/波动.shadergraph
+  artifactKey: Guid(d8f22f0f2edcec540a9c17fd422fe6fc) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/YuoRender/Shaders/Effect/波动.shadergraph using Guid(d8f22f0f2edcec540a9c17fd422fe6fc) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '05944e6d004f41ccf634d781b53d57a0') in 0.0144531 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/YuoTools/Extend/UI/Extend/Resources/YuoUI/Item/vSync.prefab
+  artifactKey: Guid(105be3460c043074eb0e735883b7c22e) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/Extend/UI/Extend/Resources/YuoUI/Item/vSync.prefab using Guid(105be3460c043074eb0e735883b7c22e) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '3a0d0853735a0a424bdc96e0d6790db4') in 0.0575145 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 20
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/YuoTools/Editor/Resources/snap_all_direction_point.png
+  artifactKey: Guid(d0cfeac4979b00142af1527a158bb72e) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/Editor/Resources/snap_all_direction_point.png using Guid(d0cfeac4979b00142af1527a158bb72e) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '52b5a46246db3c60003ac1e7cffdf686') in 0.0180615 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/YuoTools/Core/Ecs/Attributes/LinkComponentOfAttribute.cs
+  artifactKey: Guid(1bbb62f3abe84b2a88e02ee724f35e1b) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/Core/Ecs/Attributes/LinkComponentOfAttribute.cs using Guid(1bbb62f3abe84b2a88e02ee724f35e1b) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '49811841c197bccead0971bf8b532293') in 0.0153637 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/YuoTools/Editor/Measure Tool/MeasureToolWindow.cs
+  artifactKey: Guid(f4fe0d8a78c141b489a02bfbf55a1201) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/Editor/Measure Tool/MeasureToolWindow.cs using Guid(f4fe0d8a78c141b489a02bfbf55a1201) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'b640a6e5820c382813e626546a5f270e') in 0.0088133 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_optionsDropdown.png
+  artifactKey: Guid(62a48d93e78c63b4ea9b46537c7c0091) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_optionsDropdown.png using Guid(62a48d93e78c63b4ea9b46537c7c0091) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'c97be410dbac1a7c1f53c0f94fff9dcb') in 0.0188094 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderCurvedEmpty.png
+  artifactKey: Guid(4578222ee7a511446b0c340551bf8740) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderCurvedEmpty.png using Guid(4578222ee7a511446b0c340551bf8740) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'ebb46b88e7b931e9f6ff35d906f582b4') in 0.0173218 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_play.png
+  artifactKey: Guid(d8306b1e159c72c4ebc9a4fc31debe60) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_play.png using Guid(d8306b1e159c72c4ebc9a4fc31debe60) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'a0a2b8b3f4355995a889ed79232cb9b1') in 0.019252 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteSquareCurved02.png
+  artifactKey: Guid(282d742ce2ddf9f458812ab84ea6fa88) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteSquareCurved02.png using Guid(282d742ce2ddf9f458812ab84ea6fa88) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'ce6e748d30ffb0fc40016cd2ac2562fc') in 0.0173853 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/YuoTools/Core/PortableTools/YuoExtension/MathfExtension.cs
+  artifactKey: Guid(07f7390dd85ace545924857064332fad) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/Core/PortableTools/YuoExtension/MathfExtension.cs using Guid(07f7390dd85ace545924857064332fad) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '585da78dca7b5e8524b3772a02e5648e') in 0.0082788 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/YuoTools/Extend/Helper/ByteConvertHelper.cs
+  artifactKey: Guid(0223690fd2a64c18b80bf03d947a0232) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/Extend/Helper/ByteConvertHelper.cs using Guid(0223690fd2a64c18b80bf03d947a0232) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'cfaa02123ea05be0148610f1db44b003') in 0.0068069 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/YuoTools/Extend/OtherTools
+  artifactKey: Guid(62ce40d84c051a34ab70009cff6a2160) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/Extend/OtherTools using Guid(62ce40d84c051a34ab70009cff6a2160) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'ad1cbd6398aca844b214183f624716e4') in 0.0060154 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/YuoTools/Extend/Network/TService.cs
+  artifactKey: Guid(c872b7af14ee0d745b7cff0ac99359ba) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/Extend/Network/TService.cs using Guid(c872b7af14ee0d745b7cff0ac99359ba) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '23c7ce61dd6bcb5217eb7e5ad151b026') in 0.009906 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteSquareAlpha80.png
+  artifactKey: Guid(11848dd30e516d846a02cd302634d317) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteSquareAlpha80.png using Guid(11848dd30e516d846a02cd302634d317) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '3f9e4e4fb7cdcc33c476ab1f09663146') in 0.0211737 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/YuoTools/YuoRender/Shaders/TestEffect.shadergraph
+  artifactKey: Guid(836fb2e31fa215f4da891c31b97cb519) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/YuoRender/Shaders/TestEffect.shadergraph using Guid(836fb2e31fa215f4da891c31b97cb519) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '79bbc5757c1bd73b5d1b91d2519cb0dc') in 0.0265609 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_audio.png
+  artifactKey: Guid(e1af8927fb6f5634896d59aed409a589) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_audio.png using Guid(e1af8927fb6f5634896d59aed409a589) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '4a7972755b77235866223a17524891d7') in 0.0198026 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/YuoTools/Extend/Helper/DateHelper.cs
+  artifactKey: Guid(5ace0a8e5f844d57a88728bc3532aa73) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/Extend/Helper/DateHelper.cs using Guid(5ace0a8e5f844d57a88728bc3532aa73) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '9a5f2a27738ff07c66427c0d7f465d3d') in 0.0095225 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/YuoTools/Extend/UI/Extend/Texture
+  artifactKey: Guid(e12fd6ae6d39d254b87f856c2b352f91) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/Extend/UI/Extend/Texture using Guid(e12fd6ae6d39d254b87f856c2b352f91) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '6118e1ebb16d6c9d6a745fc94f6a76d1') in 0.0092525 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/YuoTools/Core/PortableTools/YuoLog/YuoLog.cs
+  artifactKey: Guid(81249e0a81af78a45b2783bf15b677e8) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/Core/PortableTools/YuoLog/YuoLog.cs using Guid(81249e0a81af78a45b2783bf15b677e8) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'a2cd557f74346a074601751fd625bb59') in 0.0136282 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_demigiant.png
+  artifactKey: Guid(229d0d11465a822449f78a50dbf7104d) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_demigiant.png using Guid(229d0d11465a822449f78a50dbf7104d) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '37455fdba469189b769733f8c43fcd3e') in 0.0205365 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteDot_whiteBorderAlpha.png
+  artifactKey: Guid(039dc89c76661c344b7776f8a47cc5a4) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteDot_whiteBorderAlpha.png using Guid(039dc89c76661c344b7776f8a47cc5a4) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '8700a0350cfe575e284ac2b2713cded3') in 0.0201066 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/YuoTools/Editor/Texture
+  artifactKey: Guid(b1e524944b6840c45a2fab35e9de40bc) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/Editor/Texture using Guid(b1e524944b6840c45a2fab35e9de40bc) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '964ac2d8e188b76335801287e781a6f8') in 0.008219 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/YuoTools/Extend/Helper/UIHelper.cs
+  artifactKey: Guid(aa3c0d2ab05d7d84cb5ae76bbb1b03ee) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/Extend/Helper/UIHelper.cs using Guid(aa3c0d2ab05d7d84cb5ae76bbb1b03ee) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '31165ed05cbca7678af776ac408f362c') in 0.0104743 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/YuoTools/Core/PortableTools/YuoExtension
+  artifactKey: Guid(84707156711de0e45929e169a3daa166) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/Core/PortableTools/YuoExtension using Guid(84707156711de0e45929e169a3daa166) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'a11fd46381441db53c27f370b84910a9') in 0.0082734 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/YuoTools/Extend/UI/Anima/Animation/YuoViewAnimator.controller
+  artifactKey: Guid(2d6f373cb129e8b4585598c63820ad3d) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/Extend/UI/Anima/Animation/YuoViewAnimator.controller using Guid(2d6f373cb129e8b4585598c63820ad3d) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'b8a5117a68a127cd2d2e70c2fb8cbd7b') in 0.0176445 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 11
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/YuoTools/Extend/Helper
+  artifactKey: Guid(b4f01bb7b6633e04b9f1a8bda1096aa9) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/Extend/Helper using Guid(b4f01bb7b6633e04b9f1a8bda1096aa9) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'e7207558a259f8258f012cff62deb35f') in 0.0073714 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/YuoTools/Extend/UI/Extend
+  artifactKey: Guid(f7cc98138c5945c4c9bdbd15f82e1ecc) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/Extend/UI/Extend using Guid(f7cc98138c5945c4c9bdbd15f82e1ecc) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '670e7ae0fb4b658762acf2be7f46760d') in 0.0058374 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Plugins/Sirenix/Odin Inspector/Modules/Unity.Addressables/Validators/CheckResourcesToAddressableDuplicateDependenciesValidator.cs
+  artifactKey: Guid(f75aebe03a9aa4a4b82d2b54dcc34de5) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/Plugins/Sirenix/Odin Inspector/Modules/Unity.Addressables/Validators/CheckResourcesToAddressableDuplicateDependenciesValidator.cs using Guid(f75aebe03a9aa4a4b82d2b54dcc34de5) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '646278c1d86a18b55afed47b3dd60733') in 0.0088629 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_play_border.png
+  artifactKey: Guid(45e128e1cf00555479ee7934ab11cadf) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_play_border.png using Guid(45e128e1cf00555479ee7934ab11cadf) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '0c5a2f43ba48dc6201e3afbe37b36a27') in 0.0273773 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Plugins/Sirenix/Odin Validator
+  artifactKey: Guid(01e289bcf61698f4e8c838ed6b54d204) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/Plugins/Sirenix/Odin Validator using Guid(01e289bcf61698f4e8c838ed6b54d204) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '95391c1ea6b3af76a23ced5187e42fc9') in 0.0086568 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/YuoTools/Extend/UI/Extend/Tools/YuoKeyButton.cs
+  artifactKey: Guid(def2eb7a4f7375e4a86ba236e401d253) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/Extend/UI/Extend/Tools/YuoKeyButton.cs using Guid(def2eb7a4f7375e4a86ba236e401d253) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '1cfa67230f644f9c9382cb8f80a9d9a1') in 0.0116799 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/YuoTools/YuoRender/Shaders/SubShader/Tex2D2X.shadersubgraph
+  artifactKey: Guid(8fca01362c0300847ae60b54ca1a359a) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/YuoRender/Shaders/SubShader/Tex2D2X.shadersubgraph using Guid(8fca01362c0300847ae60b54ca1a359a) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '384f66496982e81c69cddf59711efc63') in 0.017289 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/YuoTools/Extend/UI/Extend/Texture/btn_icon_arrow_down.png
+  artifactKey: Guid(7c7ac910be4a2074f9a467079702d5fe) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/Extend/UI/Extend/Texture/btn_icon_arrow_down.png using Guid(7c7ac910be4a2074f9a467079702d5fe) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '6e41f618018df512367a5a790c9ca8e9') in 0.0190293 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/YuoTools/Extend/UI/Extend/Tools/ImageFill.cs
+  artifactKey: Guid(6255de26c2eea614696a466f5e55beca) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/Extend/UI/Extend/Tools/ImageFill.cs using Guid(6255de26c2eea614696a466f5e55beca) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '961c746be998305b128a313001ab11de') in 0.0102248 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/YuoTools/Core/PortableTools/RandomExtractor
+  artifactKey: Guid(a4a546596515e15488db31f015c7c068) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/Core/PortableTools/RandomExtractor using Guid(a4a546596515e15488db31f015c7c068) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '2c1819da08377d46d8a67a3b8a797b69') in 0.0080648 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/YuoTools/YuoRender/Shaders/SubShader/Procedural Patterns/Brick.shadersubgraph
+  artifactKey: Guid(aa594629bd691e649abe52f379f329b1) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/YuoRender/Shaders/SubShader/Procedural Patterns/Brick.shadersubgraph using Guid(aa594629bd691e649abe52f379f329b1) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '70c2882135fab580649259cd736b4d37') in 0.0158545 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/YuoTools/Editor/UI
+  artifactKey: Guid(2286de81c557fc94493f4e3227962e39) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/Editor/UI using Guid(2286de81c557fc94493f4e3227962e39) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'feb8a73ccc4c8c0a1b4c97c8a947e242') in 0.0074144 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/YuoTools/Core/PortableTools/ThirdParty/ETTask
+  artifactKey: Guid(618c9dd369f43e84296ac09b6f468e9d) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/Core/PortableTools/ThirdParty/ETTask using Guid(618c9dd369f43e84296ac09b6f468e9d) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'cc7bf5b5c1a7ed3e5a3d4f2bec08269b') in 0.0078002 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderCurved02_darkBorders.png
+  artifactKey: Guid(e3ae01f12865ad54ba365963bda55759) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/squareBorderCurved02_darkBorders.png using Guid(e3ae01f12865ad54ba365963bda55759) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '0c6e9cdcf5466c2519e923dbe56ed193') in 0.0175369 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteSquare_fadeOut_bt.png
+  artifactKey: Guid(a40dc0d6372a9084fb45976308087290) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/whiteSquare_fadeOut_bt.png using Guid(a40dc0d6372a9084fb45976308087290) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'db56ce3516ff44a9cfea43d055d23d70') in 0.0184834 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/YuoTools/Core/PortableTools/YuoExtension/YuoTools.cs
+  artifactKey: Guid(44ac1f5aba950e547b58c3d1e544f142) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/Core/PortableTools/YuoExtension/YuoTools.cs using Guid(44ac1f5aba950e547b58c3d1e544f142) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '75c15a6a897587e6964fe49e6653c3f6') in 0.0151255 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_ui.png
+  artifactKey: Guid(cb46e1d925af22d43a6f8bf0e1d459e6) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_ui.png using Guid(cb46e1d925af22d43a6f8bf0e1d459e6) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '7f1c9e1f3beac117a5ce36aee67b027e') in 0.015196 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/YuoTools/Extend/Network/Log.cs
+  artifactKey: Guid(4435ddcadd894043a0683b901d88471c) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/Extend/Network/Log.cs using Guid(4435ddcadd894043a0683b901d88471c) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '8c7126811f8790db05bfc33897cef751') in 0.0096828 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/YuoTools/Extend/Classes/YuoEvent.cs
+  artifactKey: Guid(9484d3e0684c4604baaf5e32f0758355) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/Extend/Classes/YuoEvent.cs using Guid(9484d3e0684c4604baaf5e32f0758355) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '2a9e6ce66cae29bb5b9c40bbe4babdaa') in 0.0076183 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/YuoTools/Extend/AI/AIGC/AIGC.cs.temp
+  artifactKey: Guid(545ce8026c5fcc944ae36218070bd6db) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/Extend/AI/AIGC/AIGC.cs.temp using Guid(545ce8026c5fcc944ae36218070bd6db) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'ce97b83c5f9136a4000f7a6f961c3d6a') in 0.0100282 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/YuoTools/Extend/Anima/YuoAnimaScriptable.cs
+  artifactKey: Guid(c4b928e988d52664a8d39b72d619f5d4) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/Extend/Anima/YuoAnimaScriptable.cs using Guid(c4b928e988d52664a8d39b72d619f5d4) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '61bebd29fa989a3e2616d52a886235dc') in 0.0091364 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/YuoTools/Extend/Helper/Network/TcpHelper.cs
+  artifactKey: Guid(2ad15a91d0c041159447b870b0a88481) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/Extend/Helper/Network/TcpHelper.cs using Guid(2ad15a91d0c041159447b870b0a88481) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '7807928c059d8d721ed3fc8441c2f3d6') in 0.0093527 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/YuoTools/Core/PortableTools/YuoWait/YuoWait.cs
+  artifactKey: Guid(b15479093ac70bf4c835fb7a393a5bf4) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/Core/PortableTools/YuoWait/YuoWait.cs using Guid(b15479093ac70bf4c835fb7a393a5bf4) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '327afe971a4ca29d3091a133fad0e141') in 0.0090311 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/TextMesh Pro/Sprites/EmojiOne Attribution.txt
+  artifactKey: Guid(381dcb09d5029d14897e55f98031fca5) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/TextMesh Pro/Sprites/EmojiOne Attribution.txt using Guid(381dcb09d5029d14897e55f98031fca5) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '33b71e70f0745fa07ffa0d5f94b26eb1') in 0.0120751 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader
+  artifactKey: Guid(fe393ace9b354375a9cb14cdbbc28be4) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader using Guid(fe393ace9b354375a9cb14cdbbc28be4) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'c9da817273ba4f4fdb4122e1ef7c5f8c') in 0.0119189 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/TextMesh Pro/Resources/Sprite Assets/EmojiOne.asset
+  artifactKey: Guid(c41005c129ba4d66911b75229fd70b45) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/TextMesh Pro/Resources/Sprite Assets/EmojiOne.asset using Guid(c41005c129ba4d66911b75229fd70b45) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '13f6b5054f29e5bdd8b0b3e431b4a5d3') in 0.0198621 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/YuoTools/YuoRender/Material/FlowEffect_Square.mat
+  artifactKey: Guid(3884bde8770d7f842860100439b2ecf9) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/YuoRender/Material/FlowEffect_Square.mat using Guid(3884bde8770d7f842860100439b2ecf9) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '160ee00a0a1657cbbe5556ebbb8f2011') in 0.0160729 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/TextMesh Pro/Shaders/TMPro.cginc
+  artifactKey: Guid(407bc68d299748449bbf7f48ee690f8d) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/TextMesh Pro/Shaders/TMPro.cginc using Guid(407bc68d299748449bbf7f48ee690f8d) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '922a39539f71d43f5fd27bc8bc6e9b0a') in 0.0078608 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/TextMesh Pro/Resources/Fonts & Materials
+  artifactKey: Guid(731f1baa9d144a9897cb1d341c2092b8) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/TextMesh Pro/Resources/Fonts & Materials using Guid(731f1baa9d144a9897cb1d341c2092b8) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '40ea409a9f26338e759b99f10e8fe063') in 0.0065923 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/TextMesh Pro/Shaders/TMP_SDF-HDRP LIT.shadergraph
+  artifactKey: Guid(ca2ed216f98028c4dae6c5224a952b3c) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/TextMesh Pro/Shaders/TMP_SDF-HDRP LIT.shadergraph using Guid(ca2ed216f98028c4dae6c5224a952b3c) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '1700d620b1174b636d40082711776ea1') in 0.0212326 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader
+  artifactKey: Guid(128e987d567d4e2c824d754223b3f3b0) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader using Guid(128e987d567d4e2c824d754223b3f3b0) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '09b573d3c929a39264c2cd7bdb7a9429') in 0.0081165 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/TextMesh Pro/Fonts/LiberationSans.ttf
+  artifactKey: Guid(e3265ab4bf004d28a9537516768c1c75) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/TextMesh Pro/Fonts/LiberationSans.ttf using Guid(e3265ab4bf004d28a9537516768c1c75) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '37b7850087489b7caa3ac80beeb48a9b') in 0.0234053 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Plugins/Sirenix/Odin Inspector/Modules/Unity.Localization/Editor/Configs/OdinLocalizationConfig.asset
+  artifactKey: Guid(c09625914af7d2d4e92c3653d5f15bd7) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/Plugins/Sirenix/Odin Inspector/Modules/Unity.Localization/Editor/Configs/OdinLocalizationConfig.asset using Guid(c09625914af7d2d4e92c3653d5f15bd7) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '01fb2002791b929e54593e969da90dcf') in 0.013586 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Plugins/Sirenix/Odin Inspector/Modules/Unity.Localization/Editor/Windows/OdinLocalizationEditorWindow.cs
+  artifactKey: Guid(a7cd6c96ce4b4c2c98fae9f89eedc690) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/Plugins/Sirenix/Odin Inspector/Modules/Unity.Localization/Editor/Windows/OdinLocalizationEditorWindow.cs using Guid(a7cd6c96ce4b4c2c98fae9f89eedc690) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '99998cf457e8425c141e9155f023259b') in 0.0092233 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Plugins/Sirenix/Odin Inspector/Modules/Unity.Localization/Editor/GUI
+  artifactKey: Guid(bf930ee5d27d4f90ab84f23d337eaaca) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/Plugins/Sirenix/Odin Inspector/Modules/Unity.Localization/Editor/GUI using Guid(bf930ee5d27d4f90ab84f23d337eaaca) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '1802be7d7bdd0dc882247d457586a98a') in 0.0097374 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Plugins/Sirenix/Odin Inspector/Modules/Unity.Localization/Editor/Internal/OdinLocalizationAssetCache.cs
+  artifactKey: Guid(f5b97d1f7b884ac99cc8ebcdeb3363a7) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/Plugins/Sirenix/Odin Inspector/Modules/Unity.Localization/Editor/Internal/OdinLocalizationAssetCache.cs using Guid(f5b97d1f7b884ac99cc8ebcdeb3363a7) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '7bc5370f18da1be6fafbfab86f3a5975') in 0.0111051 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000100 seconds.
+  path: Assets/Plugins/Sirenix/Odin Inspector/Modules/Unity.Localization/Editor/GUI/OdinTemplateMetadata.cs
+  artifactKey: Guid(50bcb1c3eb1c42b3b6a84c57b1c240dd) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/Plugins/Sirenix/Odin Inspector/Modules/Unity.Localization/Editor/GUI/OdinTemplateMetadata.cs using Guid(50bcb1c3eb1c42b3b6a84c57b1c240dd) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '50e133394e9be05f3ffbebd8ef9a9716') in 0.0091032 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/TextMesh Pro/Resources
+  artifactKey: Guid(243e06394e614e5d99fab26083b707fa) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/TextMesh Pro/Resources using Guid(243e06394e614e5d99fab26083b707fa) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '4b887d5a45f1ced80f391d15c37fc567') in 0.0101408 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/TextMesh Pro/Fonts/LiberationSans - OFL.txt
+  artifactKey: Guid(6e59c59b81ab47f9b6ec5781fa725d2c) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/TextMesh Pro/Fonts/LiberationSans - OFL.txt using Guid(6e59c59b81ab47f9b6ec5781fa725d2c) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '064842cb150b038b8dd24b13c6e02cf3') in 0.0099568 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Plugins/Sirenix/Odin Inspector/Modules/Unity.Localization/Editor/GUI/OdinTableCollectionEditor.cs
+  artifactKey: Guid(b8f34a530ab34e11b148c6c45d14fd12) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/Plugins/Sirenix/Odin Inspector/Modules/Unity.Localization/Editor/GUI/OdinTableCollectionEditor.cs using Guid(b8f34a530ab34e11b148c6c45d14fd12) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '273267fbaf4bcb10ef69bea6f682ad6b') in 0.0111513 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/YuoTools/Extend/AI/AIGC
+  artifactKey: Guid(8cfefc5626084f1c9f9bb48973744c17) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/Extend/AI/AIGC using Guid(8cfefc5626084f1c9f9bb48973744c17) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'e875fc405ada5fafeb777f0219640654') in 0.009738 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Settings
+  artifactKey: Guid(2a1812acf0ec7314e8be7321200e8f28) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/Settings using Guid(2a1812acf0ec7314e8be7321200e8f28) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '9864b843e35ac8c3c430ff566dc44902') in 0.0071844 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Scripts/ItemHelper.cs
+  artifactKey: Guid(448e6ed7161941a7b20c3a272e3c0893) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/Scripts/ItemHelper.cs using Guid(448e6ed7161941a7b20c3a272e3c0893) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'c44515cb15fdc50551533fe3902abdbd') in 0.0134337 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Resources/SceneFastLoad.asset
+  artifactKey: Guid(5e180f525ad65f74fa7d44c44d218672) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/Resources/SceneFastLoad.asset using Guid(5e180f525ad65f74fa7d44c44d218672) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'b35d744a0b887bdc11ada15ecce29591') in 0.0106371 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Plugins/Sirenix/Odin Inspector/Modules/Unity.Addressables/Internal/OdinAddressableReflectionValidator.cs
+  artifactKey: Guid(97bf306f5a4249b192921db9152934f6) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/Plugins/Sirenix/Odin Inspector/Modules/Unity.Addressables/Internal/OdinAddressableReflectionValidator.cs using Guid(97bf306f5a4249b192921db9152934f6) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '0b47f4f47569cadd6c000d5e41a7bd96') in 0.0098231 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Plugins/Sirenix/Odin Inspector/Modules/Unity.Localization/Editor/GUI/OdinGUITable.cs
+  artifactKey: Guid(c6172b1a79444464bfac84d14344febf) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/Plugins/Sirenix/Odin Inspector/Modules/Unity.Localization/Editor/GUI/OdinGUITable.cs using Guid(c6172b1a79444464bfac84d14344febf) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'e801614ebf1e28583ea059cf29815d8c') in 0.010333 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000055 seconds.
+  path: Assets/FlowLayoutGroup.prefab
+  artifactKey: Guid(587e0e9757ca0cd4b9156993d5389238) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/FlowLayoutGroup.prefab using Guid(587e0e9757ca0cd4b9156993d5389238) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '69220dbfbc4ce2b6fc90402d2aef85e1') in 0.0188155 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 89
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Plugins/Sirenix/Odin Inspector/Modules/Unity.Localization/Editor/Internal/OdinLocalizationReflectionValues.cs
+  artifactKey: Guid(b54903c48e344164a8ef89c56ba21f22) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/Plugins/Sirenix/Odin Inspector/Modules/Unity.Localization/Editor/Internal/OdinLocalizationReflectionValues.cs using Guid(b54903c48e344164a8ef89c56ba21f22) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '71bbacb478036bbdb65a12b8d74a2353') in 0.0111046 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/YuoTools/Core/PortableTools/ThirdParty/ETTask/ETTaskHelper.cs
+  artifactKey: Guid(8fed180f713f7fe4a9d01aafb70304b2) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/Core/PortableTools/ThirdParty/ETTask/ETTaskHelper.cs using Guid(8fed180f713f7fe4a9d01aafb70304b2) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '6846989dd6ec67ede3939e76a1af7cd1') in 0.0115047 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/YuoTools/Core/PortableTools/YuoExtension/VectorExtension.cs
+  artifactKey: Guid(afccc39928b24a439f11bcd7ae52a5c2) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/Core/PortableTools/YuoExtension/VectorExtension.cs using Guid(afccc39928b24a439f11bcd7ae52a5c2) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '42a23a7511b99deb1fc13a5634d8694e') in 0.0093971 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/YuoTools/Core/Ecs/SystemGroupConst.cs
+  artifactKey: Guid(0bac212c1da842d686031e8ab8657bf3) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/Core/Ecs/SystemGroupConst.cs using Guid(0bac212c1da842d686031e8ab8657bf3) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '8393da183326bac366c74d0aaf2cd862') in 0.0079795 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/YuoTools/Extend/AI
+  artifactKey: Guid(f8cd06551cc91d64e8440b652e4bd09b) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/Extend/AI using Guid(f8cd06551cc91d64e8440b652e4bd09b) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'b38869319535f7b9a3bfdbd7aec44f8a') in 0.0083373 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/YuoTools/Extend/UI/Extend/Texture/Border
+  artifactKey: Guid(fe1f42238f65dd643b6f34fbdc2accab) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/Extend/UI/Extend/Texture/Border using Guid(fe1f42238f65dd643b6f34fbdc2accab) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '966f01fc13d8630612fbfc35703f013f') in 0.0073426 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/YuoTools/YuoRender/Shaders/SubShader/ScreenTex_2.shadersubgraph
+  artifactKey: Guid(9eec6f3a2749f2b4f90657a69cc0ee7d) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/YuoRender/Shaders/SubShader/ScreenTex_2.shadersubgraph using Guid(9eec6f3a2749f2b4f90657a69cc0ee7d) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '72143d32aafebda71a6f4eba3a089bc2') in 0.0124715 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Plugins/Sirenix/Assemblies/NoEditor/Sirenix.Utilities.dll
+  artifactKey: Guid(5978f8f3dd274e848fbb7a123bde1fb9) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/Plugins/Sirenix/Assemblies/NoEditor/Sirenix.Utilities.dll using Guid(5978f8f3dd274e848fbb7a123bde1fb9) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'db78b587ae8638b4aa775499ba62b88f') in 0.0099418 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Plugins/Sirenix/Odin Inspector/Modules/Unity.Addressables/Validators/CheckDuplicateBundleDependenciesValidator.cs
+  artifactKey: Guid(bdc8ee2cf75a17644a0bd81a965cc2e0) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/Plugins/Sirenix/Odin Inspector/Modules/Unity.Addressables/Validators/CheckDuplicateBundleDependenciesValidator.cs using Guid(bdc8ee2cf75a17644a0bd81a965cc2e0) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'edf2fe20b822fad4863d9203640af801') in 0.008647 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Plugins/Demigiant/DOTweenPro/Editor/DOTweenProEditor.XML
+  artifactKey: Guid(753a4f4ed73b17143923101226957756) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/Plugins/Demigiant/DOTweenPro/Editor/DOTweenProEditor.XML using Guid(753a4f4ed73b17143923101226957756) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'a6e0423b95409a69451ca7e722fd0b57') in 0.0095653 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/YuoTools/Editor/Resources/snap_to_childs_v.png
+  artifactKey: Guid(0d813229cf5e4b6449d2ae27d5479954) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/Editor/Resources/snap_to_childs_v.png using Guid(0d813229cf5e4b6449d2ae27d5479954) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '494e3ea31d89c8950a35af8a6f884c81') in 0.0148589 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_terrains.png
+  artifactKey: Guid(4a091a7609ef2d34bbdfaa1a886deb18) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_terrains.png using Guid(4a091a7609ef2d34bbdfaa1a886deb18) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '270aa2c6549651a1240d032980c7e700') in 0.0190486 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/YuoTools/Core/PortableTools/RandomExtractor/RandomExtractorManger.cs
+  artifactKey: Guid(1cae93c52e8ad2a439ab93a810c50e88) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/Core/PortableTools/RandomExtractor/RandomExtractorManger.cs using Guid(1cae93c52e8ad2a439ab93a810c50e88) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '9f8eaef4ab6003871f0a4445572ebbe7') in 0.0108959 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000051 seconds.
+  path: Assets/YuoTools/Extend/UI/Extend/Texture/Border/Cut/Cut Frame Glow.png
+  artifactKey: Guid(f36acd6accdfce74cad4f49b1a5823bb) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/YuoTools/Extend/UI/Extend/Texture/Border/Cut/Cut Frame Glow.png using Guid(f36acd6accdfce74cad4f49b1a5823bb) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '9ce0fe2115df62ae27b7543105d16710') in 0.0253235 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Plugins/Sirenix/Odin Inspector/Config/Editor/TypeRegistryUserConfig.asset
+  artifactKey: Guid(413b5983d57d54e43bd8e234bb85bd8c) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/Plugins/Sirenix/Odin Inspector/Config/Editor/TypeRegistryUserConfig.asset using Guid(413b5983d57d54e43bd8e234bb85bd8c) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'a8a951d8dd64738d6d5124eef6c8fbe9') in 0.0239923 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Plugins/Sirenix/Odin Validator/Editor
+  artifactKey: Guid(f5e3fd78bedc016479e54119d5e57068) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/Plugins/Sirenix/Odin Validator/Editor using Guid(f5e3fd78bedc016479e54119d5e57068) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '6494ca017f997911ea97967ec4dc6d1d') in 0.0087857 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_fonts.png
+  artifactKey: Guid(cf986943c88c2254780c17b2b5e3bc2f) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/project/ico_fonts.png using Guid(cf986943c88c2254780c17b2b5e3bc2f) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'bb1d1958257a8aaec813d4592bb4166a') in 0.0147169 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_todo.png
+  artifactKey: Guid(c561c878c05ceb1448966fe706740008) Importer(2089858483,192608db42251d675da83286b1cce702)
+Start importing Assets/Plugins/Demigiant/DemiLib/Core/Editor/Imgs/ico_todo.png using Guid(c561c878c05ceb1448966fe706740008) Importer(2089858483,192608db42251d675da83286b1cce702) (ScriptedImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '1e42c71ef9ad533c455bf8b0cebe286f') in 0.0164037 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  1.594 seconds
+Refreshing native plugins compatible for Editor in 3.79 ms, found 5 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.424 seconds
+Domain Reload Profiling: 3009ms
+	BeginReloadAssembly (624ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (79ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (3ms)
+		CreateAndSetChildDomain (234ms)
+	RebuildCommonClasses (43ms)
+	RebuildNativeTypeToScriptingClass (16ms)
+	initialDomainReloadingComplete (51ms)
+	LoadAllAssembliesAndSetupDomain (850ms)
+		LoadAssemblies (755ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (247ms)
+			TypeCache.Refresh (12ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (214ms)
+			ResolveRequiredComponents (15ms)
+	FinalizeReload (1425ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (1051ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (3ms)
+			SetLoadedEditorAssemblies (5ms)
+			BeforeProcessingInitializeOnLoad (81ms)
+			ProcessInitializeOnLoadAttributes (593ms)
+			ProcessInitializeOnLoadMethodAttributes (360ms)
+			AfterProcessingInitializeOnLoad (9ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (13ms)
+Refreshing native plugins compatible for Editor in 6.05 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 18 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6091 unused Assets / (3.9 MB). Loaded Objects now: 6981.
+Memory consumption went from 184.4 MB to 180.5 MB.
+Total: 33.991800 ms (FindLiveObjects: 0.862600 ms CreateObjectMapping: 0.826000 ms MarkObjects: 29.448200 ms  DeleteObjects: 2.852600 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  1.154 seconds
+Refreshing native plugins compatible for Editor in 3.36 ms, found 5 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.273 seconds
+Domain Reload Profiling: 2419ms
+	BeginReloadAssembly (291ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (13ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (1ms)
+		CreateAndSetChildDomain (97ms)
+	RebuildCommonClasses (50ms)
+	RebuildNativeTypeToScriptingClass (19ms)
+	initialDomainReloadingComplete (54ms)
+	LoadAllAssembliesAndSetupDomain (733ms)
+		LoadAssemblies (564ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (285ms)
+			TypeCache.Refresh (8ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (254ms)
+			ResolveRequiredComponents (18ms)
+	FinalizeReload (1274ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (971ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (3ms)
+			SetLoadedEditorAssemblies (3ms)
+			BeforeProcessingInitializeOnLoad (79ms)
+			ProcessInitializeOnLoadAttributes (573ms)
+			ProcessInitializeOnLoadMethodAttributes (304ms)
+			AfterProcessingInitializeOnLoad (9ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (12ms)
+Refreshing native plugins compatible for Editor in 5.59 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 17 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6088 unused Assets / (5.0 MB). Loaded Objects now: 6986.
+Memory consumption went from 188.0 MB to 182.9 MB.
+Total: 31.808300 ms (FindLiveObjects: 1.057400 ms CreateObjectMapping: 1.326000 ms MarkObjects: 25.825600 ms  DeleteObjects: 3.597700 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 10.59 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 17 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6071 unused Assets / (4.2 MB). Loaded Objects now: 6988.
+Memory consumption went from 188.1 MB to 183.9 MB.
+Total: 101.297800 ms (FindLiveObjects: 2.324500 ms CreateObjectMapping: 9.717700 ms MarkObjects: 85.320100 ms  DeleteObjects: 3.933000 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  0.887 seconds
+Refreshing native plugins compatible for Editor in 5.43 ms, found 5 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.292 seconds
+Domain Reload Profiling: 2173ms
+	BeginReloadAssembly (226ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (13ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (66ms)
+	RebuildCommonClasses (47ms)
+	RebuildNativeTypeToScriptingClass (14ms)
+	initialDomainReloadingComplete (36ms)
+	LoadAllAssembliesAndSetupDomain (557ms)
+		LoadAssemblies (443ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (210ms)
+			TypeCache.Refresh (16ms)
+				TypeCache.ScanAssembly (6ms)
+			BuildScriptInfoCaches (181ms)
+			ResolveRequiredComponents (10ms)
+	FinalizeReload (1293ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (988ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (3ms)
+			SetLoadedEditorAssemblies (3ms)
+			BeforeProcessingInitializeOnLoad (77ms)
+			ProcessInitializeOnLoadAttributes (591ms)
+			ProcessInitializeOnLoadMethodAttributes (304ms)
+			AfterProcessingInitializeOnLoad (9ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (13ms)
+Refreshing native plugins compatible for Editor in 5.46 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 17 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6090 unused Assets / (4.4 MB). Loaded Objects now: 6993.
+Memory consumption went from 188.0 MB to 183.5 MB.
+Total: 44.747400 ms (FindLiveObjects: 1.299500 ms CreateObjectMapping: 1.844000 ms MarkObjects: 37.109600 ms  DeleteObjects: 4.492500 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 15054.111544 seconds.
+  path: Assets/YuoTools/YuoRender/Material/Black.mat
+  artifactKey: Guid(fd206576ba3446f418802348679487fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/YuoTools/YuoRender/Material/Black.mat using Guid(fd206576ba3446f418802348679487fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '1b8dadc12c332c8308deac8eca918b94') in 0.8127684 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/YuoTools/YuoRender/Shaders/Decal/TestDecal.shadergraph
+  artifactKey: Guid(a1c31ee08cdaeee49bcb17e34b8de206) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/YuoTools/YuoRender/Shaders/Decal/TestDecal.shadergraph using Guid(a1c31ee08cdaeee49bcb17e34b8de206) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '90bb2db9e63fb90af38a5325ea4d2433') in 0.0156702 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/YuoTools/YuoRender/Material/Particles_Additive.mat
+  artifactKey: Guid(cec37a6fb4085b94a8b5e8e88c6ab025) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/YuoTools/YuoRender/Material/Particles_Additive.mat using Guid(cec37a6fb4085b94a8b5e8e88c6ab025) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '5de59376147bf2b0395ebd105f870a1e') in 0.0417256 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/YuoTools/YuoRender/Shaders/New Shader Graph.shadergraph
+  artifactKey: Guid(288ff765d702a2649b7a304c42df5c15) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/YuoTools/YuoRender/Shaders/New Shader Graph.shadergraph using Guid(288ff765d702a2649b7a304c42df5c15) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '3d19f85541caf2ae07000692d7804d6a') in 0.2383888 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset
+  artifactKey: Guid(2e498d1c8094910479dc3e1b768306a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset using Guid(2e498d1c8094910479dc3e1b768306a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '76c9958bfb38917f22b72b5cecf822fc') in 0.0361942 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000046 seconds.
+  path: Assets/YuoTools/YuoRender/Shaders/raodong.shadergraph
+  artifactKey: Guid(d7a7681ea318a814094bf0d61abaf7b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/YuoTools/YuoRender/Shaders/raodong.shadergraph using Guid(d7a7681ea318a814094bf0d61abaf7b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '9d4f849a45794d627cd8f5608ed4fc17') in 0.2425526 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/YuoTools/YuoRender/Material/FlowEffect_Square.mat
+  artifactKey: Guid(3884bde8770d7f842860100439b2ecf9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/YuoTools/YuoRender/Material/FlowEffect_Square.mat using Guid(3884bde8770d7f842860100439b2ecf9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '8ee8347a519579c8f3f0307fad12ed36') in 0.2163769 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/YuoTools/Extend/UI/Extend/Resources/Fonts/ResourceHanRounded/ResourceHanRounded SDF.asset
+  artifactKey: Guid(c599f4a8d1dd74e408d18cf728165d83) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/YuoTools/Extend/UI/Extend/Resources/Fonts/ResourceHanRounded/ResourceHanRounded SDF.asset using Guid(c599f4a8d1dd74e408d18cf728165d83) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '1e2269a05fa98194d7495ea7777365c3') in 0.0666738 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/TextMesh Pro/Shaders/TMP_SDF-HDRP LIT.shadergraph
+  artifactKey: Guid(ca2ed216f98028c4dae6c5224a952b3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TextMesh Pro/Shaders/TMP_SDF-HDRP LIT.shadergraph using Guid(ca2ed216f98028c4dae6c5224a952b3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'b0105a634e13cc93d271e6671c2c2ecb') in 0.0110365 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/YuoTools/YuoRender/Shaders/UI/UI_Def.mat
+  artifactKey: Guid(1f36dacffb3a06b47ae4e92e9a4a44d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/YuoTools/YuoRender/Shaders/UI/UI_Def.mat using Guid(1f36dacffb3a06b47ae4e92e9a4a44d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'c7256ce74f4b00df9b6fec17e60625c9') in 0.0093031 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/YuoTools/Extend/UI/Extend/Resources/Fonts/ResourceHanRounded/ResourceHanRounded Atlas Material OutLine.mat
+  artifactKey: Guid(98f81f652a38a4e4bbdf954559700a29) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/YuoTools/Extend/UI/Extend/Resources/Fonts/ResourceHanRounded/ResourceHanRounded Atlas Material OutLine.mat using Guid(98f81f652a38a4e4bbdf954559700a29) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '0201f57054266fe151f39d5e5c99d93d') in 0.0429422 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/YuoTools/YuoRender/Material/Shader Graphs_随机顶点动画.mat
+  artifactKey: Guid(46191de2f170ee147a0d1ba86b0850d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/YuoTools/YuoRender/Material/Shader Graphs_随机顶点动画.mat using Guid(46191de2f170ee147a0d1ba86b0850d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '1861454e430f53218d6418b6ee3824fd') in 0.2178392 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000079 seconds.
+  path: Assets/YuoTools/YuoRender/Shaders/UI/UI_Additive.mat
+  artifactKey: Guid(2b19ca345d79aaf4a9c9d5404aa4db9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/YuoTools/YuoRender/Shaders/UI/UI_Additive.mat using Guid(2b19ca345d79aaf4a9c9d5404aa4db9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '6a05527c86f55ece3a5a333872f49192') in 0.0093478 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/TextMesh Pro/Shaders/TMP_SDF-URP Lit.shadergraph
+  artifactKey: Guid(a3d800b099a06e0478fb790c5e79057a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TextMesh Pro/Shaders/TMP_SDF-URP Lit.shadergraph using Guid(a3d800b099a06e0478fb790c5e79057a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '88f3b8f55f0d6553d2467834ce47a6c4') in 1.0486223 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/YuoTools/YuoRender/Shaders/randomVertex.shadergraph
+  artifactKey: Guid(55044995b1bd88a42956f67c43b87ca3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/YuoTools/YuoRender/Shaders/randomVertex.shadergraph using Guid(55044995b1bd88a42956f67c43b87ca3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'c90578df84a1f4de9652a9855c42275d') in 0.0128449 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/YuoTools/YuoRender/Shaders/Effect/FlowEffect_Round.shadergraph
+  artifactKey: Guid(b9e89de534ae2fb4cb489ec1a0098eb9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/YuoTools/YuoRender/Shaders/Effect/FlowEffect_Round.shadergraph using Guid(b9e89de534ae2fb4cb489ec1a0098eb9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '11126a07fd5dae19d5e92bd6f44c9947') in 0.4585884 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/YuoTools/YuoRender/Shaders/OtherScale2D.shadergraph
+  artifactKey: Guid(93f16a9a76ec65143a31085bf6590175) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/YuoTools/YuoRender/Shaders/OtherScale2D.shadergraph using Guid(93f16a9a76ec65143a31085bf6590175) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '2ec0dba36856de9326c1e26a5ee88329') in 0.2356823 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/YuoTools/Extend/UI/Extend/Resources/Fonts/ResourceHanRounded/ResourceHanRounded Atlas Material OutLine White.mat
+  artifactKey: Guid(c3a1b7bb88bfac046abbf832d4c3f5f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/YuoTools/Extend/UI/Extend/Resources/Fonts/ResourceHanRounded/ResourceHanRounded Atlas Material OutLine White.mat using Guid(c3a1b7bb88bfac046abbf832d4c3f5f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '038a1d1184fd0c80c53cd0db552829b0') in 0.0647084 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0

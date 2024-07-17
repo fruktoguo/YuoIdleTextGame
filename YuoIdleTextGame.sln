@@ -9,11 +9,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sirenix.OdinInspector.Modul
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{f884dc87-819a-8fb9-3857-6d3e8b8db4da}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.RenderPipelines.Core.Samples.Editor", "Unity.RenderPipelines.Core.Samples.Editor.csproj", "{b3af0cdc-00e7-5a4e-b682-22e63494e12b}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-firstpass", "Assembly-CSharp-firstpass.csproj", "{e008b576-4402-49d4-88d5-2fc7a4b36933}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YuoTools.ECS", "YuoTools.ECS.csproj", "{200726d1-fbca-2fd2-8760-7dfbaccea4dd}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sirenix.OdinInspector.Modules.Unity.Addressables", "Sirenix.OdinInspector.Modules.Unity.Addressables.csproj", "{ae3b1e30-76ba-901f-9269-7df644569548}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.RenderPipelines.Core.Samples.Runtime", "Unity.RenderPipelines.Core.Samples.Runtime.csproj", "{e81e18f6-8e63-e369-d287-943103876168}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor-firstpass", "Assembly-CSharp-Editor-firstpass.csproj", "{1ef7a9a2-0052-2c49-5c37-dd58e898f240}"
 EndProject
@@ -36,12 +40,16 @@ Global
 		{bb7f515a-7aab-6d05-18e9-259c0e23f398}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{f884dc87-819a-8fb9-3857-6d3e8b8db4da}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{f884dc87-819a-8fb9-3857-6d3e8b8db4da}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{b3af0cdc-00e7-5a4e-b682-22e63494e12b}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{b3af0cdc-00e7-5a4e-b682-22e63494e12b}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{e008b576-4402-49d4-88d5-2fc7a4b36933}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{e008b576-4402-49d4-88d5-2fc7a4b36933}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{200726d1-fbca-2fd2-8760-7dfbaccea4dd}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{200726d1-fbca-2fd2-8760-7dfbaccea4dd}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ae3b1e30-76ba-901f-9269-7df644569548}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{ae3b1e30-76ba-901f-9269-7df644569548}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{e81e18f6-8e63-e369-d287-943103876168}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{e81e18f6-8e63-e369-d287-943103876168}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1ef7a9a2-0052-2c49-5c37-dd58e898f240}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1ef7a9a2-0052-2c49-5c37-dd58e898f240}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{95378a82-b5e9-6797-57ee-2e798ce7336d}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
