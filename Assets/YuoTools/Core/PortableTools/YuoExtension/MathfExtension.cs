@@ -69,7 +69,7 @@ namespace YuoTools
 
         public static float Clamp(ref this float i, float max)
         {
-            i = Mathf.Clamp(i, 0, max);
+            i = Mathf.Clamp(i, i, max);
             return i;
         }
 

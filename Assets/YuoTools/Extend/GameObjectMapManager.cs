@@ -24,7 +24,7 @@ namespace YuoTools.Extend
 
         public YuoEntity GetMap(GameObject gameObject)
         {
-            return gameObjectMap.TryGetValue(gameObject, out var map) ? map : null;
+            return gameObjectMap.GetValueOrDefault(gameObject);
         }
 
         MultiHashSetMap<string, GameObject> goPool = new();

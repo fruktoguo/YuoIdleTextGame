@@ -67,7 +67,7 @@ namespace YuoTools.Extend.PhysicalCallback
 
     public class
         PhysicalCallbackTrigger2DComponentStartSystem :
-            YuoSystem<PhysicalCallbackTrigger2DComponent, TransformComponent>, IAwake, IDestroy
+        YuoSystem<PhysicalCallbackTrigger2DComponent, TransformComponent>, IAwake, IDestroy
     {
         public override string Group => SystemGroupConst.CallBack;
 
@@ -75,12 +75,15 @@ namespace YuoTools.Extend.PhysicalCallback
         {
             if (RunType == SystemTagType.Awake)
             {
-                component.transform = tran.Transform;
+                component.transform = tran.transform;
+                
+                GameObjectMapManager.Get.AddMap(component.transform.gameObject, component.Entity);
+                
                 //检查是否有物理回调组件
                 var callback = component.transform.GetOrAddComponent<PhysicalCallbackTrigger2D>();
                 callback.callbackComponent = component;
                 component.callback = callback;
-                // "生成物理回调组件".Log();
+                "生成物理回调组件".Log();
             }
 
             if (RunType == SystemTagType.Destroy)

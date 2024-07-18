@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using YuoTools.Main.Ecs;
 using Sirenix.OdinInspector;
+using TMPro;
 
 namespace YuoTools.UI
 {
@@ -57,6 +58,32 @@ namespace YuoTools.UI
 		}
 
 
+		private TextMeshProUGUI mTextMeshProUGUI_Console;
+
+		public TextMeshProUGUI TextMeshProUGUI_Console
+		{
+			get
+			{
+				if (mTextMeshProUGUI_Console == null)
+					mTextMeshProUGUI_Console = rectTransform.Find("C_Bottom/Scroll View/Viewport/C_Console").GetComponent<TextMeshProUGUI>();
+				return mTextMeshProUGUI_Console;
+			}
+		}
+
+
+		private ContentSizeFitter mContentSizeFitter_Console;
+
+		public ContentSizeFitter ContentSizeFitter_Console
+		{
+			get
+			{
+				if (mContentSizeFitter_Console == null)
+					mContentSizeFitter_Console = rectTransform.Find("C_Bottom/Scroll View/Viewport/C_Console").GetComponent<ContentSizeFitter>();
+				return mContentSizeFitter_Console;
+			}
+		}
+
+
 		private View_ItemComponent mChild_Item;
 
 		public View_ItemComponent Child_Item
@@ -85,6 +112,14 @@ namespace YuoTools.UI
 
 		[FoldoutGroup("ALL")]
 
+		public List<TextMeshProUGUI> all_TextMeshProUGUI = new();
+
+		[FoldoutGroup("ALL")]
+
+		public List<ContentSizeFitter> all_ContentSizeFitter = new();
+
+		[FoldoutGroup("ALL")]
+
 		public List<View_ItemComponent> all_View_ItemComponent = new();
 
 		public void FindAll()
@@ -94,6 +129,10 @@ namespace YuoTools.UI
 			all_RectTransform.Add(RectTransform_Bottom);;
 				
 			all_FlowLayout.Add(FlowLayout_Content);;
+				
+			all_TextMeshProUGUI.Add(TextMeshProUGUI_Console);;
+				
+			all_ContentSizeFitter.Add(ContentSizeFitter_Console);;
 				
 			all_View_ItemComponent.Add(Child_Item);;
 

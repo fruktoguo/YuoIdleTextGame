@@ -6,6 +6,5 @@ using YuoTools.Main.Ecs;
 
 public partial class TransformComponent : YuoComponent
 {
-    public Transform Transform;
-    public GameObject GameObject;
+    public Transform transform;
 }

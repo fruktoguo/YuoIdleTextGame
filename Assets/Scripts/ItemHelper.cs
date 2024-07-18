@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using SimpleJSON;
 using YuoTools;
 
 public class ItemHelper
@@ -20,5 +21,25 @@ public class ItemHelper
     {
         ItemLibrary[item] = ItemLibrary.GetValueOrDefault(item, 0) - num;
         $"失去了 {num} 个 {item}".Log();
+    }
+
+    public static void Load()
+    {
+        var text = DataHelper.LoadSave("ItemLibrary");
+        JSONArray array = JSON.Parse(text) as JSONArray;
+        if (array != null)
+        {
+            $"ItemLibrary 加载成功".Log();
+            ItemLibrary.Clear();
+            foreach (var (_, node) in array)
+            {
+                ItemLibrary[node[a.Name]] = node[a.Num].AsLong;
+            }
+        }
+        else
+        {
+            $"ItemLibrary 没有数据".LogError();
+            ItemLibrary = new();
+        }
     }
 }
