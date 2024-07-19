@@ -17,6 +17,8 @@ namespace YuoTools.UI
         public RoleData Data = new();
 
         public TimerCountDown MoveTimer = new();
+
+        public Vector2 LastVelocity;
     }
 
     public class TimerCountDown
@@ -85,6 +87,8 @@ namespace YuoTools.UI
                 view.MoveDir = (view.Target.rectTransform.position - view.rectTransform.position).normalized;
                 view.MoveTimer.Update(Time.deltaTime * view.Data.Def);
             }
+
+            view.LastVelocity = view.Rig.linearVelocity;
         }
     }
 
@@ -104,7 +108,7 @@ namespace YuoTools.UI
                 float maxImpulse = contactPoint2D.normalImpulse;
 
                 float ratio = 1;
-                
+
                 if (contactPoint2D.collider.gameObject.layer == LayerMask.NameToLayer("Wall"))
                 {
                     // $"{view.Entity} 撞墙了  当前速度{view.Rig.velocity.magnitude:F2}".Log();
@@ -113,15 +117,20 @@ namespace YuoTools.UI
                 {
                     var selfRig = view.Rig;
                     var targetRig = contactPoint2D.rigidbody;
-                    float v = (view.Rig.velocity - contactPoint2D.rigidbody.velocity).magnitude;
 
-                    var velocityRatio = targetRig.velocity.magnitude / selfRig.velocity.magnitude;
+                    var selfRole = view;
+                    var targetRole = entity.GetComponent<View_RoleComponent>();
+
+                    var selfLastVelocity = selfRole.LastVelocity;
+                    var targetLastVelocity = targetRole.LastVelocity;
+
+                    var velocityRatio = targetLastVelocity.magnitude / selfLastVelocity.magnitude;
                     velocityRatio.Clamp(0.01f, 100f);
                     var massRatio = targetRig.mass / selfRig.mass;
 
-                    maxImpulse.Max(targetRig.velocity.magnitude * targetRig.mass);
+                    maxImpulse.Max(targetRig.linearVelocity.magnitude * targetRig.mass);
 
-                    var velocityRatioReverse = selfRig.velocity.magnitude / targetRig.velocity.magnitude;
+                    var velocityRatioReverse = selfLastVelocity.magnitude / targetLastVelocity.magnitude;
                     velocityRatioReverse.Clamp(0.1f, 100f);
 
                     if (massRatio > 1)
@@ -144,7 +153,7 @@ namespace YuoTools.UI
 
                 var damage = contactPoint2D.normalImpulse * ratio;
                 damage.Clamp(maxImpulse);
-                
+
                 if (damage > 0.00001)
                 {
                     $"{view.Entity} 受到了 来自 {contactPoint2D.collider.gameObject} 的冲量 {contactPoint2D.normalImpulse} 倍率 {ratio:f2} 实际伤害{damage:f2}"
