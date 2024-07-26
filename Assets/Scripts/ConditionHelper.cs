@@ -13,13 +13,22 @@ public static class ConditionHelper
         switch (type)
         {
             case a.Item:
-                var num = node[a.Num].AsInt - ItemHelper.GetItemNum(name);
-                if (num > 0)
+                var itemNum = node[a.Num].AsInt - ItemHelper.GetItemNum(name);
+                if (itemNum > 0)
                 {
-                    error = $"[{name}] 还差 [{num}] 个";
+                    error = $"[{name.ColorizeName()}] 不足 还差 [{itemNum.ToString().ColorizeNum()}] 个";
                 }
 
-                return num <= 0;
+                return itemNum <= 0;
+
+            case a.Property:
+                var propertyNum = node[a.Num].AsFloat - PropertyHelper.Get(name);
+                if (propertyNum > 0)
+                {
+                    error = $"[{name.ColorizeName()}] 不足 还差 [{propertyNum.ToString("f0").ColorizeNum()}] 点";
+                }
+
+                return propertyNum <= 0;
         }
 
         $"{type} 作为判断类型 不支持".Log();

@@ -19,28 +19,41 @@ namespace YuoTools.UI
 		public static View_MainComponent GetView() => UIManagerComponent.Get.GetUIView<View_MainComponent>();
 
 
-		private RectTransform mRectTransform_Top;
+		private FlowLayout mFlowLayout_Behavior;
 
-		public RectTransform RectTransform_Top
+		public FlowLayout FlowLayout_Behavior
 		{
 			get
 			{
-				if (mRectTransform_Top == null)
-					mRectTransform_Top = rectTransform.Find("C_Top").GetComponent<RectTransform>();
-				return mRectTransform_Top;
+				if (mFlowLayout_Behavior == null)
+					mFlowLayout_Behavior = rectTransform.Find("C_Behavior").GetComponent<FlowLayout>();
+				return mFlowLayout_Behavior;
 			}
 		}
 
 
-		private FlowLayout mFlowLayout_Content;
+		private VerticalLayoutGroup mVerticalLayoutGroup_PlayerState;
 
-		public FlowLayout FlowLayout_Content
+		public VerticalLayoutGroup VerticalLayoutGroup_PlayerState
 		{
 			get
 			{
-				if (mFlowLayout_Content == null)
-					mFlowLayout_Content = rectTransform.Find("C_Content").GetComponent<FlowLayout>();
-				return mFlowLayout_Content;
+				if (mVerticalLayoutGroup_PlayerState == null)
+					mVerticalLayoutGroup_PlayerState = rectTransform.Find("C_PlayerState").GetComponent<VerticalLayoutGroup>();
+				return mVerticalLayoutGroup_PlayerState;
+			}
+		}
+
+
+		private FlowLayout mFlowLayout_Build;
+
+		public FlowLayout FlowLayout_Build
+		{
+			get
+			{
+				if (mFlowLayout_Build == null)
+					mFlowLayout_Build = rectTransform.Find("C_Build").GetComponent<FlowLayout>();
+				return mFlowLayout_Build;
 			}
 		}
 
@@ -58,6 +71,19 @@ namespace YuoTools.UI
 		}
 
 
+		private ScrollRect mScrollRect_Console;
+
+		public ScrollRect ScrollRect_Console
+		{
+			get
+			{
+				if (mScrollRect_Console == null)
+					mScrollRect_Console = rectTransform.Find("C_Bottom/C_Console").GetComponent<ScrollRect>();
+				return mScrollRect_Console;
+			}
+		}
+
+
 		private TextMeshProUGUI mTextMeshProUGUI_Console;
 
 		public TextMeshProUGUI TextMeshProUGUI_Console
@@ -65,7 +91,7 @@ namespace YuoTools.UI
 			get
 			{
 				if (mTextMeshProUGUI_Console == null)
-					mTextMeshProUGUI_Console = rectTransform.Find("C_Bottom/Scroll View/Viewport/C_Console").GetComponent<TextMeshProUGUI>();
+					mTextMeshProUGUI_Console = rectTransform.Find("C_Bottom/C_Console/Viewport/C_Console").GetComponent<TextMeshProUGUI>();
 				return mTextMeshProUGUI_Console;
 			}
 		}
@@ -78,7 +104,7 @@ namespace YuoTools.UI
 			get
 			{
 				if (mContentSizeFitter_Console == null)
-					mContentSizeFitter_Console = rectTransform.Find("C_Bottom/Scroll View/Viewport/C_Console").GetComponent<ContentSizeFitter>();
+					mContentSizeFitter_Console = rectTransform.Find("C_Bottom/C_Console/Viewport/C_Console").GetComponent<ContentSizeFitter>();
 				return mContentSizeFitter_Console;
 			}
 		}
@@ -94,13 +120,38 @@ namespace YuoTools.UI
 				{
 					mChild_Item = Entity.AddChild<View_ItemComponent>();
 					mChild_Item.Entity.EntityName = "Item";
-					mChild_Item.rectTransform = rectTransform.Find("C_Content/D_Item") as RectTransform;
+					mChild_Item.rectTransform = rectTransform.Find("D_Item") as RectTransform;
 					mChild_Item.RunSystem<IUICreate>();
 				}
 				return mChild_Item;
 			}
 		}
 
+		private View_PropertyComponent mChild_Property;
+
+		public View_PropertyComponent Child_Property
+		{
+			get
+			{
+				if (mChild_Property == null)
+				{
+					mChild_Property = Entity.AddChild<View_PropertyComponent>();
+					mChild_Property.Entity.EntityName = "Property";
+					mChild_Property.rectTransform = rectTransform.Find("D_Property") as RectTransform;
+					mChild_Property.RunSystem<IUICreate>();
+				}
+				return mChild_Property;
+			}
+		}
+
+
+		[FoldoutGroup("ALL")]
+
+		public List<FlowLayout> all_FlowLayout = new();
+
+		[FoldoutGroup("ALL")]
+
+		public List<VerticalLayoutGroup> all_VerticalLayoutGroup = new();
 
 		[FoldoutGroup("ALL")]
 
@@ -108,7 +159,7 @@ namespace YuoTools.UI
 
 		[FoldoutGroup("ALL")]
 
-		public List<FlowLayout> all_FlowLayout = new();
+		public List<ScrollRect> all_ScrollRect = new();
 
 		[FoldoutGroup("ALL")]
 
@@ -122,19 +173,29 @@ namespace YuoTools.UI
 
 		public List<View_ItemComponent> all_View_ItemComponent = new();
 
+		[FoldoutGroup("ALL")]
+
+		public List<View_PropertyComponent> all_View_PropertyComponent = new();
+
 		public void FindAll()
 		{
 				
-			all_RectTransform.Add(RectTransform_Top);
+			all_FlowLayout.Add(FlowLayout_Behavior);
+			all_FlowLayout.Add(FlowLayout_Build);;
+				
+			all_VerticalLayoutGroup.Add(VerticalLayoutGroup_PlayerState);;
+				
 			all_RectTransform.Add(RectTransform_Bottom);;
 				
-			all_FlowLayout.Add(FlowLayout_Content);;
+			all_ScrollRect.Add(ScrollRect_Console);;
 				
 			all_TextMeshProUGUI.Add(TextMeshProUGUI_Console);;
 				
 			all_ContentSizeFitter.Add(ContentSizeFitter_Console);;
 				
 			all_View_ItemComponent.Add(Child_Item);;
+				
+			all_View_PropertyComponent.Add(Child_Property);;
 
 
 		}

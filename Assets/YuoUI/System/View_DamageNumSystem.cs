@@ -1,7 +1,5 @@
-﻿using DG.Tweening;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Pool;
-using YuoTools.Extend.Helper;
 using YuoTools.Main.Ecs;
 
 namespace YuoTools.UI
@@ -10,8 +8,14 @@ namespace YuoTools.UI
     {
         public ObjectPool<View_NumComponent> numPool;
 
-        public void ShowNum(long num, Vector3 pos)
+        public async void ShowNum(long num, Vector3 pos)
         {
+            var numView = numPool.Get();
+            numView.MainTextMeshProUGUI.text = (-num).ToString();
+            numView.rectTransform.position = pos;
+            numView.rectTransform.anchoredPosition += new Vector2(Random.Range(-50, 50), Random.Range(0, 50));
+            await YuoWait.WaitTimeAsync(0.5f);
+            numPool.Release(numView);
         }
     }
 
@@ -22,7 +26,8 @@ namespace YuoTools.UI
         protected override void Run(View_DamageNumComponent view)
         {
             view.FindAll();
-            view.numPool = new ObjectPool<View_NumComponent>(() => view.AddChildAndInstantiate(view.Child_Num));
+            view.numPool = new ObjectPool<View_NumComponent>(() => view.AddChildAndInstantiate(view.Child_Num),
+                YuoWorld.RunSystem<IUIOpen>, YuoWorld.RunSystem<IUIClose>);
         }
     }
 

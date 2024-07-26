@@ -281,11 +281,13 @@ namespace YuoTools.UI
 
         public static Vector2 CanvasSize;
 
-        void RunSystemAndChild<T>(UIComponent component) where T : ISystemTag
+        public void RunSystemAndChild<T>(UIComponent component) where T : ISystemTag
         {
             component.Entity.RunSystem<T>();
             YuoWorld.RunSystem<T>(component.Entity.GetAllChildren());
         }
+
+        public List<UIComponent> GetOpenItems() => openItems;
     }
 
     public partial class UIComponent
@@ -408,6 +410,19 @@ namespace YuoTools.UI
             if (baseComponent.rectTransform != null)
             {
                 Object.Destroy(baseComponent.rectTransform.gameObject);
+            }
+        }
+    }
+
+    public class UIUpdateSystem : YuoSystem<UIManagerComponent>, IUpdate
+    {
+        public override string Group => SystemGroupConst.MainUI;
+
+        protected override void Run(UIManagerComponent manager)
+        {
+            foreach (var uiComponent in manager.GetOpenItems())
+            {
+                manager.RunSystemAndChild<IUIUpdate>(uiComponent);
             }
         }
     }

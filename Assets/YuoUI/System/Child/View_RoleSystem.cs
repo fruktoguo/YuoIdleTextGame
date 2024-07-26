@@ -19,6 +19,16 @@ namespace YuoTools.UI
         public TimerCountDown MoveTimer = new();
 
         public Vector2 LastVelocity;
+
+        public void SetMass(float mass)
+        {
+            Rig.mass = mass;
+            //根据球形质量求半径,质量为1时半径为1
+            var radius = Mathf.Pow(mass, 1 / 3f);
+            rectTransform.localScale = Vector3.one * radius;
+        }
+
+        public float totalDamage;
     }
 
     public class TimerCountDown
@@ -124,11 +134,30 @@ namespace YuoTools.UI
                     var selfLastVelocity = selfRole.LastVelocity;
                     var targetLastVelocity = targetRole.LastVelocity;
 
+
+                    // 计算速度方向和连线方向的夹角余弦值
+                    var collisionDirection = (targetRig.position - selfRig.position).normalized;
+                    var selfVelocityDirection = selfLastVelocity.normalized;
+                    var targetVelocityDirection = targetLastVelocity.normalized;
+
+                    float selfCosAngle = (Vector2.Dot(selfVelocityDirection, collisionDirection) + 1) / 2;
+                    float targetCosAngle = (Vector2.Dot(targetVelocityDirection, -collisionDirection) + 1) / 2;
+
+                    // 计算绝对速度反比
+                    var velocityAngleRatioReverse = (selfLastVelocity.magnitude * selfCosAngle) /
+                                                    (targetLastVelocity.magnitude * targetCosAngle);
+
+                    //这个反比只会用于减伤
+                    velocityAngleRatioReverse.Clamp(1, 100f);
+                    
+                    $"selfCosAngle {selfCosAngle:f2} targetCosAngle {targetCosAngle:f2}  绝对速度反比 :{velocityAngleRatioReverse:f2}"
+                        .Log();
+
                     var velocityRatio = targetLastVelocity.magnitude / selfLastVelocity.magnitude;
                     velocityRatio.Clamp(0.01f, 100f);
                     var massRatio = targetRig.mass / selfRig.mass;
 
-                    maxImpulse.Max(targetRig.linearVelocity.magnitude * targetRig.mass);
+                    maxImpulse.Max(targetLastVelocity.magnitude * targetRig.mass);
 
                     var velocityRatioReverse = selfLastVelocity.magnitude / targetLastVelocity.magnitude;
                     velocityRatioReverse.Clamp(0.1f, 100f);
@@ -146,18 +175,22 @@ namespace YuoTools.UI
                         massRatio = 1 / massRatio;
                     }
 
-                    $"速度倍率 {velocityRatio:f2} 质量倍率 {massRatio:f2} 质量原始倍率 {targetRig.mass / selfRig.mass:f2}".Log();
-                    ratio = velocityRatio * massRatio;
+                    $"速度倍率 {velocityRatio:f2} 质量倍率 {massRatio:f2} 质量原始倍率 {targetRig.mass / selfRig.mass:f2}"
+                        .Log();
+                    
+                    ratio = velocityRatio * massRatio / velocityAngleRatioReverse;
                     // $"{view.Entity} 撞了 {entity} 速度差{v:F2}".Log();
                 }
 
                 var damage = contactPoint2D.normalImpulse * ratio;
                 damage.Clamp(maxImpulse);
 
-                if (damage > 0.00001)
+                if (damage > 0.5f)
                 {
-                    $"{view.Entity} 受到了 来自 {contactPoint2D.collider.gameObject} 的冲量 {contactPoint2D.normalImpulse} 倍率 {ratio:f2} 实际伤害{damage:f2}"
+                    $"{view.Entity} 受到了 来自 {contactPoint2D.collider.gameObject.name} 的冲量 {contactPoint2D.normalImpulse} 倍率 {ratio:f2} 实际伤害{damage:f2}"
                         .Log();
+                    view.totalDamage += damage;
+                    View_DamageNumComponent.GetView().ShowNum((long)damage, view.rectTransform.position);
                 }
             }
         }

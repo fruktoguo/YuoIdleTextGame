@@ -161,6 +161,13 @@ namespace YuoTools.UI
     {
     }
 
+    /// <summary>
+    /// UI处于Active状态时每帧调用
+    /// </summary>
+    public interface IUIUpdate : ISystemTag
+    {
+    }
+
     #endregion
 }
 

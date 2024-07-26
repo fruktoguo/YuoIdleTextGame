@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using YuoTools;
 
@@ -7,6 +8,16 @@ public class FlowLayout : MonoBehaviour, IGenerateCode
     public float spacing = 5f; // 子元素之间的间距
 
     private RectTransform root;
+
+    public bool AutoRefresh = false;
+
+    private void Update()
+    {
+        if (AutoRefresh)
+        {
+            ArrangeChildren();
+        }
+    }
 
     public void ArrangeChildren()
     {

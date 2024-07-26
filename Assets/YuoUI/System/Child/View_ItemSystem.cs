@@ -27,50 +27,38 @@ namespace YuoTools.UI
 
         public void Produce(JSONNode node)
         {
-            if (node.HasKey(a.In))
+            if (countTimer > 0)
+            {
+                $"正在冷却,还剩 {countTimer:f1} s".ViewLog();
+                return;
+            }
+
+            if (InOutHelper.HasIn(node))
             {
                 var input = node[a.In];
 
-                string result = "";
-                bool condition = true;
-                foreach (var (_, item) in input)
-                {
-                    if (!ConditionHelper.Check(item, out var error))
-                    {
-                        result += error;
-                        condition = false;
-                    }
-                }
+                var condition = InOutHelper.TryCheckIn(input, out var result);
 
                 if (!condition)
                 {
-                    $"不满足条件,{result}".Log();
+                    $"不满足条件,{result}".ViewLog();
                     return;
                 }
 
-                foreach (var (_, item) in input)
-                {
-                    if (item[a.Type].Value == a.Item)
-                    {
-                        ItemHelper.RemoveItem(item[a.Name], item[a.Num].AsInt);
-                    }
-                }
+                InOutHelper.GenerateInList(input);
             }
             //没有输入就直接输出
 
             var output = node[a.Out];
 
-            foreach (var (_, item) in output)
-            {
-                ItemHelper.AddItem(item[a.Name], item[a.Num].AsInt);
-            }
+            InOutHelper.GenerateOutList(output);
 
             countMax = node[a.Time].AsFloat;
             countTimer = countMax;
         }
     }
 
-    public class ViewItemComponentUpdateSystem : YuoSystem<View_ItemComponent>, IUpdate
+    public class ViewItemComponentUpdateSystem : YuoSystem<View_ItemComponent>, IUIUpdate
     {
         protected override void Run(View_ItemComponent view)
         {

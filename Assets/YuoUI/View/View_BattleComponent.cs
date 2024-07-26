@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using YuoTools.Main.Ecs;
 using Sirenix.OdinInspector;
+using TMPro;
 
 namespace YuoTools.UI
 {
@@ -27,6 +28,32 @@ namespace YuoTools.UI
 				if (mImage_Wall == null)
 					mImage_Wall = rectTransform.Find("Item/C_Wall").GetComponent<Image>();
 				return mImage_Wall;
+			}
+		}
+
+
+		private TextMeshProUGUI mTextMeshProUGUI_Role1;
+
+		public TextMeshProUGUI TextMeshProUGUI_Role1
+		{
+			get
+			{
+				if (mTextMeshProUGUI_Role1 == null)
+					mTextMeshProUGUI_Role1 = rectTransform.Find("Item/C_Role1").GetComponent<TextMeshProUGUI>();
+				return mTextMeshProUGUI_Role1;
+			}
+		}
+
+
+		private TextMeshProUGUI mTextMeshProUGUI_Role2;
+
+		public TextMeshProUGUI TextMeshProUGUI_Role2
+		{
+			get
+			{
+				if (mTextMeshProUGUI_Role2 == null)
+					mTextMeshProUGUI_Role2 = rectTransform.Find("Item/C_Role2").GetComponent<TextMeshProUGUI>();
+				return mTextMeshProUGUI_Role2;
 			}
 		}
 
@@ -55,12 +82,19 @@ namespace YuoTools.UI
 
 		[FoldoutGroup("ALL")]
 
+		public List<TextMeshProUGUI> all_TextMeshProUGUI = new();
+
+		[FoldoutGroup("ALL")]
+
 		public List<View_RoleComponent> all_View_RoleComponent = new();
 
 		public void FindAll()
 		{
 				
 			all_Image.Add(Image_Wall);;
+				
+			all_TextMeshProUGUI.Add(TextMeshProUGUI_Role1);
+			all_TextMeshProUGUI.Add(TextMeshProUGUI_Role2);;
 				
 			all_View_RoleComponent.Add(Child_Role);;
 

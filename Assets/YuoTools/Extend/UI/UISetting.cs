@@ -37,11 +37,16 @@ namespace YuoTools.UI
         [Button("打开Component脚本")]
         public void SelectSystemScript()
         {
-            var result = AssetDatabase.FindAssets($"View_{gameObject.name}Component");
+            var fileName = $"View_{gameObject.name}Component";
+            var result = AssetDatabase.FindAssets(fileName);
             if (result.Length > 0)
             {
                 var asset = AssetDatabase.LoadAssetAtPath<TextAsset>(AssetDatabase.GUIDToAssetPath(result[0]));
                 AssetDatabase.OpenAsset(asset);
+            }
+            else
+            {
+                Debug.LogError($"{fileName} 没有找到");
             }
         }
 
@@ -49,11 +54,16 @@ namespace YuoTools.UI
         [Button("打开System脚本")]
         public void OpenSystemScript()
         {
-            var result = AssetDatabase.FindAssets($"View_{gameObject.name}System");
+            var fileName = $"View_{gameObject.name}System";
+            var result = AssetDatabase.FindAssets(fileName);
             if (result.Length > 0)
             {
                 var asset = AssetDatabase.LoadAssetAtPath<TextAsset>(AssetDatabase.GUIDToAssetPath(result[0]));
                 AssetDatabase.OpenAsset(asset);
+            }
+            else
+            {
+                Debug.LogError($"{fileName} 没有找到");
             }
         }
 
@@ -93,6 +103,7 @@ namespace YuoTools.UI
 
         public async void Init()
         {
+            if (!enabled) return;
             var o = gameObject;
             Active = o.activeSelf;
             if (Active)

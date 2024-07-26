@@ -1,6 +1,6 @@
 using SimpleJSON;
 
-public class ItemUnClockHelper
+public class UnClockHelper
 {
     public static bool IsUnClock(JSONObject item)
     {
@@ -24,6 +24,8 @@ public class ItemUnClockHelper
                 var askNum = node[a.Num].AsInt;
                 var itemNum = ItemHelper.GetItemNum(node[a.Name]);
                 return itemNum >= askNum;
+            case a.ItemOwned:
+                return ItemHelper.Owned(node[a.Name]);
             default:
                 return true;
         }

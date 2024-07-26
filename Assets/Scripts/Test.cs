@@ -35,7 +35,7 @@ public class Test : MonoBehaviour
         {
             foreach (var (key, value) in root)
             {
-                ItemUnClockHelper.IsUnClock(value as JSONObject);
+                UnClockHelper.IsUnClock(value as JSONObject);
             }
         }
 

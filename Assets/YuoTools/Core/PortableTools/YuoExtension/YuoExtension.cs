@@ -554,6 +554,20 @@ namespace YuoTools
             tran.anchoredPosition = Temp.V2.RSet(tran.anchoredPosition.x, posY);
             return tran.anchoredPosition;
         }
+        
+        public static Vector2 AddAnchoredPosX(this RectTransform tran, float posX)
+        {
+            Temp.V2.Set(tran.anchoredPosition.x + posX, tran.anchoredPosition.y);
+            tran.anchoredPosition = Temp.V2;
+            return tran.anchoredPosition;
+        }
+
+        public static Vector2 AddAnchoredPosY(this RectTransform tran, float posY)
+        {
+            Temp.V2.Set(tran.anchoredPosition.x, tran.anchoredPosition.y + posY);
+            tran.anchoredPosition = Temp.V2;
+            return tran.anchoredPosition;
+        }
 
         public static void ForceRebuildLayout(this RectTransform transform)
         {

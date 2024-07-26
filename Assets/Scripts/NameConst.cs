@@ -1,7 +1,11 @@
 public class a
 {
     public const string Type = "Type";
+    
     public const string Item = "Item";
+    public const string ItemOwned = "ItemOwned";
+    public const string Property = "Property";
+    
     public const string Num = "Num";
     public const string Name = "Name";
     public const string Time = "Time";
