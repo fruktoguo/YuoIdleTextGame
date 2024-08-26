@@ -19,9 +19,9 @@ namespace YuoTools.UI
         {
             get
             {
-                if (animation)
+                if (doTweenAnimation)
                 {
-                    return animation.duration;
+                    return doTweenAnimation.duration;
                 }
 
                 if (animator)
@@ -33,15 +33,15 @@ namespace YuoTools.UI
             }
         }
 
-        private DOTweenAnimation animation;
+        private DOTweenAnimation doTweenAnimation;
 
         private Animator animator;
 
         public async ETTask Open()
         {
-            if (animation)
+            if (doTweenAnimation)
             {
-                animation.DOPlayForward();
+                doTweenAnimation.DOPlayForward();
 
                 Sate = UISetting.UISate.ShowAnima;
                 await YuoWait.WaitTimeAsync(AnimaDuration);
@@ -59,9 +59,9 @@ namespace YuoTools.UI
 
         public async ETTask Close()
         {
-            if (animation)
+            if (doTweenAnimation)
             {
-                animation.DOPlayBackwards();
+                doTweenAnimation.DOPlayBackwards();
 
                 Sate = UISetting.UISate.HideAnima;
                 await YuoWait.WaitTimeAsync(AnimaDuration);
@@ -80,7 +80,7 @@ namespace YuoTools.UI
         public void From(UISetting setting)
         {
             rectTransform = setting.transform as RectTransform;
-            animation = setting.GetComponent<DOTweenAnimation>();
+            doTweenAnimation = setting.GetComponent<DOTweenAnimation>();
             animator = setting.GetComponent<Animator>();
             animatorDuration = setting.AnimatorLength;
         }

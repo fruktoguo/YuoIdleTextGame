@@ -10,19 +10,17 @@ namespace YuoTools.UI
         public float countTimer;
         public float countMax;
 
+        public JSONNode produce;
+
         public void Init(JSONNode node)
         {
             TextMeshProUGUI_Text.text = node[a.Name];
 
-            var produce = node[a.Produce];
+            produce = node[a.Produce];
 
-            foreach (var (_, p) in produce)
-            {
-                // $"检索到配方{p[a.Name]}_需要时间{p[a.Time]}s".Log();
-                MainButton.SetBtnClick(() => Produce(p));
-            }
+            MainButton.SetBtnClick(() => Produce(produce));
 
-            rectTransform.sizeDelta = TextMeshProUGUI_Text.rectTransform.GetPreferredSize() + new Vector2(30, 30);
+            rectTransform.AutoPreferredSize(TextMeshProUGUI_Text.rectTransform, new Vector2(30, 30));
         }
 
         public void Produce(JSONNode node)
@@ -47,8 +45,8 @@ namespace YuoTools.UI
 
                 InOutHelper.GenerateInList(input);
             }
+            
             //没有输入就直接输出
-
             var output = node[a.Out];
 
             InOutHelper.GenerateOutList(output);

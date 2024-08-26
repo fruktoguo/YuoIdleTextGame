@@ -20,9 +20,9 @@ namespace YuoTools.UI
         [HorizontalGroup("2")] [LabelText("模块UI")]
         public bool ModuleUI = false;
 
-        [ShowIf(nameof(hasAnimator))] public float AnimatorLength = 0.5f;
+        [ShowIf(nameof(HasAnimator))] public float AnimatorLength = 0.5f;
 
-        bool hasAnimator => GetComponent<Animator>() != null;
+        bool HasAnimator => GetComponent<Animator>() != null;
 
 #if UNITY_EDITOR
 
@@ -30,6 +30,7 @@ namespace YuoTools.UI
         [Button("生成UI代码")]
         public void SpawnCode()
         {
+            SpawnUICode.BasePath = useCustomDirectory ? customDirectory : SpawnUICode.DefaultBasePath;
             SpawnUICode.SpawnCode(gameObject);
         }
 
@@ -66,6 +67,12 @@ namespace YuoTools.UI
                 Debug.LogError($"{fileName} 没有找到");
             }
         }
+
+        [SerializeField] [HorizontalGroup("customDirectory")] [LabelText("自定义生成目录")] [LabelWidth(200)]
+        bool useCustomDirectory;
+
+        [ShowIf("useCustomDirectory")] [HorizontalGroup("customDirectory")] [LabelText("自定义目录")] [SerializeField]
+        string customDirectory = "YuoUITemplate";
 
         [ShowInInspector] public bool OpenTools { get; set; } = false;
 

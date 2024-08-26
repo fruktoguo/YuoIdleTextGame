@@ -2,102 +2,94 @@
   {
     "Name": "火堆",
     "ToolTip": "用于烹饪和取暖的火堆",
-    "生产": [
-      {
-        "Name": "烤肉",
-        "Time": 1,
-        "In": [
-          {
-            "Type": "Item",
-            "Name": "肉",
-            "Num": 1
-          }
-        ],
-        "Out": [
-          {
-            "Type": "Item",
-            "Name": "烤肉",
-            "Num": 1
-          }
-        ]
-      }
-    ]
+    "生产": {
+      "Name": "烤肉",
+      "Time": 1,
+      "In": [
+        {
+          "Type": "Item",
+          "Name": "肉",
+          "Num": 1
+        }
+      ],
+      "Out": [
+        {
+          "Type": "Item",
+          "Name": "烤肉",
+          "Num": 1
+        }
+      ]
+    }
   },
   {
     "Name": "锯木厂",
     "ToolTip": "用于将原木加工成木板的建筑",
-    "生产": [
-      {
-        "Name": "木板",
-        "Time": 2,
-        "In": [
-          {
-            "Type": "Item",
-            "Name": "原木",
-            "Num": 1
-          }
-        ],
-        "Out": [
-          {
-            "Type": "Item",
-            "Name": "木板",
-            "Num": 2
-          }
-        ]
-      }
-    ]
+    "生产": {
+      "Name": "木板",
+      "Time": 2,
+      "In": [
+        {
+          "Type": "Item",
+          "Name": "原木",
+          "Num": 1
+        }
+      ],
+      "Out": [
+        {
+          "Type": "Item",
+          "Name": "木板",
+          "Num": 2
+        }
+      ]
+    }
   },
   {
     "Name": "铁匠铺",
     "ToolTip": "用于锻造和修理工具的建筑",
-    "生产": [
-      {
-        "Name": "铁锭",
-        "Time": 3,
-        "In": [
-          {
-            "Type": "Item",
-            "Name": "铁矿石",
-            "Num": 1
-          }
-        ],
-        "Out": [
-          {
-            "Type": "Item",
-            "Name": "铁锭",
-            "Num": 1
-          }
-        ]
-      }
-    ]
+    "生产": {
+      "Name": "铁锭",
+      "Time": 3,
+      "In": [
+        {
+          "Type": "Item",
+          "Name": "铁矿石",
+          "Num": 1
+        }
+      ],
+      "Out": [
+        {
+          "Type": "Item",
+          "Name": "铁锭",
+          "Num": 1
+        }
+      ]
+    }
   },
   {
     "Name": "农田",
     "ToolTip": "用于种植和收获农作物的区域",
-    "生产": [
-      {
-        "Name": "小麦",
-        "Time": 4,
-        "In": [
-          {
-            "Type": "Item",
-            "Name": "种子",
-            "Num": 1
-          },
-          {
-            "Type": "Item",
-            "Name": "水",
-            "Num": 1
-          }
-        ],
-        "Out": [
-          {
-            "Type": "Item",
-            "Name": "小麦",
-            "Num": 3
-          }
-        ]
-      }
-    ]
+    "生产": {
+      "Name": "小麦",
+      "Time": 4,
+      "In": [
+        {
+          "Type": "Item",
+          "Name": "种子",
+          "Num": 1
+        },
+        {
+          "Type": "Item",
+          "Name": "水",
+          "Num": 1
+        }
+      ],
+      "Out": [
+        {
+          "Type": "Item",
+          "Name": "小麦",
+          "Num": 3
+        }
+      ]
+    }
   }
 ]

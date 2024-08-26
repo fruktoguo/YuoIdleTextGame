@@ -23,6 +23,10 @@ public class InOutHelper
         return condition;
     }
 
+    /// <summary>
+    /// 执行输入事件
+    /// </summary>
+    /// <param name="input"></param>
     public static void GenerateInList(JSONNode input)
     {
         foreach (var (_, item) in input)
@@ -44,6 +48,10 @@ public class InOutHelper
         }
     }
 
+    /// <summary>
+    /// 执行生成事件
+    /// </summary>
+    /// <param name="output"></param>
     public static void GenerateOutList(JSONNode output)
     {
         foreach (var (_, item) in output)

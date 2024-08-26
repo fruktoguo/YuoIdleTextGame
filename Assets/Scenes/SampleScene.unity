@@ -510,6 +510,8 @@ MonoBehaviour:
   Active: 1
   ModuleUI: 0
   AnimatorLength: 0.5
+  useCustomDirectory: 0
+  customDirectory: YuoUITemplate
   maskableGraphics: []
 --- !u!1 &416150669
 GameObject:
@@ -607,6 +609,8 @@ MonoBehaviour:
   Active: 1
   ModuleUI: 1
   AnimatorLength: 0.5
+  useCustomDirectory: 0
+  customDirectory: YuoUITemplate
   maskableGraphics: []
 --- !u!1 &519420028
 GameObject:
@@ -1051,6 +1055,8 @@ MonoBehaviour:
   Active: 1
   ModuleUI: 0
   AnimatorLength: 0.5
+  useCustomDirectory: 0
+  customDirectory: YuoUITemplate
   maskableGraphics: []
 --- !u!224 &710987297 stripped
 RectTransform:

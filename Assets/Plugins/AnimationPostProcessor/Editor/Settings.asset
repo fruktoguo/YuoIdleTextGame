@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53f3cae1abc12454297928eb511313a3, type: 3}
+  m_Name: Settings
+  m_EditorClassIdentifier: 
+  enabled: 1
+  referenceAvatar: {fileID: 9000000, guid: 6d04967b2403b0947a66ac519789eaaa, type: 3}
+  referenceFBX: {fileID: 919132149155446097, guid: 6d04967b2403b0947a66ac519789eaaa,
+    type: 3}
+  enableTranslationDoF: 1
+  animationType: 3
+  loopTime: 1
+  renameClips: 1
+  forceEditorApply: 1
+  extractTextures: 1

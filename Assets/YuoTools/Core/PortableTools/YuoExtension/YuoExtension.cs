@@ -554,7 +554,7 @@ namespace YuoTools
             tran.anchoredPosition = Temp.V2.RSet(tran.anchoredPosition.x, posY);
             return tran.anchoredPosition;
         }
-        
+
         public static Vector2 AddAnchoredPosX(this RectTransform tran, float posX)
         {
             Temp.V2.Set(tran.anchoredPosition.x + posX, tran.anchoredPosition.y);
@@ -567,6 +567,24 @@ namespace YuoTools
             Temp.V2.Set(tran.anchoredPosition.x, tran.anchoredPosition.y + posY);
             tran.anchoredPosition = Temp.V2;
             return tran.anchoredPosition;
+        }
+
+        public static Vector2 AutoPreferredSizeX(this RectTransform rect, RectTransform target, float add = 0)
+        {
+            rect.sizeDelta = Temp.V2.RSet(target.GetPreferredWidth() + add, rect.sizeDelta.y);
+            return rect.sizeDelta;
+        }
+
+        public static Vector2 AutoPreferredSizeY(this RectTransform rect, RectTransform target, float add = 0)
+        {
+            rect.sizeDelta = Temp.V2.RSet(rect.sizeDelta.x, target.GetPreferredHeight() + add);
+            return rect.sizeDelta;
+        }
+
+        public static Vector2 AutoPreferredSize(this RectTransform rect, RectTransform target, Vector2 add = default)
+        {
+            rect.sizeDelta = Temp.V2.RSet(target.GetPreferredWidth() + add.x, target.GetPreferredHeight() + add.y);
+            return rect.sizeDelta;
         }
 
         public static void ForceRebuildLayout(this RectTransform transform)

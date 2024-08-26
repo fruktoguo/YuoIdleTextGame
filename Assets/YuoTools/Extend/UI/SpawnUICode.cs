@@ -17,6 +17,9 @@ namespace YuoTools.UI
 {
     public static class SpawnUICode
     {
+        public const string DefaultBasePath = "YuoUI";
+        public static string BasePath = DefaultBasePath;
+
         public static void SpawnCode(GameObject gameObject)
         {
             if (null == gameObject) return;
@@ -24,7 +27,7 @@ namespace YuoTools.UI
             string UIName = gameObject.name;
             string strDlgName = $"View_{UIName}Component";
 
-            string strFilePath = Application.dataPath + "/YuoUI/View";
+            string strFilePath = $"{Application.dataPath}/{BasePath}/View";
 
             if (!Directory.Exists(strFilePath))
             {
@@ -87,7 +90,7 @@ namespace YuoTools.UI
 
             string strDlgName = $"View_{UIName}Component";
 
-            string strFilePath = Application.dataPath + "/YuoUI/View/General";
+            string strFilePath = $"{Application.dataPath}/{BasePath}/View/General";
 
             if (!Directory.Exists(strFilePath))
             {
@@ -134,7 +137,7 @@ namespace YuoTools.UI
 
             string strDlgName = $"View_{uiName}Component";
 
-            string strFilePath = Application.dataPath + "/YuoUI/View/Child";
+            string strFilePath = $"{Application.dataPath}/{BasePath}/View/Child";
 
             if (!System.IO.Directory.Exists(strFilePath))
             {
@@ -181,7 +184,7 @@ namespace YuoTools.UI
 
             string strDlgName = $"View_{uiName}VariantComponent";
 
-            string strFilePath = Application.dataPath + "/YuoUI/View/Child";
+            string strFilePath = $"{Application.dataPath}/{BasePath}/View/Child";
 
             if (!Directory.Exists(strFilePath))
             {
@@ -502,7 +505,7 @@ namespace YuoTools.UI
 
         public static void SpawnSystemCode(string name, UIType uiType = UIType.Window)
         {
-            string strFilePath = Application.dataPath + "/YuoUI/System";
+            string strFilePath = $"{Application.dataPath}/{BasePath}/System";
             if (uiType != UIType.Window) strFilePath += "/Child";
             if (!Directory.Exists(strFilePath))
             {
