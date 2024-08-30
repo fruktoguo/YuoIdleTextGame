@@ -73,7 +73,7 @@ namespace YuoTools.UI
     {
         public override string Group => "UI/Main";
 
-        protected override void Run(View_MainComponent view)
+        protected override async void Run(View_MainComponent view)
         {
             view.FindAll();
             //关闭窗口的事件注册,名字不同请自行更
@@ -110,6 +110,10 @@ namespace YuoTools.UI
 
             view.FlowLayout_Build.ArrangeChildren();
             view.FlowLayout_Behavior.ArrangeChildren();
+
+            await YuoWait.WaitTimeAsync(0.1f);
+
+            var result = View_TipWindowComponent.GetView().ShowTip("测试一下");
         }
     }
 

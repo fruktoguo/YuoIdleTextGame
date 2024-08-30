@@ -8,16 +8,28 @@ using TMPro;
 
 namespace YuoTools.UI
 {
-
 	public static partial class ViewType
 	{
 		public const string Main = "Main";
 	}
+
 	public partial class View_MainComponent : UIComponent 
 	{
 
 		public static View_MainComponent GetView() => UIManagerComponent.Get.GetUIView<View_MainComponent>();
 
+
+		private RectTransform mainRectTransform;
+
+		public RectTransform MainRectTransform
+		{
+			get
+			{
+				if (mainRectTransform == null)
+					mainRectTransform = rectTransform.GetComponent<RectTransform>();
+				return mainRectTransform;
+			}
+		}
 
 		private FlowLayout mFlowLayout_Behavior;
 
@@ -146,46 +158,39 @@ namespace YuoTools.UI
 
 
 		[FoldoutGroup("ALL")]
-
-		public List<FlowLayout> all_FlowLayout = new();
-
-		[FoldoutGroup("ALL")]
-
-		public List<VerticalLayoutGroup> all_VerticalLayoutGroup = new();
-
-		[FoldoutGroup("ALL")]
-
 		public List<RectTransform> all_RectTransform = new();
 
 		[FoldoutGroup("ALL")]
+		public List<FlowLayout> all_FlowLayout = new();
 
+		[FoldoutGroup("ALL")]
+		public List<VerticalLayoutGroup> all_VerticalLayoutGroup = new();
+
+		[FoldoutGroup("ALL")]
 		public List<ScrollRect> all_ScrollRect = new();
 
 		[FoldoutGroup("ALL")]
-
 		public List<TextMeshProUGUI> all_TextMeshProUGUI = new();
 
 		[FoldoutGroup("ALL")]
-
 		public List<ContentSizeFitter> all_ContentSizeFitter = new();
 
 		[FoldoutGroup("ALL")]
-
 		public List<View_ItemComponent> all_View_ItemComponent = new();
 
 		[FoldoutGroup("ALL")]
-
 		public List<View_PropertyComponent> all_View_PropertyComponent = new();
 
 		public void FindAll()
 		{
 				
+			all_RectTransform.Add(MainRectTransform);
+			all_RectTransform.Add(RectTransform_Bottom);;
+				
 			all_FlowLayout.Add(FlowLayout_Behavior);
 			all_FlowLayout.Add(FlowLayout_Build);;
 				
 			all_VerticalLayoutGroup.Add(VerticalLayoutGroup_PlayerState);;
-				
-			all_RectTransform.Add(RectTransform_Bottom);;
 				
 			all_ScrollRect.Add(ScrollRect_Console);;
 				
@@ -196,7 +201,6 @@ namespace YuoTools.UI
 			all_View_ItemComponent.Add(Child_Item);;
 				
 			all_View_PropertyComponent.Add(Child_Property);;
-
 
 		}
 	}}

@@ -1,10 +1,7 @@
 using System.Reflection;
-using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using YuoTools.Extend.Helper;
 using YuoTools.Main.Ecs;
-using YuoTools.UI;
 
 namespace YuoTools.Extend
 {
@@ -31,7 +28,7 @@ namespace YuoTools.Extend
         {
             Main.Ecs.YuoLog.Open(new UnityEngineLog());
 
-            $"Init In {Time.frameCount} Frame".Log();
+            $"YuoEntitiesSystem Init In {Time.frameCount} Frame".Log();
 
             component.Entity.EntityName = $"Scene {YuoWorld.Instance.AllScenes.Count - 1}";
             var componentManager = YuoWorld.Main.GetOrAddComponent<ComponentManager>();

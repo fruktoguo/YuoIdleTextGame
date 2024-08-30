@@ -105,7 +105,7 @@ namespace YuoTools.UI
                 return await OpenAsync(uiItemsType[typeof(T)].ViewName) as T;
             else
             {
-                Debug.LogError($"UIManagerComponent Open<T> error,not find {typeof(T)}");
+                Debug.LogError($"UIManagerComponent Open error,not find {typeof(T)}");
                 return null;
             }
         }
@@ -236,7 +236,18 @@ namespace YuoTools.UI
 
         public T GetUIView<T>() where T : UIComponent
         {
-            return uiItemsType.ContainsKey(typeof(T)) ? uiItemsType[typeof(T)] as T : null;
+            if (uiItemsType.ContainsKey(typeof(T)))
+                return uiItemsType[typeof(T)] as T;
+            else
+            {
+                Debug.LogError($"没有找到对应的窗口---{typeof(T)}");
+                return null;
+            }
+        }
+
+        public async ETTask<UIComponent> GetOrAddView(string winName)
+        {
+            return uiItems.ContainsKey(winName) ? uiItems[winName] : await AddWindow(winName);
         }
 
         private async ETTask<GameObject> Create(string winName)
@@ -292,9 +303,9 @@ namespace YuoTools.UI
 
     public partial class UIComponent
     {
-        public void SetWindowLayer(int layer)
+        public void SetWindowLayer(int windowLayer)
         {
-            rectTransform.SetSiblingIndex(layer);
+            rectTransform.SetSiblingIndex(windowLayer);
         }
 
         public T AddChildAndInstantiate<T>(T template) where T : UIComponent, new() =>
@@ -332,11 +343,28 @@ namespace YuoTools.UI
                 component.DestroyComponent();
                 return;
             }
-
+            
+            //初始化所有挂载在根节点的UI
             var uiSettings = component.Transform.GetComponentsInChildren<UISetting>(true);
             foreach (var uiSetting in uiSettings)
             {
                 uiSetting.Init();
+            }
+            
+            //初始化自动加载的UI
+            var uiAutoLoadConfig = Resources.Load<UIAutoLoadConfig>("UIAutoLoadConfig");
+            if (uiAutoLoadConfig != null)
+            {
+                foreach (var uiWindow in uiAutoLoadConfig.AutoLoadList)
+                {
+                    var uiObject = uiWindow.Instantiate(component.Transform);
+                    uiObject.name = uiWindow.name;
+                    var uiSetting = uiObject.GetComponent<UISetting>();
+                    if (uiSetting != null)
+                    {
+                        uiSetting.Init();
+                    }
+                }
             }
         }
     }

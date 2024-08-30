@@ -73,7 +73,7 @@ namespace YuoTools.Extend.PhysicalCallback
                 var callback = component.transform.GetOrAddComponent<PhysicalCallback2D>();
                 callback.callbackComponent = component;
                 component.callback = callback;
-                "生成物理回调组件".Log();
+                // "生成物理回调组件".Log();
             }
 
             if (RunType == SystemTagType.Destroy)

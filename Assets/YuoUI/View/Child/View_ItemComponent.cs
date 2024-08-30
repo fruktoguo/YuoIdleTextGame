@@ -65,15 +65,12 @@ namespace YuoTools.UI
 
 
 		[FoldoutGroup("ALL")]
-
 		public List<Button> all_Button = new();
 
 		[FoldoutGroup("ALL")]
-
 		public List<Image> all_Image = new();
 
 		[FoldoutGroup("ALL")]
-
 		public List<TextMeshProUGUI> all_TextMeshProUGUI = new();
 
 		public void FindAll()
@@ -85,7 +82,6 @@ namespace YuoTools.UI
 				
 			all_TextMeshProUGUI.Add(TextMeshProUGUI_Text);
 			all_TextMeshProUGUI.Add(TextMeshProUGUI_lv);;
-
 
 		}
 	}}

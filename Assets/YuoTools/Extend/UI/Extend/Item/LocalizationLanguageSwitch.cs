@@ -1,10 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
+#if YuoTools
 using UnityEngine;
 using UnityEngine.Localization;
 using UnityEngine.Localization.Settings;
 using YuoTools.UI;
-
 
 public class LocalizationLanguageSwitch : MonoBehaviour
 {
@@ -22,9 +20,5 @@ public class LocalizationLanguageSwitch : MonoBehaviour
 
         dropDown.SetItem(LocalizationSettings.SelectedLocale.LocaleName);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-    }
 }
+#endif

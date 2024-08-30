@@ -43,24 +43,24 @@ namespace YuoTools.UI
             Dictionary<string, string> allTypes = new();
 
             strBuilder.AppendLine(CodeSpawn_AddAllComponent(SpawnUICodeConfig.UIComponentTag, allTypes,
-                gameObject.transform));
+                gameObject.transform, true));
 
             strBuilder.AppendLine(CodeSpawn_FindAll(allTypes));
 
-            strBuilder.AppendLine("\n\t\t}");
+            strBuilder.AppendLine("\t\t}");
 
             strBuilder.AppendLine("\t}\r}");
 
             //引入命名空间
             StringBuilder final = new StringBuilder();
 
-            final.AppendLine(CodeSpawn_AddNameSpace(strDlgName, allTypes));
-
+            final.Append(CodeSpawn_AddNameSpace(strDlgName, allTypes));
 
             final.AppendLine("\tpublic static partial class ViewType");
             final.AppendLine("\t{");
             final.AppendLine($"\t\tpublic const string {UIName} = \"{UIName}\";");
             final.AppendLine("\t}");
+            final.AppendLine();
 
             final.AppendLine($"\tpublic partial class {strDlgName} : UIComponent \n\t{{");
 
@@ -109,7 +109,7 @@ namespace YuoTools.UI
 
             strBuilder.AppendLine(CodeSpawn_FindAll(allTypes));
 
-            strBuilder.AppendLine("\n\t\t}");
+            strBuilder.AppendLine("\t\t}");
 
             strBuilder.AppendLine("\t}\r}");
 
@@ -157,7 +157,7 @@ namespace YuoTools.UI
 
             strBuilder.AppendLine(CodeSpawn_FindAll(allTypes));
 
-            strBuilder.AppendLine("\n\t\t}");
+            strBuilder.AppendLine("\t\t}");
 
             strBuilder.AppendLine("\t}\r}");
 
@@ -204,7 +204,7 @@ namespace YuoTools.UI
 
             strBuilder.AppendLine(CodeSpawn_FindAll(allTypes));
 
-            strBuilder.AppendLine("\n\t\t}");
+            strBuilder.AppendLine("\t\t}");
 
             strBuilder.AppendLine("\t}\r}");
 
@@ -309,7 +309,7 @@ namespace YuoTools.UI
                 var types = GetTypes(transform);
                 foreach (var type in types)
                 {
-                    if (!allTypes.ContainsKey(type)) allTypes.Add(type, "");
+                    allTypes.TryAdd(type, "");
                     allTypes[type] += $"\n\t\t\tall_{type}.Add(Main{type});";
                     string get = "{\n\t\t\tget\n\t\t\t{\n\t\t\t\tif (" + $"main{type}" +
                                  $" == null)\n\t\t\t\t\tmain{type} = rectTransform.GetComponent<{type}>();\n\t\t\t\treturn " +
@@ -380,10 +380,7 @@ namespace YuoTools.UI
 
                 string type = $"View_{typeName}Component";
                 Debug.Log($"检索到子物体 [ {child} ]  _ 类型为 [ {type} ]");
-                if (!allTypes.ContainsKey(type))
-                {
-                    allTypes.Add(type, "");
-                }
+                allTypes.TryAdd(type, "");
 
                 allTypes[type] += $"\n\t\t\tall_{type}.Add(Child_{name});";
 
@@ -484,7 +481,7 @@ namespace YuoTools.UI
             foreach (var item in allTypes.Keys)
             {
                 strBuilder.AppendLine("\n\t\t[FoldoutGroup(\"ALL\")]");
-                strBuilder.AppendLine($"\n\t\tpublic List<{item}> all_{item} = new();");
+                strBuilder.AppendLine($"\t\tpublic List<{item}> all_{item} = new();");
             }
 
             strBuilder.AppendLine("\n\t\tpublic void FindAll()\n\t\t{");

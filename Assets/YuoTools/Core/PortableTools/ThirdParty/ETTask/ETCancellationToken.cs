@@ -10,10 +10,10 @@ namespace ET
 
         public void Add(Action callback)
         {
-            //如果action是null，绝对不能添加,要抛异常，说明有协程泄漏
+            // 如果action是null，绝对不能添加,要抛异常，说明有协程泄漏
             this.actions.Add(callback);
         }
-
+        
         public void Remove(Action callback)
         {
             this.actions?.Remove(callback);
