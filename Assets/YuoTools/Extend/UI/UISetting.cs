@@ -41,6 +41,11 @@ namespace YuoTools.UI
         [Button("生成UI代码")]
         public void SpawnCode()
         {
+            if (gameObject.transform is not RectTransform)
+            {
+                Debug.LogError("目标窗口没有RectTransform");
+                return;
+            }
             SpawnUICode.BasePath = useCustomDirectory ? customDirectory : SpawnUICode.DefaultBasePath;
             SpawnUICode.SpawnCode(gameObject);
             if (useCustomDirectory && customDirectory == "YuoUITemplate")

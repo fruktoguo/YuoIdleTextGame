@@ -55,6 +55,13 @@ namespace YuoTools.Extend.Helper
             return list.ToArray();
         }
 
+        /// <summary>
+        /// 调用以某个前缀开头的方法
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <param name="prefix"></param>
+        /// <param name="parameters"></param>
+        /// <typeparam name="T"></typeparam>
         public static void InvokeMethodByPrefix<T>(T obj, string prefix, params object[] parameters)
         {
             MethodInfo[] methods = GetMethodByPrefix(obj, prefix);

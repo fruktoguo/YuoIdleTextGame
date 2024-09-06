@@ -112,8 +112,6 @@ namespace YuoTools.UI
             view.FlowLayout_Behavior.ArrangeChildren();
 
             await YuoWait.WaitTimeAsync(0.1f);
-
-            var result = View_TipWindowComponent.GetView().ShowTip("测试一下");
         }
     }
 

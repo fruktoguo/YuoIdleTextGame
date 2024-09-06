@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Newtonsoft.Json;
-using OpenAi;
 using Sirenix.OdinInspector;
 using Sirenix.OdinInspector.Editor;
 using Sirenix.Utilities;
@@ -11,6 +10,7 @@ using Sirenix.Utilities.Editor;
 using UnityEditor;
 using UnityEngine;
 using YuoTools.Extend.Helper;
+using YuoTools.Extend.AI;
 
 namespace YuoTools.Editor
 {
@@ -103,8 +103,11 @@ namespace YuoTools.Editor
         {
             string message = JsonConvert.SerializeObject(files);
             message = "分别猜测下面这些代码文件的作用,并给出我关于行数的建议" + message;
-            var result = await ChatGpt.SingleAskStream(message, x => { AI = x; });
-            AI = result + "\n" + "------------------------";
+            string prompt = "请生成一段关于人工智能的介绍。";
+            string result = await GeminiApi.GenerateText(prompt);
+            result.Log();
+            // var result = await ChatGpt.SingleAskStream(message, x => { AI = x; });
+            // AI = result + "\n" + "------------------------";
         }
 
         [HorizontalGroup("AI")] [ReadOnly] [LabelWidth(50)] [TextArea(20, 1000)]

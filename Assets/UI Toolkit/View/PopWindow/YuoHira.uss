@@ -1,0 +1,16 @@
+Label {
+    -unity-font-style: normal;
+    font-size: 200%;
+    color: rgb(0, 0, 0);
+    white-space: pre-wrap;
+    -unity-text-align: upper-center;
+}
+
+#DialogContainer {
+}
+
+Button {
+    width: 30%;
+    height: auto;
+    font-size: 200%;
+}

@@ -240,7 +240,7 @@ namespace YuoTools.UI
                 return uiItemsType[typeof(T)] as T;
             else
             {
-                Debug.LogError($"没有找到对应的窗口---{typeof(T)}");
+                // Debug.LogError($"没有找到对应的窗口---{typeof(T)}");
                 return null;
             }
         }

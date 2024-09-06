@@ -23,7 +23,6 @@ namespace YuoTools.UI
         public static void SpawnCode(GameObject gameObject)
         {
             if (null == gameObject) return;
-
             string UIName = gameObject.name;
             string strDlgName = $"View_{UIName}Component";
 

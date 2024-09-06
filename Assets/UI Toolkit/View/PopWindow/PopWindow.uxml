@@ -1,0 +1,14 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/View/PopWindow/YuoHira.uss?fileID=7433441132597879392&amp;guid=6b4aecee165232241a0039e5a87fd442&amp;type=3#YuoHira" />
+    <Style src="project://database/Assets/UI%20Toolkit/View/Styles/Anima.uss?fileID=7433441132597879392&amp;guid=c27caaa60366edd43afef4944197016c&amp;type=3#Anima" />
+    <ui:VisualElement style="flex-grow: 1; justify-content: center; align-items: center; opacity: 1; width: auto; height: auto;">
+        <ui:VisualElement name="DialogContainer" class="panel" style="background-color: rgb(171, 171, 171); border-radius: 15px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); padding: 20px; flex-direction: column; justify-content: space-between; width: 50%; height: 50%;">
+            <ui:Label text="确认操作" name="Title" style="unity-text-align: center; font-weight: bold; margin-bottom: 10px; -unity-background-scale-mode: stretch-to-fill; align-items: auto; justify-content: flex-start; align-content: auto; align-self: center;" />
+            <ui:Label text="你确定要继续这个操作吗?" name="Content" parse-escape-sequences="false" selectable="false" enable-rich-text="true" emoji-fallback-support="true" double-click-selects-word="true" triple-click-selects-line="true" display-tooltip-when-elided="true" focusable="false" usage-hints="None" style="unity-text-align: center; margin-bottom: 20px; align-self: center; align-items: auto; justify-content: flex-start; align-content: auto; flex-direction: column; flex-wrap: nowrap;" />
+            <ui:VisualElement style="flex-direction: row; justify-content: space-around;">
+                <ui:Button name="CancelButton" text="取消" class="def-button" style="border-radius: 10px; background-color: rgb(244, 67, 54); font-weight: bold;" />
+                <ui:Button name="ConfirmButton" text="确认" class="def-button" style="border-radius: 10px; background-color: rgb(76, 175, 80); font-weight: bold;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

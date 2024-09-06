@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using UnityEditor;
 using UnityEditor.PackageManager;
@@ -10,6 +11,7 @@ public abstract class PackageChecker
     private readonly string _packageName; // 包名
     private readonly string _defineSymbol; // 定义符号
 
+    [Obsolete("Obsolete")]
     protected PackageChecker(string packageName, string defineSymbol)
     {
         _packageName = packageName;
@@ -18,6 +20,7 @@ public abstract class PackageChecker
         EditorApplication.update += Progress; // 注册更新回调
     }
 
+    [Obsolete("Obsolete")]
     private void Progress()
     {
         if (_listRequest.IsCompleted) // 检查请求是否完成
@@ -36,6 +39,7 @@ public abstract class PackageChecker
         }
     }
 
+    [Obsolete("Obsolete")]
     private void SetScriptingDefineSymbol(string symbol, bool enable)
     {
         var targetGroup = EditorUserBuildSettings.selectedBuildTargetGroup; // 获取当前目标组

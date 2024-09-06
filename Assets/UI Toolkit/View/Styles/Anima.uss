@@ -1,0 +1,48 @@
+.def-button {
+    transition-duration: 0.1s;
+    border-left-color: rgb(255, 255, 255);
+    border-right-color: rgb(255, 255, 255);
+    border-top-color: rgb(255, 255, 255);
+    border-bottom-color: rgb(255, 255, 255);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-width: 5px;
+    border-right-width: 5px;
+    border-bottom-width: 5px;
+    border-left-width: 5px;
+}
+
+.def-button:hover {
+    border-left-color: rgb(255, 255, 255);
+    border-right-color: rgb(255, 255, 255);
+    border-top-color: rgb(255, 255, 255);
+    border-bottom-color: rgb(255, 255, 255);
+    background-color: rgb(0, 127, 217);
+    scale: 1.1 1.1;
+    transition-duration: 0.1s;
+}
+
+.def-button:active {
+    border-left-color: rgb(0, 127, 217);
+    border-right-color: rgb(0, 127, 217);
+    border-top-color: rgb(0, 127, 217);
+    border-bottom-color: rgb(0, 127, 217);
+    background-color: rgb(81, 216, 255);
+    color: rgb(0, 127, 217);
+    scale: 1.1 1.1;
+    transition-duration: 0.1s;
+}
+
+.panel {
+    transition-duration: 0.5s;
+    opacity: 0.2;
+    scale: 0.1 0;
+}
+
+.panel.show {
+    transition-duration: 0.5s;
+    scale: 1 1;
+    opacity: 1;
+}
