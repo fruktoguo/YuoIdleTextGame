@@ -66,7 +66,10 @@ namespace YuoTools.Extend.AI
                 _ => ""
             };
 
-            result = await ChatGpt.SingleAskStream(message, s => result = s);
+            await foreach (var line in AIHelper.GenerateTextStream(message))
+            {
+                result = line;
+            }
         }
 
         [HorizontalGroup("button")]
