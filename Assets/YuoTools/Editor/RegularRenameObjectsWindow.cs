@@ -1,3 +1,6 @@
+using System.Threading.Tasks;
+using YuoTools.Extend.AI;
+
 namespace YuoTools.Editor
 {
     using System;
@@ -28,6 +31,10 @@ namespace YuoTools.Editor
         private string prefix = "";
         private string prefixStartNum = "";
         private int prefixOption;
+
+        private bool showAISection = false; // 折叠区域的状态
+        private string aiInput = ""; // 输入框的内容
+        private string aiPreview = ""; // 预览框的内容
 
         private void OnGUI()
         {
@@ -136,6 +143,33 @@ namespace YuoTools.Editor
                 Undo.CollapseUndoOperations(Undo.GetCurrentGroup());
             }
 
+            // 添加折叠区域
+            showAISection = EditorGUILayout.Foldout(showAISection, "AI");
+            if (showAISection)
+            {
+                GUILayout.BeginHorizontal();
+
+                // 左边的不可编辑预览框
+                GUILayout.Label(string.IsNullOrEmpty(aiPreview) ? GetOriginalText() : aiPreview, GUILayout.Width(400));
+
+                // 右边的输入框
+                aiInput = EditorGUILayout.TextField(aiInput, GUILayout.Width(400));
+
+                GUILayout.EndHorizontal();
+
+                // 输入框下面的按钮并列显示
+                GUILayout.BeginHorizontal();
+                if (GUILayout.Button("预览", GUILayout.Width(200)))
+                {
+                    UpdateAIPreview();
+                }
+                if (GUILayout.Button("应用", GUILayout.Width(200)))
+                {
+                    ApplyAI();
+                }
+                GUILayout.EndHorizontal();
+            }
+
             string GetTargetName(string str, int index = 0)
             {
                 string result = Regular(str, regexPattern, regexReplace);
@@ -171,6 +205,42 @@ namespace YuoTools.Editor
 
                 return result;
             }
+        }
+
+        string GetOriginalText()
+        {
+            string result = "";
+            foreach (var obj in objects)
+            {
+                result += obj.name + "\n";
+            }
+
+            return result;
+        }
+
+        private async void UpdateAIPreview()
+        {
+            // 更新预览框的内容
+            var message =
+                $"我需要你帮助我批量修改名称,你必须且只能返回和原文本格式匹配的文本,不能返回其他内容,原文带有的回车也必须保留,接下来是其余的要求 : {aiInput} 以上就是所有的要求,下一个回车后的所有文本都是原文本,请务必返回符合原文本格式的文本 \n{GetOriginalText()}";
+            await foreach (var preview in AIHelper.GenerateTextStream(message))
+            {
+                aiPreview = preview;
+            }
+        }
+        
+        void ApplyAI()
+        {
+            Undo.SetCurrentGroupName($"AI修改名称 [数量:{objects.Length}]");
+            Undo.RecordObjects(objects, "AI修改名称");
+            var names = aiPreview.Split('\n');
+            for (int index = 0; index < objects.Length; index++)
+            {
+                Object obj = objects[index];
+                obj.name = names[index];
+            }
+
+            Undo.CollapseUndoOperations(Undo.GetCurrentGroup());
         }
 
         string Regular(string str, string regex, string replace)

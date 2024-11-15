@@ -29,6 +29,11 @@ namespace YuoTools.UI
         {
             linkDirList.Clear();
             if (linkDir.Count == 0) return;
+            foreach (var dir in linkDir)
+            {
+                if (dir.IsNullOrSpace()) return;
+            }
+
             string[] guids = UnityEditor.AssetDatabase.FindAssets("t:GameObject", linkDir.ToArray());
 
             foreach (string guid in guids)

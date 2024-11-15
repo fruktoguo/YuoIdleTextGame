@@ -7,47 +7,50 @@ using Object = UnityEngine.Object;
 
 namespace YuoTools
 {
-    public class YuoWait
+    /// <summary>
+    /// 提供各种等待和异步操作的静态工具类
+    /// </summary>
+    public static class YuoWait
     {
-        // 存储WaitForSeconds对象的字典
-        private static Dictionary<int, WaitForSeconds> waits = new();
-
-        // 存储WaitForSecondsRealtime对象的字典
-        private static Dictionary<int, WaitForSecondsRealtime> waitsRealtime = new();
-
         #region 协程相关方法
-
-        /// <summary>
-        /// 返回一个WaitForSeconds对象
-        /// </summary>
-        /// <param name="time">等待时间（秒）</param>
-        /// <returns>WaitForSeconds对象</returns>
-        public static WaitForSeconds WaitTime(float time = 1)
-        {
-            int key = (int)(time * 1000);
-            if (!waits.ContainsKey(key))
-            {
-                waits.Add(key, new WaitForSeconds(time));
-            }
-
-            return waits[key];
-        }
-
-        /// <summary>
-        /// 返回一个不受TimeScale影响的WaitForSecondsRealtime对象
-        /// </summary>
-        /// <param name="time">等待时间（秒）</param>
-        /// <returns>WaitForSecondsRealtime对象</returns>
-        public static WaitForSecondsRealtime WaitUnscaledTime(float time = 1)
-        {
-            int key = (int)(time * 1000);
-            if (!waitsRealtime.ContainsKey(key))
-            {
-                waitsRealtime.Add(key, new WaitForSecondsRealtime(time));
-            }
-
-            return waitsRealtime[key];
-        }
+        
+        // // 存储WaitForSeconds对象的字典
+        // private static Dictionary<int, WaitForSeconds> waits = new Dictionary<int, WaitForSeconds>();
+        //
+        // // 存储WaitForSecondsRealtime对象的字典
+        // private static Dictionary<int, WaitForSecondsRealtime> waitsRealtime = new Dictionary<int, WaitForSecondsRealtime>();
+        //
+        // /// <summary>
+        // /// 返回一个WaitForSeconds对象
+        // /// </summary>
+        // /// <param name="time">等待时间（秒）</param>
+        // /// <returns>WaitForSeconds对象</returns>
+        // public static WaitForSeconds WaitTime(float time = 1)
+        // {
+        //     int key = (int)(time * 1000);
+        //     if (!waits.TryGetValue(key, out var wait))
+        //     {
+        //         wait = new WaitForSeconds(time);
+        //         waits[key] = wait;
+        //     }
+        //     return wait;
+        // }
+        //
+        // /// <summary>
+        // /// 返回一个不受TimeScale影响的WaitForSecondsRealtime对象
+        // /// </summary>
+        // /// <param name="time">等待时间（秒）</param>
+        // /// <returns>WaitForSecondsRealtime对象</returns>
+        // public static WaitForSecondsRealtime WaitUnscaledTime(float time = 1)
+        // {
+        //     int key = (int)(time * 1000);
+        //     if (!waitsRealtime.TryGetValue(key, out var wait))
+        //     {
+        //         wait = new WaitForSecondsRealtime(time);
+        //         waitsRealtime[key] = wait;
+        //     }
+        //     return wait;
+        // }
 
         #endregion
 
@@ -57,58 +60,69 @@ namespace YuoTools
         /// 异步等待指定时间（受TimeScale影响）
         /// </summary>
         /// <param name="waitTime">等待时间（秒）</param>
+        /// <param name="cancelToken">取消令牌</param>
         /// <returns>ETTask</returns>
-        public static async ETTask WaitTimeAsync(float waitTime) => await YuoAwait_Mono.Instance.WaitTimeAsync(waitTime);
+        public static async ETTask WaitTimeAsync(float waitTime, ETCancellationToken cancelToken = null) 
+            => await YuoAwait_Mono.Instance.WaitTimeAsync(waitTime, cancelToken);
 
         /// <summary>
         /// 异步等待指定帧数
         /// </summary>
-        /// <param name="frame">等待帧数</param>
+        /// <param name="frame">等待的帧数</param>
+        /// <param name="cancelToken">取消令牌</param>
         /// <returns>ETTask</returns>
-        public static async ETTask WaitFrameAsync(int frame = 1) => await YuoAwait_Mono.Instance.WaitFrameAsync(frame);
+        public static async ETTask WaitFrameAsync(int frame = 1, ETCancellationToken cancelToken = null) 
+            => await YuoAwait_Mono.Instance.WaitFrameAsync(frame, cancelToken);
 
         /// <summary>
         /// 异步等待指定时间（不受TimeScale影响）
         /// </summary>
         /// <param name="waitTime">等待时间（秒）</param>
+        /// <param name="cancelToken">取消令牌</param>
         /// <returns>ETTask</returns>
-        public static async ETTask WaitUnscaledTimeAsync(float waitTime) => 
-            await YuoAwait_Mono.Instance.WaitUnscaledTimeAsync(waitTime);
+        public static async ETTask WaitUnscaledTimeAsync(float waitTime, ETCancellationToken cancelToken = null) 
+            => await YuoAwait_Mono.Instance.WaitUnscaledTimeAsync(waitTime, cancelToken);
 
         /// <summary>
-        /// 再一段时间内每帧执行一次
+        /// 在指定时间内每帧执行操作
         /// </summary>
-        /// <param name="waitTime"></param>
-        /// <param name="action"></param>
-        public static async ETTask InvokeEveryTimeAsync(float waitTime, UnityAction<float> action)
+        /// <param name="time">持续时间（秒）</param>
+        /// <param name="action">每帧执行的操作</param>
+        /// <param name="cancelToken">取消令牌</param>
+        /// <returns>ETTask</returns>
+        public static async ETTask InvokeEveryTimeAsync(float time, UnityAction action, ETCancellationToken cancelToken = null)
         {
-            var timer = 0f;
-            while (timer < waitTime)
+            float startTime = Time.time;
+            while (Time.time - startTime < time)
             {
-                action.Invoke(timer);
-                timer += Time.deltaTime;
-                await WaitFrameAsync();
+                if (cancelToken != null && cancelToken.IsCancel())
+                {
+                    throw new OperationCanceledException();
+                }
+                action?.Invoke();
+                await WaitFrameAsync(1, cancelToken);
             }
-
-            action.Invoke(waitTime);
         }
 
         /// <summary>
-        /// 再一段时间内每帧执行一次(不受TimeScale影响)
+        /// 在指定时间内每帧执行操作（不受TimeScale影响）
         /// </summary>
-        /// <param name="waitTime"></param>
-        /// <param name="action"></param>
-        public static async ETTask InvokeEveryUnscaledTimeAsync(float waitTime, UnityAction action)
+        /// <param name="time">持续时间（秒）</param>
+        /// <param name="action">每帧执行的操作</param>
+        /// <param name="cancelToken">取消令牌</param>
+        /// <returns>ETTask</returns>
+        public static async ETTask InvokeEveryUnscaledTimeAsync(float time, UnityAction action, ETCancellationToken cancelToken = null)
         {
-            var timer = 0f;
-            while (timer < waitTime)
+            float startTime = Time.unscaledTime;
+            while (Time.unscaledTime - startTime < time)
             {
-                action.Invoke();
-                timer += Time.unscaledDeltaTime;
-                await WaitFrameAsync();
+                if (cancelToken != null && cancelToken.IsCancel())
+                {
+                    throw new OperationCanceledException();
+                }
+                action?.Invoke();
+                await WaitFrameAsync(1, cancelToken);
             }
-
-            action.Invoke();
         }
 
         /// <summary>
@@ -116,68 +130,105 @@ namespace YuoTools
         /// </summary>
         /// <typeparam name="T">资源类型</typeparam>
         /// <param name="path">资源路径</param>
-        /// <returns>ETTask</returns>
-        public static ETTask<T> ResourcesLoadAsync<T>(string path) where T : Object => YuoAwait_Mono.Instance.ResourcesLoadAsync<T>(path);
+        /// <param name="cancelToken">取消令牌</param>
+        /// <returns>加载的资源</returns>
+        public static async ETTask<T> ResourcesLoadAsync<T>(string path, ETCancellationToken cancelToken = null) where T : Object
+            => await YuoAwait_Mono.Instance.ResourcesLoadAsync<T>(path, cancelToken);
+
+        #endregion
+
+        #region 输入等待方法
 
         /// <summary>
-        /// 异步等待指定按键按下
+        /// 等待指定按键被按下
         /// </summary>
-        /// <param name="keyCode">按键代码</param>
+        /// <param name="key">按键</param>
+        /// <param name="cancelToken">取消令牌</param>
         /// <returns>ETTask</returns>
-        public static async ETTask WaitInputKeyDownAsync(KeyCode keyCode)
+        public static async ETTask WaitInputKeyDownAsync(KeyCode key, ETCancellationToken cancelToken = null)
         {
-            await WaitFrameAsync();
-
-            while (!Input.GetKeyDown(keyCode))
+            while (!Input.GetKeyDown(key))
             {
-                await WaitFrameAsync();
+                if (cancelToken != null && cancelToken.IsCancel())
+                {
+                    throw new OperationCanceledException();
+                }
+                await WaitFrameAsync(1, cancelToken);
             }
         }
-        
-        public static async ETTask WaitInputAnyKeyDownAsync()
-        {
-            await WaitFrameAsync();
 
+        /// <summary>
+        /// 等待任意按键被按下
+        /// </summary>
+        /// <param name="cancelToken">取消令牌</param>
+        /// <returns>ETTask</returns>
+        public static async ETTask WaitInputAnyKeyDownAsync(ETCancellationToken cancelToken = null)
+        {
             while (!Input.anyKeyDown)
             {
-                await WaitFrameAsync();
-            }
-        }
-        
-        public static async ETTask WaitInputMouseDownAsync(int button)
-        {
-            await WaitFrameAsync();
-
-            while (!Input.GetMouseButtonDown(button))
-            {
-                await WaitFrameAsync();
+                if (cancelToken != null && cancelToken.IsCancel())
+                {
+                    throw new OperationCanceledException();
+                }
+                await WaitFrameAsync(1, cancelToken);
             }
         }
 
         /// <summary>
-        /// 异步等待指定按键按住
+        /// 等待鼠标按键被按下
         /// </summary>
-        /// <param name="keyCode">按键代码</param>
+        /// <param name="mouseButton">鼠标按键</param>
+        /// <param name="cancelToken">取消令牌</param>
         /// <returns>ETTask</returns>
-        public static async ETTask WaitInputKeyAsync(KeyCode keyCode)
+        public static async ETTask WaitInputMouseDownAsync(int mouseButton, ETCancellationToken cancelToken = null)
         {
-            await WaitFrameAsync();
-            while (!Input.GetKey(keyCode))
+            while (!Input.GetMouseButtonDown(mouseButton))
             {
-                await WaitFrameAsync();
+                if (cancelToken != null && cancelToken.IsCancel())
+                {
+                    throw new OperationCanceledException();
+                }
+                await WaitFrameAsync(1, cancelToken);
             }
         }
 
         /// <summary>
-        /// 异步等待直到指定条件为真
+        /// 等待指定按键被按住
+        /// </summary>
+        /// <param name="key">按键</param>
+        /// <param name="cancelToken">取消令牌</param>
+        /// <returns>ETTask</returns>
+        public static async ETTask WaitInputKeyAsync(KeyCode key, ETCancellationToken cancelToken = null)
+        {
+            while (!Input.GetKey(key))
+            {
+                if (cancelToken != null && cancelToken.IsCancel())
+                {
+                    throw new OperationCanceledException();
+                }
+                await WaitFrameAsync(1, cancelToken);
+            }
+        }
+
+        #endregion
+
+        #region 条件等待方法
+
+        /// <summary>
+        /// 等待直到条件满足
         /// </summary>
         /// <param name="condition">条件函数</param>
+        /// <param name="cancelToken">取消令牌</param>
         /// <returns>ETTask</returns>
-        public static async ETTask WaitUntilAsync(Func<bool> condition)
+        public static async ETTask WaitUntilAsync(Func<bool> condition, ETCancellationToken cancelToken = null)
         {
             while (!condition())
             {
-                await WaitFrameAsync();
+                if (cancelToken != null && cancelToken.IsCancel())
+                {
+                    throw new OperationCanceledException();
+                }
+                await WaitFrameAsync(1, cancelToken);
             }
         }
 

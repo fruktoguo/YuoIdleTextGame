@@ -23,15 +23,24 @@ namespace YuoTools.Deprecated
         public static async ETTask YuoScheduleAsync<T>(this T jobData) where T : struct, IJob
         {
             ETTask tcs = ETTask.Create();
-            YuoAwait_Mono.Instance.StartCoroutine(YuoWaitDForJobEnumeratorAsync(jobData.Schedule(), tcs, null));
+            YuoAwait_Mono.Instance.StartCoroutine(YuoWaitDForJobEnumeratorAsync(jobData.Schedule(), tcs));
             await tcs;
         }
 
-        public static ETTask YuoScheduleAsyncNoWait<T>(this T jobData, UnityAction onCompleted) where T : struct, IJob
+        public static ETTask YuoScheduleAsyncNoWait<T>(this T jobData) where T : struct, IJob
         {
             ETTask tcs = ETTask.Create();
-            YuoAwait_Mono.Instance.StartCoroutine(YuoWaitDForJobEnumeratorAsync(jobData.Schedule(), tcs, onCompleted));
+            YuoAwait_Mono.Instance.StartCoroutine(YuoWaitDForJobEnumeratorAsync(jobData.Schedule(), tcs));
             return tcs;
+        }
+        
+        
+        
+        public static async ETTask YuoScheduleAsync(this List<JobHandle> jobData) 
+        {
+            ETTask tcs = ETTask.Create();
+            YuoAwait_Mono.Instance.StartCoroutine(YuoWaitDForJobEnumeratorAsync(jobData, tcs));
+            await tcs;
         }
 
         public static async ETTask AwaitAll(this List<ETTask> tasks)
@@ -42,7 +51,7 @@ namespace YuoTools.Deprecated
             }
         }
 
-        public static IEnumerator YuoWaitDForJobEnumeratorAsync(JobHandle handle, ETTask tcs, UnityAction onCompleted)
+        public static IEnumerator YuoWaitDForJobEnumeratorAsync(JobHandle handle, ETTask tcs)
         {
             while (!handle.IsCompleted)
             {
@@ -50,7 +59,17 @@ namespace YuoTools.Deprecated
             }
 
             handle.Complete();
-            onCompleted?.Invoke();
+            tcs.SetResult();
+        }
+
+        public static IEnumerator YuoWaitDForJobEnumeratorAsync(List<JobHandle> handles, ETTask tcs)
+        {
+            while (!handles.TrueForAll(x => x.IsCompleted))
+            {
+                yield return null;
+            }
+
+            handles.ForEach(x => x.Complete());
             tcs.SetResult();
         }
 
@@ -116,5 +135,7 @@ namespace YuoTools.Deprecated
             onEnd?.Invoke();
             yield break;
         }
+        
+        
     }
 }

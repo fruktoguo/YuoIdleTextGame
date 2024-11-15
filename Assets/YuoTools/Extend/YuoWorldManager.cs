@@ -8,6 +8,6 @@ public class YuoWorldManager : MonoBehaviour
 {
     private void Awake()
     {
-        WorldMono.WorldInitBeforeSceneLoad();
+        WorldMono.WorldInit();
     }
 }

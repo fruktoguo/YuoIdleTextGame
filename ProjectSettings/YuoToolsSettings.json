@@ -1,4 +1,21 @@
 {
-    "AIApiKey": "AIzaSyBgsmlqnDzIaCgeOarOP4z541gt4HY-AK4",
-    "AIServer": "gemini"
+    "AISetting": {
+        "Server": 1,
+        "Servers": {
+            "mKeys": [
+                "智谱",
+                "豆包"
+            ],
+            "mValues": [
+                {
+                    "APIKey": "7c0be4aec997124de7f92220eb1d6023.VPtDMotwNN262K49",
+                    "Model": "glm-4-flash"
+                },
+                {
+                    "APIKey": "ac93ee32-a7b4-4910-bfc7-a58aed7f6152",
+                    "Model": "ep-20240924155253-kv5b6"
+                }
+            ]
+        }
+    }
 }

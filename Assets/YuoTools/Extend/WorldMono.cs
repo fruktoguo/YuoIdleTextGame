@@ -9,11 +9,13 @@ namespace YuoTools.Extend
     {
         public YuoWorld World;
 
-        // [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
-        public static void WorldInitBeforeSceneLoad()
+        public static void WorldInit()
         {
-            if(YuoWorld.Instance != null)
+            if (YuoWorld.Instance != null)
+            {
+                Debug.LogError("WorldInit 错误，请检查是否多次调用了该函数");
                 return;
+            }
             var worldMono = new GameObject("World").AddComponent<WorldMono>();
             worldMono.World = new YuoWorld();
             worldMono.World.OnInit();
@@ -26,9 +28,15 @@ namespace YuoTools.Extend
                 World.OnDestroy();
         }
 
+        private float time;
         private void Update()
         {
             World.Update();
+            if (time < Time.time)
+            {
+                time += 1;
+                YuoWorld.RunSystemForAll<IUpdateEverySecond>();
+            }
         }
 
         private void FixedUpdate()

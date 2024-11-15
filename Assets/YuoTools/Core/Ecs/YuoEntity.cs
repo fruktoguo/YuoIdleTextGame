@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using YuoTools.Core.Ecs;
 
 namespace YuoTools.Main.Ecs
 {
@@ -13,23 +14,9 @@ namespace YuoTools.Main.Ecs
         public MultiHashSetMap<Type, YuoComponent> ChildComponents { get; private set; } = new();
         public MultiMap<Type, YuoComponent> BaseComponents { get; private set; } = new();
 
-        public List<YuoEntity> Children { get; } = new();
+        public HashSet<YuoEntity> Children { get; } = new();
 
-        /// <summary>
-        ///  获取所有子Entity,包括子Entity的子Entity
-        /// </summary>
-        /// <returns></returns>
-        public List<YuoEntity> GetAllChildren()
-        {
-            var list = new List<YuoEntity>();
-            foreach (var child in Children)
-            {
-                list.Add(child);
-                list.AddRange(child.GetAllChildren());
-            }
-
-            return list;
-        }
+        #region 构造函数
 
         public YuoEntity()
         {
@@ -63,6 +50,10 @@ namespace YuoTools.Main.Ecs
         {
             EntityName = name;
         }
+
+        #endregion
+
+        #region 组件管理
 
         public T GetComponent<T>() where T : YuoComponent
         {
@@ -152,7 +143,6 @@ namespace YuoTools.Main.Ecs
             return GetBaseComponent(typeof(T)) as T;
         }
 
-
         /// <summary>
         /// 如果不存在该组件,则添加该组件
         /// </summary>
@@ -167,29 +157,29 @@ namespace YuoTools.Main.Ecs
         {
             return Components.ContainsKey(typeof(T));
         }
-        
+
         public bool HasBaseComponent<T>() where T : YuoComponent
         {
             return BaseComponents.ContainsKey(typeof(T));
         }
-        
+
         public bool HasComponent(Type type)
         {
             return Components.ContainsKey(type);
         }
-        
+
         public bool HasBaseComponent(Type type)
         {
             return BaseComponents.ContainsKey(type);
         }
-        
+
         /// <summary>
         ///  替换Component
         /// </summary>
         /// <param name="component"></param>
         /// <param name="componentType"></param>
         /// <typeparam name="T"></typeparam>
-        public void SetComponent<T>(T component, Type componentType = null) where T : YuoComponent
+        public void ReplaceComponent<T>(T component, Type componentType = null) where T : YuoComponent
         {
             if (componentType != null) component.SetComponentType(componentType);
             var componentTemp = GetComponent(component.Type);
@@ -212,16 +202,7 @@ namespace YuoTools.Main.Ecs
         {
             if (Components.ContainsKey(type)) return GetComponent(type);
             if (Activator.CreateInstance(type) is not YuoComponent component) return null;
-            AddComponent(type, component);
-            return component;
-        }
-
-        public YuoComponent AddComponent(Type type, Action<YuoComponent> onAwakeBefore)
-        {
-            if (Components.ContainsKey(type)) return GetComponent(type);
-            if (Activator.CreateInstance(type) is not YuoComponent component) return null;
-            onAwakeBefore?.Invoke(component);
-            AddComponent(type, component);
+            SetComponent(type, component);
             return component;
         }
 
@@ -229,32 +210,17 @@ namespace YuoTools.Main.Ecs
         {
             if (GetComponent<T>() != null) return GetComponent<T>();
             T component = new T();
-            AddComponent(typeof(T), component);
+            SetComponent(typeof(T), component);
             return component;
         }
 
-        public T AddComponent<T>(Action<T> onAwakeBefore) where T : YuoComponent, new()
+        private void SetComponent(Type type, YuoComponent component)
         {
-            if (GetComponent<T>() != null) return GetComponent<T>();
-            T component = new T();
-            onAwakeBefore?.Invoke(component);
-            AddComponent(typeof(T), component);
-            return component;
-        }
-
-        private void AddComponent(Type type, YuoComponent component)
-        {
+            // $"{this} AddComponent:{component.Name}".Log();
             component.Entity = this;
             Components.TryAdd(type, component);
             YuoWorld.Instance.AddComponent(this, component);
             Parent?.AddChildComponent(type, component);
-        }
-
-        void AddChildComponent(Type type, YuoComponent component)
-        {
-            if (component == null) return;
-            ChildComponents.AddItem(type, component);
-            if (!Children.Contains(component.Entity)) Children.Add(component.Entity);
         }
 
         public void RemoveComponent<T>() where T : YuoComponent
@@ -280,11 +246,16 @@ namespace YuoTools.Main.Ecs
             Parent?.RemoveChildComponent(component);
         }
 
-        // public T GetChild<T>(int index) where T : YuoComponent
-        // {
-        //     var cs = ChildComponents[typeof(T)];
-        //     return cs is { Count: > 0 } ? cs[index] as T : null;
-        // }
+        #endregion
+
+        #region 子实体管理
+
+        void AddChildComponent(Type type, YuoComponent component)
+        {
+            if (component?.Entity == null) return;
+            ChildComponents.AddItem(type, component);
+            Children.Add(component.Entity);
+        }
 
         public List<T> GetChildren<T>() where T : YuoComponent
         {
@@ -318,15 +289,6 @@ namespace YuoTools.Main.Ecs
             return com;
         }
 
-        public YuoComponent AddChild(Type type, long entityID = long.MinValue)
-        {
-            var child = entityID != long.MinValue ? new YuoEntity(entityID) : new YuoEntity();
-            child.Parent = this;
-            var component = child.AddComponent(type);
-            AddChildComponent(type, component);
-            return component;
-        }
-
         public YuoEntity AddChild(long entityID = long.MinValue)
         {
             var child = entityID != long.MinValue ? new YuoEntity(entityID) : new YuoEntity();
@@ -336,13 +298,18 @@ namespace YuoTools.Main.Ecs
             return child;
         }
 
+        public YuoComponent AddChild(Type type, long entityID = long.MinValue)
+        {
+            var child = AddChild(entityID);
+            var component = child.AddComponent(type);
+            AddChildComponent(type, component);
+            return component;
+        }
+
         public YuoEntity AddChild(string entityName)
         {
-            var child = new YuoEntity(entityName.GetHashCode());
+            var child = AddChild(entityName.GetHashCode());
             child.EntityName = entityName;
-            child.Parent = this;
-            var type = typeof(EntityComponent);
-            AddChildComponent(type, child.EntityData);
             return child;
         }
 
@@ -366,10 +333,6 @@ namespace YuoTools.Main.Ecs
             ChildComponents.RemoveItem(component.Type, component);
         }
 
-        /// <summary>
-        ///  外部不允许调用,防止嵌套调用
-        /// </summary>
-        /// <param name="parent"></param>
         internal void SetParent(YuoEntity parent)
         {
             if (Parent != null)
@@ -379,6 +342,10 @@ namespace YuoTools.Main.Ecs
 
             Parent = parent;
         }
+
+        #endregion
+
+        #region 生命周期
 
         public bool IsDisposed { get; private set; }
 
@@ -428,34 +395,61 @@ namespace YuoTools.Main.Ecs
             }
         }
 
-        #region Operator
+        #endregion
 
-        public static bool operator true(YuoEntity entity)
+        #region AddWithData
+
+        public YuoComponent AddComponent<T2>(Type type, T2 componentInitData)
         {
-            return entity is { IsDisposed: false };
+            if (Components.ContainsKey(type)) return GetComponent(type);
+            if (Activator.CreateInstance(type) is not YuoComponent component) return null;
+            component.Entity = this;
+            if (component is IComponentInit<T2> init) init.ComponentInit(componentInitData);
+            SetComponent(type, component);
+            return component;
         }
 
-        public static bool operator false(YuoEntity entity)
+        public T AddComponent<T, T2>(T2 componentInitData) where T : YuoComponent, IComponentInit<T2>, new()
         {
-            return entity is not { IsDisposed: not true };
+            if (GetComponent<T>() != null) return GetComponent<T>();
+            T component = new T();
+            component.Entity = this;
+            component.ComponentInit(componentInitData);
+            SetComponent(typeof(T), component);
+            return component;
         }
 
-        public static bool operator !(YuoEntity entity)
+        public YuoComponent AddChild<T2>(Type type, T2 componentInitData, long entityID = long.MinValue)
         {
-            return entity is { IsDisposed: true };
+            var child = entityID != long.MinValue ? new YuoEntity(entityID) : new YuoEntity();
+            child.Parent = this;
+            var component = child.AddComponent(type, componentInitData);
+            AddChildComponent(type, component);
+            return component;
         }
 
-        // public static bool operator ==(YuoEntity left, object right)
-        // {
-        //     return right?.Equals(left) ?? left is null || left.IsDisposed;
-        // }
-        //
-        // public static bool operator !=(YuoEntity left, object right)
-        // {
-        //     return !(left == right);
-        // }
+        public T AddChild<T, T2>(T2 componentInitData) where T : YuoComponent, IComponentInit<T2>, new()
+        {
+            var child = new YuoEntity();
+            child.Parent = this;
+            var component = child.AddComponent<T, T2>(componentInitData);
+            AddChildComponent(typeof(T), component);
+            return component;
+        }
 
         #endregion
+
+        #region 运算符
+
+        public static bool operator true(YuoEntity entity) => entity is { IsDisposed: false };
+
+        public static bool operator false(YuoEntity entity) => entity is not { IsDisposed: false };
+
+        public static bool operator !(YuoEntity entity) => entity is not { IsDisposed: false };
+
+        #endregion
+
+        #region 系统管理
 
         /// <summary>
         ///  runSystem的简化调用
@@ -465,5 +459,27 @@ namespace YuoTools.Main.Ecs
         {
             YuoWorld.RunSystem<T>(this);
         }
+
+        #endregion
+
+        #region 其他
+
+        /// <summary>
+        ///  获取所有子Entity,包括子Entity的子Entity
+        /// </summary>
+        /// <returns></returns>
+        public List<YuoEntity> GetAllChildren()
+        {
+            var list = new List<YuoEntity>();
+            foreach (var child in Children)
+            {
+                list.Add(child);
+                list.AddRange(child.GetAllChildren());
+            }
+
+            return list;
+        }
+
+        #endregion
     }
 }

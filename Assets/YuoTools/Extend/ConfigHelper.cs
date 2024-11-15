@@ -221,7 +221,7 @@ namespace YuoTools.Extend
 
 #if UNITY_EDITOR
 
-        [UnityEditor.MenuItem("Tools/生成配置类")]
+        [UnityEditor.MenuItem("Tools/YuoTools/生成配置类")]
         static void KeyToClass()
         {
             string classPath = Path.Combine(Application.dataPath, "YuoTools/ConfigEnum.cs");

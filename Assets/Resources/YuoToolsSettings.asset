@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98cb14e6b5594d29a05ba9171943ae7f, type: 3}
+  m_Name: YuoToolsSettings
+  m_EditorClassIdentifier: 
+  AISetting:
+    Server: 1
+    Servers:
+      mKeys:
+      - "\u667A\u8C31"
+      - "\u8C46\u5305"
+      mValues:
+      - APIKey: 7c0be4aec997124de7f92220eb1d6023.VPtDMotwNN262K49
+        Model: glm-4-flash
+      - APIKey: ac93ee32-a7b4-4910-bfc7-a58aed7f6152
+        Model: ep-20240924155253-kv5b6

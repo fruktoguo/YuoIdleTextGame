@@ -90,20 +90,11 @@ namespace YuoTools.Main.Ecs
             IsDisposed = true;
         }
 
-        public static bool operator true(YuoComponent component)
-        {
-            return component is { IsDisposed: false };
-        }
+        public static bool operator true(YuoComponent component) => component is { IsDisposed: false };
 
-        public static bool operator false(YuoComponent component)
-        {
-            return component is not { IsDisposed: not true };
-        }
+        public static bool operator false(YuoComponent component) => component is not { IsDisposed: false };
 
-        public static bool operator !(YuoComponent component)
-        {
-            return !(component is { IsDisposed: false });
-        }
+        public static bool operator !(YuoComponent component) => component is not { IsDisposed: false };
 
         /// <summary>
         ///  runSystem的简化调用
@@ -119,7 +110,6 @@ namespace YuoTools.Main.Ecs
             YuoWorld.RunSystemOfBase<T>(this);
         }
 
-        //
         // public static bool operator ==(YuoComponent left, object right)
         // {
         //     return right?.Equals(left) ?? left is null || left.IsDisposed;

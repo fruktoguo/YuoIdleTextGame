@@ -64,24 +64,6 @@ namespace YuoTools.UI
             { typeof(TMP_Dropdown), typeof(Image) }
         };
 
-        [LabelText("组件的默认命名空间")] public List<string> ComponentNameSpace = new()
-        {
-            "using UnityEngine;",
-            "using System.Collections;",
-            "using System.Collections.Generic;",
-            "using UnityEngine.UI;",
-            "using YuoTools.Main.Ecs;",
-            "using Sirenix.OdinInspector;",
-        };
-
-        [LabelText("需要额外添加命名空间的组件")] public Dictionary<Type, string> ComponentAddNameSpace = new()
-        {
-            { typeof(TextMeshProUGUI), "using TMPro;" },
-            { typeof(TMP_InputField), "using TMPro;" },
-            { typeof(TMP_Dropdown), "using TMPro;" },
-            { typeof(EventTrigger), "using UnityEngine.EventSystems;" },
-        };
-
         [LabelText("System的默认命名空间")] public List<string> SystemNameSpace = new()
         {
             "using DG.Tweening;",

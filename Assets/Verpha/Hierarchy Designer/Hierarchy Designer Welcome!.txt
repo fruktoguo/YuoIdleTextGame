@@ -1,0 +1,17 @@
+Welcome!
+
+If you are a new user of Hierarchy Designer, please check out the Demo scene to get started.
+
+Hierarchy Designer was recently remade from scratch. If you are updating from an older version (1.0.0 to 1.1.0.3f), you will need to completely remove the older version, including the 'Saved Data,' before updating to the new one, as they are not compatible.
+
+If you are updating from version 1.1.1 or newer, you can ignore the message above and simply import future updates into your project, as they will be compatible from now on.
+
+Additionally, if you are installing Hierarchy Designer for the first time in your project, you may need to restart the editor for the changes to take effect.
+
+If you have any questions or would like to report a bug, you can email me at: VerphaSuporte@outlook.com
+
+If you like Hierarchy Designer, please rate it on the Store.
+
+That's it! You can now delete this message.
+
+Regards, Verpha.

@@ -55,3 +55,13 @@ The following packages were updated:
   com.unity.burst from version 1.8.16 to 1.8.17
   com.unity.inputsystem from version 1.8.2 to 1.9.0
   com.unity.test-framework from version 1.4.4 to 1.4.5
+
+=== Fri Oct 18 11:33:00 2024
+
+Packages were changed.
+Update Mode: updateDependencies
+
+The following packages were 已添加:
+  com.unity.multiplayer.center@1.0.0
+The following packages were 已更新:
+  com.unity.inputsystem 从版本 1.9.0 到 1.11.1

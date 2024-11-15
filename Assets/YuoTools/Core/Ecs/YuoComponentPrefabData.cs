@@ -22,7 +22,7 @@ namespace YuoTools.Main.Ecs
         public void Load(YuoEntity entity)
         {
             var newSo = Instantiate(this);
-            entity.SetComponent(newSo.component, newSo.ComponentType);
+            entity.ReplaceComponent(newSo.component, newSo.ComponentType);
         }
     }
 }

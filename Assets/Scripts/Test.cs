@@ -1,108 +1,71 @@
 using System;
 using System.Collections.Generic;
-using SimpleJSON;
+using System.Threading.Tasks;
 using Sirenix.OdinInspector;
+using Unity.Sentis;
 using UnityEngine;
-using YuoTools;
-using YuoTools.Extend.Helper;
+using YuoTools.Extend.AI;
 
 public class Test : MonoBehaviour
 {
-    public int num1;
-    public int num2;
-
-    private void Update()
+    [Button]
+    public async void AI(string prompt)
     {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            GenUnClockJson();
-        }
+        var result = await AITool.Think(prompt);
+    }
+    [Button]
+    public async void AI2(string prompt)
+    {
+        var result = await AIHelper.GenerateText(prompt);
+    }
+}
+
+public static class AITool
+{
+    // 存储思考过程的列表
+    private static List<string> thoughtProcess = new List<string>();
+
+    // 修改后的AI方法，现在返回字符串结果
+    public static async Task<string> AI(string prompt)
+    {
+        string result = await AIHelper.GenerateText(prompt);
+        thoughtProcess.Add($"提示: {prompt}\n回答: {result}");
+        return result;
     }
 
-    public void GenUnClockJson()
+    // 新增的Think方法，用于模拟AI的思考过程
+    public static async Task<string> Think(string initialPrompt, int maxSteps = 5)
     {
-        JSONArray root = new JSONArray();
+        thoughtProcess.Clear();
+        string currentPrompt = initialPrompt;
+        string finalResult = "";
 
-        for (int i = 0; i < num1; i++)
+        for (int i = 0; i < maxSteps; i++)
         {
-            AddItem(root, 1);
-        }
-
-        //计时
-        var sw = new System.Diagnostics.Stopwatch();
-        sw.Start();
-        for (int i = 0; i < num2; i++)
-        {
-            foreach (var (key, value) in root)
+            string result = await AI(currentPrompt);
+            Debug.Log($"第{i}步 {result}");
+            if (result.Contains("FINAL ANSWER:"))
             {
-                UnClockHelper.IsUnClock(value as JSONObject);
-            }
-        }
-
-        sw.Stop();
-
-        Debug.Log($"原生耗时：{sw.ElapsedMilliseconds}ms");
-
-        //委托
-        sw.Reset();
-        Dictionary<string, BoolAction> dic = new Dictionary<string, BoolAction>();
-        foreach (var (_, value) in root)
-        {
-            JSONArray unClock = value[a.Ask] as JSONArray;
-            if (unClock == null) continue;
-            List<(string, int)> list = new List<(string, int)>();
-            foreach (var (_, condition) in unClock)
-            {
-                var (item, num) = (condition[a.Name].ToString(), condition[a.Num].AsInt);
-                list.Add((item, num));
+                finalResult = result.Substring(result.IndexOf("FINAL ANSWER:", StringComparison.Ordinal) + 13).Trim();
+                break;
             }
 
-            dic.Add(value[a.Name], () =>
-            {
-                foreach (var (item, num) in list)
-                {
-                    if (ItemHelper.GetItemNum(item) < num) return false;
-                }
-
-                return true;
-            });
+            // 生成下一步的提示
+            currentPrompt = $"基于之前的回答：\"{result}\"，继续思考。如果你认为已经得到了最终答案，请以'FINAL ANSWER:'开头给出答案。";
         }
-        
-        sw.Start();
 
-        for (int i = 0; i < num2; i++)
+        // 如果没有得到最终答案，使用最后一次的结果
+        if (string.IsNullOrEmpty(finalResult))
         {
-            foreach (var (key, value) in dic)
-            {
-                if (value())
-                {
-                    
-                }
-            }
+            finalResult = await AI("根据之前的思考过程，给出一个最终答案。");
         }
-        sw.Stop();
-        
-        Debug.Log($"委托耗时：{sw.ElapsedMilliseconds}ms");
+
+        return finalResult;
     }
 
-    private int index;
-    void AddItem(JSONArray root, int num)
+    // 获取思考过程
+    public static string GetThoughtProcess()
     {
-        JSONNode item1 = new JSONObject();
-        item1[a.Name] = $"测试物品{index++}";
-        JSONArray ask = new JSONArray();
-        for (int i = 0; i < num; i++)
-        {
-            var item = new JSONObject
-            {
-                [a.Type] = a.Item,
-                [a.Item] = $"随机物品{i}",
-                [a.Num] = 1
-            };
-            ask.Add(item);
-        }
-
-        item1[a.Ask] = ask;
-        root.Add(item1);
+        return string.Join("\n\n", thoughtProcess);
     }
 }

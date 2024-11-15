@@ -281,7 +281,7 @@ namespace YuoTools.Main.Ecs
 
                                 YuoComponent component =
                                     Deserialize<YuoComponent>(componentData.Value, serializeType, type);
-                                entity.SetComponent(component);
+                                entity.ReplaceComponent(component);
                             }
                         }
                         catch (Exception e)
@@ -301,7 +301,7 @@ namespace YuoTools.Main.Ecs
 
                             YuoComponent component =
                                 Deserialize<YuoComponent>(componentData.Value, serializeType, type);
-                            entity.SetComponent(component, gameData.TypeDic[componentData.Key]);
+                            entity.ReplaceComponent(component, gameData.TypeDic[componentData.Key]);
                         }
                         catch (Exception e)
                         {
@@ -489,7 +489,7 @@ namespace YuoTools.Main.Ecs
                         var type = GetType(componentData.Key);
                         YuoComponent component = DeserializeComponent(componentData.Value, type);
                         // var component = JsonUtility.FromJson(componentData.Value, type) as YuoComponent;
-                        entity.SetComponent(component);
+                        entity.ReplaceComponent(component);
                         components.Add(component);
                     }
 
@@ -503,7 +503,7 @@ namespace YuoTools.Main.Ecs
                         {
                             var type = GetType(componentData.Key);
                             YuoComponent c = DeserializeComponent(componentData.Value, type);
-                            entity.SetComponent(c);
+                            entity.ReplaceComponent(c);
                             // World.RunSystem<IOnLoad>(c);
                         }
                         catch (Exception e)

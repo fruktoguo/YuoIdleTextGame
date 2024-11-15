@@ -360,6 +360,7 @@ MonoBehaviour:
   OnValueChange:
     m_PersistentCalls:
       m_Calls: []
+  _color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &6522368758334787551
 GameObject:
   m_ObjectHideFlags: 0

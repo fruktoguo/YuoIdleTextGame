@@ -15,7 +15,7 @@ namespace YuoTools.UI
 
         private float animatorDuration;
 
-        // [Sirenix.OdinInspector.ShowInInspector] [Sirenix.OdinInspector.ReadOnly]
+        [Sirenix.OdinInspector.ShowInInspector] [Sirenix.OdinInspector.ReadOnly]
         public float AnimaDuration
         {
             get
@@ -70,7 +70,7 @@ namespace YuoTools.UI
             {
                 if (doTweenAnimation)
                 {
-                    doTweenAnimation.DOPlayForward();
+                    doTweenAnimation.DOPlayBackwards();
                 }
                 else if (animator)
                 {
