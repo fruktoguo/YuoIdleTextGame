@@ -23,6 +23,21 @@ namespace YuoTools.Extend.AI
             }
         }
 
+        public static async Task<string> GenerateChat(string prompt, AIChatModel chat)
+        {
+            switch (YuoToolsSettingsHelper.GetOrCreateSettings().AISetting.Server)
+            {
+                // case "gemini":
+                //     return await GeminiApi.GenerateText(prompt);
+                // case AIServerType.豆包:
+                //     return await DoubaoApi.GenerateText(prompt);
+                case AIServerType.智谱:
+                    return await ZhipuGLM.GenerateChat(prompt, chat);
+                default:
+                    return "没有配置正确的服务商";
+            }
+        }
+
         public static async IAsyncEnumerable<string> GenerateTextStream(string prompt)
         {
             switch (YuoToolsSettingsHelper.GetOrCreateSettings().AISetting.Server)
@@ -55,20 +70,24 @@ namespace YuoTools.Extend.AI
             }
         }
 
-        public interface IChat
+        public class AIChatModel
         {
-            public List<IChatMessage> ChatMessages { get; }
+            public List<AIChatMessageModel> messages = new();
+
+            public void AddMessage(string role, string content)
+            {
+                messages.Add(new AIChatMessageModel()
+                {
+                    role = role,
+                    content = content
+                });
+            }
         }
 
-        public interface IChatMessage
+        public class AIChatMessageModel
         {
-            public string MessageRole { get; }
-
-            /// <summary>
-            /// 消息内容
-            /// 当role为tool时,content为工具调用的返回结果
-            /// </summary>
-            public string MessageContent { get; }
+            public string role;
+            public string content;
         }
     }
 }

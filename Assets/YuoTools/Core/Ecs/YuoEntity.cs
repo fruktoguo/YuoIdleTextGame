@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using YuoTools.Core.Ecs;
 
 namespace YuoTools.Main.Ecs
 {
@@ -63,6 +62,12 @@ namespace YuoTools.Main.Ecs
         public bool TryGetComponent<T>(out T component) where T : YuoComponent
         {
             component = GetComponent<T>();
+            return component != null;
+        }
+
+        public bool TryGetComponent(Type type, out YuoComponent component)
+        {
+            component = GetComponent(type);
             return component != null;
         }
 

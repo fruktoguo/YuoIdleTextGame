@@ -100,11 +100,27 @@ namespace YuoTools.Editor
             {
                 Download();
             }
+            
+            EditorGUILayout.EndHorizontal(); // 结束水平布局
+
+            if (isUpdated)
+            {
+                minSize = new Vector2(625, 165);
+                maxSize = new Vector2(626, 166);
+                if (GUILayout.Button("查看文件变更", buttonStyle))
+                {
+                    YuoToolsChangeViewer.ShowWindow();
+                }
+            }
+            else
+            {
+                minSize = new Vector2(625, 125);
+                maxSize = new Vector2(626, 126);
+            }
 
             // 恢复按钮样式
             buttonStyle.normal.textColor = Color.white;
 
-            EditorGUILayout.EndHorizontal(); // 结束水平布局
         }
 
         string GetNewWriteTime()
@@ -276,7 +292,7 @@ namespace YuoTools.Editor
             }
 
             EditorUtility.ClearProgressBar();
-            
+
             //刷新
             AssetDatabase.Refresh();
         }

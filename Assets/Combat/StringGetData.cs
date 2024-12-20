@@ -8,7 +8,7 @@ using YuoTools;
 using YuoTools.Extend;
 using YuoTools.Main.Ecs;
 
-namespace AI
+namespace Combat.Role
 {
     public static class StringGetData
     {
@@ -28,7 +28,6 @@ namespace AI
             public const string BaseAttackSpeed = "BaseAttackSpeed";
             public const string ExAttackSpeed = "ExAttackSpeed";
             public const string AttackSpeed = "AttackSpeed";
-            public const string MaxEquipNum = "MaxEquipNum";
 
             public static readonly List<string> All = new()
             {
@@ -46,7 +45,6 @@ namespace AI
                 BaseAttackSpeed,
                 ExAttackSpeed,
                 AttackSpeed,
-                MaxEquipNum,
             };
         }
 
@@ -67,7 +65,6 @@ namespace AI
                 RoleDataConfig.BaseAttackSpeed => data.BaseAttackSpeed.Value,
                 RoleDataConfig.ExAttackSpeed => data.ExAttackSpeed.Value,
                 RoleDataConfig.AttackSpeed => data.AttackSpeed,
-                RoleDataConfig.MaxEquipNum => data.MaxEquipNum.Value,
                 _ => 0f
             };
 

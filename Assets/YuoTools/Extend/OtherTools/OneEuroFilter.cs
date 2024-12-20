@@ -1,8 +1,10 @@
+using System;
 using UnityEngine;
 
 /// <summary>
 /// 这个类是一个通用的One Euro Filter。它可以处理任何类型的输入，只要提供合适的距离计算和插值函数。
 /// </summary>
+[Serializable]
 public class OneEuroFilter<T>
 {
     /// <summary>

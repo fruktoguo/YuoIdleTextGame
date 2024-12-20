@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using ET;
 using Sirenix.OdinInspector;
 using UnityEngine;
-using YuoTools.Core.Ecs;
 using YuoTools.Main.Ecs;
 using YuoTools.UI;
 using Object = UnityEngine.Object;

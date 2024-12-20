@@ -25,28 +25,10 @@ namespace YuoTools.UI
             VariantChildComponentTag,
         };
 
-        [LabelText("会被检索到的组件类型")] public List<Type> SpawnType = new()
+        public List<Type> NoneSpawnType = new()
         {
-            typeof(Button),
-            typeof(Image),
-            typeof(RawImage),
-            typeof(Text),
-            typeof(TextMeshProUGUI),
-            typeof(TMP_InputField),
-            typeof(TMP_Dropdown),
-            typeof(Toggle),
-            typeof(ToggleGroup),
-            typeof(Dropdown),
-            typeof(InputField),
-            typeof(Slider),
-            typeof(ScrollRect),
-            typeof(EventTrigger),
-            typeof(Scrollbar),
-            typeof(LayoutGroup),
-            typeof(ContentSizeFitter),
-            typeof(ParticleSystem),
-            typeof(CanvasGroup),
-            typeof(Canvas),
+            typeof(CanvasRenderer),
+            typeof(UISetting),
         };
 
         [LabelText("相斥组件")] public Dictionary<Type, Type> RemoveType = new()

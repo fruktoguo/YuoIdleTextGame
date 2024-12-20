@@ -4,7 +4,10 @@ using YuoTools.Extend.PhysicalCallback;
 using YuoTools.Extend.MathFunction;
 using YuoTools.Main.Ecs;
 
-public partial class TransformComponent : YuoComponent
+namespace YuoTools.Extend
 {
-    public Transform transform;
+    public partial class TransformComponent : YuoComponent
+    {
+        public Transform transform;
+    }
 }

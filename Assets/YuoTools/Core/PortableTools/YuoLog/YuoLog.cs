@@ -93,11 +93,11 @@ namespace YuoTools
         public static List<T> LogAll<T>(this List<T> objs)
         {
             if (!OpenDebug) return objs;
-            $"该 {typeof(T).Name.LogSetColor(YuoColorText.钢蓝)} 集合 的长度为 [{objs.Count.ToString().LogSetColor(YuoColorText.深粉色)}]"
+            $"该 {typeof(T).Name.LogSetColor(YuoColorText.蓝色系.矢车菊的蓝色)} 集合 的长度为 [{objs.Count.ToString().LogSetColor(YuoColorText.红粉色系.深粉色)}]"
                 .Log();
             for (int i = 0; i < objs.Count; i++)
             {
-                $"第 [{(i + 1).ToString().LogSetColor(YuoColorText.深粉色)}] 个元素为 {objs[i].ToString().LogSetColor(YuoColorText.紫罗兰红色)}"
+                $"第 [{(i + 1).ToString().LogSetColor(YuoColorText.红粉色系.深粉色)}] 个元素为 {objs[i].ToString().LogSetColor(YuoColorText.红粉色系.紫罗兰红色)}"
                     .Log();
             }
 
@@ -107,11 +107,11 @@ namespace YuoTools
         public static T[] LogAll<T>(this T[] objs)
         {
             if (!OpenDebug) return objs;
-            $"该 {typeof(T).ToString().LogSetColor(YuoColorText.钢蓝)} 数组 的长度为 [{objs.Length.ToString().LogSetColor(YuoColorText.深粉色)}]"
+            $"该 {typeof(T).ToString().LogSetColor(YuoColorText.蓝色系.矢车菊的蓝色)} 数组 的长度为 [{objs.Length.ToString().LogSetColor(YuoColorText.红粉色系.深粉色)}]"
                 .Log();
             for (int i = 0; i < objs.Length; i++)
             {
-                $"第 [{(i + 1).ToString().LogSetColor(YuoColorText.深粉色)}] 个元素为 {objs[i].ToString().LogSetColor(YuoColorText.耐火砖)}"
+                $"第 [{(i + 1).ToString().LogSetColor(YuoColorText.红粉色系.深粉色)}] 个元素为 {objs[i].ToString().LogSetColor(YuoColorText.红粉色系.耐火砖)}"
                     .Log();
             }
 
@@ -121,12 +121,12 @@ namespace YuoTools
         public static Dictionary<T1, T2> LogAll<T1, T2>(this Dictionary<T1, T2> objs)
         {
             if (!OpenDebug) return objs;
-            $"该 【Key :{typeof(T1).ToString().LogSetColor(YuoColorText.钢蓝)} , Value : {typeof(T2).ToString().LogSetColor(YuoColorText.钢蓝)} 】 字典 共有[{objs.Count.ToString().LogSetColor(YuoColorText.深粉色)}] 个元素 "
+            $"该 【Key :{typeof(T1).ToString().LogSetColor(YuoColorText.蓝色系.矢车菊的蓝色)} , Value : {typeof(T2).ToString().LogSetColor(YuoColorText.蓝色系.矢车菊的蓝色)} 】 字典 共有[{objs.Count.ToString().LogSetColor(YuoColorText.红粉色系.深粉色)}] 个元素 "
                 .Log();
             int i = 0;
             foreach (var item in objs)
             {
-                $"第 [{(i + 1).ToString().LogSetColor(YuoColorText.深粉色)}] 个元素为 {item.ToString().LogSetColor(YuoColorText.耐火砖)}"
+                $"第 [{(i + 1).ToString().LogSetColor(YuoColorText.红粉色系.深粉色)}] 个元素为 {item.ToString().LogSetColor(YuoColorText.红粉色系.耐火砖)}"
                     .Log();
                 i++;
             }

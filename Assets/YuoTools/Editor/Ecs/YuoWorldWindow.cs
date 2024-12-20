@@ -68,9 +68,9 @@ namespace YuoTools.Editor.Ecs
             if (mode == PlayModeStateChange.EnteredPlayMode)
             {
                 ForceMenuTreeRebuild();
-                
+
                 await Task.Delay(100);
-                
+
                 ForceMenuTreeRebuild();
             }
         }
@@ -385,7 +385,7 @@ namespace YuoTools.Editor.Ecs
                 DraggableItems = false,
                 NumberOfItemsPerPage = 99,
                 ShowItemCount = false, ListElementLabelName = "@Name",
-                ElementColor = "ElementColor")]
+                ElementColor = nameof(ElementColor))]
             [ShowInInspector]
             [HideIf("_count", 0)]
             public List<YuoComponent> Components = new();
@@ -417,15 +417,7 @@ namespace YuoTools.Editor.Ecs
 
             private Color ElementColor(int index)
             {
-                return HashCodeToColor(Components[index].Type.Name);
-            }
-
-            private Color HashCodeToColor(string input)
-            {
-                using MD5 md5 = MD5.Create();
-                byte[] hashBytes = md5.ComputeHash(Encoding.UTF8.GetBytes(input));
-                float h = Math.Abs(hashBytes[0] / 1.3f % 1f);
-                return Color.HSVToRGB(h, 0.35f, 0.55f);
+                return Components[index].CustomEditorElementColor();
             }
 
             int _count;

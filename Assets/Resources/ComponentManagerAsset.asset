@@ -52,18 +52,6 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 1
-      Data: NetworkTest
-    - Name: $v
-      Entry: 5
-      Data: true
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 1
       Data: UIEventSystemManager
     - Name: $v
       Entry: 5
@@ -80,6 +68,18 @@ MonoBehaviour:
     - Name: $v
       Entry: 5
       Data: true
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: TranslateManagerComponent
+    - Name: $v
+      Entry: 5
+      Data: false
     - Name: 
       Entry: 8
       Data: 
@@ -136,7 +136,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 1
-      Data: TranslateManagerComponent
+      Data: LanguageTools
     - Name: $v
       Entry: 5
       Data: false
@@ -148,10 +148,10 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 1
-      Data: LanguageTools
+      Data: CombatTimeManager
     - Name: $v
       Entry: 5
-      Data: false
+      Data: true
     - Name: 
       Entry: 8
       Data: 

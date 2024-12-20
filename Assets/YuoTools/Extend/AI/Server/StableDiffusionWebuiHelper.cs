@@ -14,13 +14,13 @@ namespace YuoTools.Extend.AI
     {
         private const string BaseUrl = "http://127.0.0.1:7860";
 
-        private static readonly JsonSerializerSettings JsonSettings = new()
+        private static readonly JsonSerializerSettings? JsonSettings = new()
         {
             NullValueHandling = NullValueHandling.Ignore
         };
 
         // 保持原有的 Draw 方法,但增加错误处理
-        public static async Task<Texture2D> Draw(Text2ImgRequestDto data)
+        public static async Task<Texture2D?> Draw(Text2ImgRequestDto? data)
         {
             try
             {
@@ -28,10 +28,13 @@ namespace YuoTools.Extend.AI
                 if (response?.images != null && response.images.Count > 0)
                 {
                     var bytes = Convert.FromBase64String(response.images[0]);
-                    var texture = new Texture2D((int)(data.width ?? 512), (int)(data.height ?? 512));
-                    texture.LoadImage(bytes);
-                    texture.Apply();
-                    return texture;
+                    if (data != null)
+                    {
+                        var texture = new Texture2D((int)(data.width ?? 512), (int)(data.height ?? 512));
+                        texture.LoadImage(bytes);
+                        texture.Apply();
+                        return texture;
+                    }
                 }
 
                 return null;
@@ -44,7 +47,7 @@ namespace YuoTools.Extend.AI
         }
 
         // 图生图方法
-        public static async Task<Texture2D> DrawFromImage(Img2ImgRequestDto data)
+        public static async Task<Texture2D?> DrawFromImage(Img2ImgRequestDto? data)
         {
             try
             {
@@ -52,10 +55,13 @@ namespace YuoTools.Extend.AI
                 if (response?.images != null && response.images.Count > 0)
                 {
                     var bytes = Convert.FromBase64String(response.images[0]);
-                    var texture = new Texture2D((int)(data.width ?? 512), (int)(data.height ?? 512));
-                    texture.LoadImage(bytes);
-                    texture.Apply();
-                    return texture;
+                    if (data != null)
+                    {
+                        var texture = new Texture2D((int)(data.width ?? 512), (int)(data.height ?? 512));
+                        texture.LoadImage(bytes);
+                        texture.Apply();
+                        return texture;
+                    }
                 }
 
                 return null;
@@ -68,13 +74,13 @@ namespace YuoTools.Extend.AI
         }
 
         // 获取生成进度
-        public static async Task<ProgressResponse> GetProgress()
+        public static async Task<ProgressResponse?> GetProgress()
         {
             return await SendRequest<ProgressResponse>("/sdapi/v1/progress", null, "GET");
         }
 
         // 获取可用模型列表
-        public static async Task<List<SDModelItem>> GetModels()
+        public static async Task<List<SDModelItem>?> GetModels()
         {
             return await SendRequest<List<SDModelItem>>("/sdapi/v1/sd-models", null, "GET");
         }
@@ -88,13 +94,13 @@ namespace YuoTools.Extend.AI
         }
 
         // 获取当前系统选项
-        public static async Task<SDOptions> GetOptions()
+        public static async Task<SDOptions?> GetOptions()
         {
             return await SendRequest<SDOptions>("/sdapi/v1/options", null, "GET");
         }
 
         // 获取采样器列表
-        public static async Task<List<SamplerItem>> GetSamplers()
+        public static async Task<List<SamplerItem>?> GetSamplers()
         {
             return await SendRequest<List<SamplerItem>>("/sdapi/v1/samplers", null, "GET");
         }
@@ -106,7 +112,7 @@ namespace YuoTools.Extend.AI
         }
 
         // 通用请求方法
-        private static async Task<T> SendRequest<T>(string endpoint, object data = null, string method = "POST")
+        private static async Task<T?> SendRequest<T>(string endpoint, object? data = null, string method = "POST")
         {
             try
             {
@@ -161,7 +167,7 @@ namespace YuoTools.Extend.AI
         }
 
         // 简化的异步生成方法(保持原有的便捷方法)
-        public static async Task<Texture2D> Draw(string parameters, string negativePrompt = "") =>
+        public static async Task<Texture2D?> Draw(string parameters, string negativePrompt = "") =>
             await Draw(new Text2ImgRequestDto
             {
                 prompt = parameters,

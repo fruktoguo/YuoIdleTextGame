@@ -1,14 +1,79 @@
-﻿#if UNITY_EDITOR
+﻿using System;
+using System.Security.Cryptography;
+using System.Text;
+using UnityEngine;
 
-using System;
+#if UNITY_EDITOR
+using Sirenix.OdinInspector.Editor;
 using Sirenix.OdinInspector;
 using UnityEditor;
-using UnityEngine;
+#endif
 
 namespace YuoTools.Main.Ecs
 {
     public partial class YuoComponent
     {
+        public virtual Color CustomEditorElementColor()
+        {
+            using MD5 md5 = MD5.Create();
+            byte[] hashBytes = md5.ComputeHash(Encoding.UTF8.GetBytes(Type.Name));
+            float h = Math.Abs(hashBytes[0] / 1.3f % 1f);
+            return Color.HSVToRGB(h, 0.35f, 0.55f);
+        }
+
+        public virtual string CustomEditorDisplayOnInspector() => "";
+    }
+}
+
+#if UNITY_EDITOR
+namespace YuoTools.Main.Ecs
+{
+    [HideReferenceObjectPicker]
+    [GUIColor(1, 1, 1)]
+    public partial class YuoComponent
+    {
+        protected class YuoComponentDrawer : OdinValueDrawer<YuoComponent>
+        {
+            protected override void DrawPropertyLayout(GUIContent label)
+            {
+                var value = this.ValueEntry.SmartValue;
+
+                // 保存当前的GUI状态
+                var originalColor = GUI.color;
+
+                // 先绘制原有的编辑控件
+                CallNextDrawer(label);
+
+                if (!this.ValueEntry.Property.State.Expanded)
+                {
+                    var extend = value.CustomEditorDisplayOnInspector();
+                    if (!string.IsNullOrEmpty(extend))
+                    {
+                        // 获取最后绘制的矩形区域
+                        var rect = GUILayoutUtility.GetLastRect();
+
+                        // 计算值的显示区域
+                        var valueRect = rect;
+                        valueRect.xMin = EditorGUIUtility.labelWidth;
+
+                        // 使用 Unity 默认的数值编辑器样式
+                        var valueStyle = EditorStyles.numberField;
+
+                        // 禁用输入以显示为只读状态
+                        using (new EditorGUI.DisabledScope(true))
+                        {
+                            // 使用 EditorGUI.TextField 而不是 LabelField 来匹配默认外观
+                            EditorGUI.TextField(valueRect, extend, valueStyle);
+                        }
+                    }
+                }
+
+                // 恢复GUI状态
+                GUI.color = originalColor;
+            }
+        }
+
+        [ButtonGroup]
         [Button("RemoveComponent")]
         [HorizontalGroup("SelectField")]
         [ShowIf("_privateSelect")]
@@ -18,6 +83,7 @@ namespace YuoTools.Main.Ecs
             Entity.RemoveComponent(this);
         }
 
+                [ButtonGroup]
         [Button]
         [HorizontalGroup("SelectField")]
         [ShowIf("_privateSelect")]
@@ -31,6 +97,7 @@ namespace YuoTools.Main.Ecs
             }
         }
 
+             [ButtonGroup]
         [Button]
         [HorizontalGroup("SelectField")]
         [ShowIf("_privateSelect")]
@@ -49,6 +116,7 @@ namespace YuoTools.Main.Ecs
             _privateSelect = false;
         }
 
+               [ButtonGroup]
         [Button]
         [HorizontalGroup("SelectField")]
         [ShowIf("_privateSelect")]
@@ -72,6 +140,7 @@ namespace YuoTools.Main.Ecs
         private string ShowBase => BaseComponentType?.Name;
 
         [HorizontalGroup("SelectField")]
+             [ButtonGroup]
         [Button(ButtonSizes.Medium)]
         [ShowIf("_privateSelect")]
         private void SavePrefab()

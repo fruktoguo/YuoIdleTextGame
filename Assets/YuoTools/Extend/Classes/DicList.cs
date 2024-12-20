@@ -19,7 +19,18 @@ namespace YuoTools
             return list == null ? Array.Empty<TV>() : list.ToArray();
         }
 
-        public new List<TV> this[TK t] => TryGetValue(t, out var list) ? list : _empty;
+        public new List<TV> this[TK t]
+        {
+            get
+            {
+                if (!ContainsKey(t))
+                {
+                    Add(t, new List<TV>());
+                }
+
+                return TryGetValue(t, out var list) ? list : _empty;
+            }
+        }
 
         public void AddItem(TK t, TV k)
         {

@@ -4,6 +4,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Networking;
 
 namespace YuoTools.Extend.AI
@@ -12,24 +13,81 @@ namespace YuoTools.Extend.AI
     {
         public const string URL = "https://ark.cn-beijing.volces.com/api/v3/chat/completions";
 
-        public static async IAsyncEnumerable<string> GenerateStream(string prompt)
+        public static Task<string> GenerateText(string prompt)
         {
-            var model = AIHelper.AIModel;
-            if (string.IsNullOrEmpty(model))
+            var request = new ZhipuGLM.ChatCompletionRequest
             {
-                Debug.LogError("模型不能为空");
-                yield break;
-            }
+                model = AIHelper.AIModel,
+                messages = new List<ZhipuGLM.ChatCompletionRequest.Message>
+                {
+                    new()
+                    {
+                        role = "user",
+                        content = prompt
+                    }
+                },
+                stream = false
+            };
 
-            var requestBody = new ChatCompletionRequest(model, prompt)
+            return GenerateText(request);
+        }
+
+        public static async Task<string> GenerateChat(string prompt, AIHelper.AIChatModel chat)
+        {
+            chat.AddMessage("user", prompt);
+            var request = new ZhipuGLM.ChatCompletionRequest(chat);
+            var response = await GenerateText(request);
+            chat.AddMessage("assistant", response);
+            return response;
+        }
+
+        public static async Task<string> GenerateText(ZhipuGLM.ChatCompletionRequest request)
+        {
+            var body = JsonConvert.SerializeObject(request);
+            var responseJson = await AIServerHelper.GetResponse(AIHelper.ApiKey, URL, body);
+
+            if (string.IsNullOrEmpty(responseJson)) return "发生错误";
+            var parsedJson = JsonConvert.DeserializeObject<ChatCompletionResponse>(responseJson);
+            return parsedJson.choices[0].message.content;
+        }
+
+        public static IAsyncEnumerable<string> GenerateStream(string prompt)
+        {
+            var request = new ZhipuGLM.ChatCompletionRequest
+            {
+                model = AIHelper.AIModel,
+                messages = new List<ZhipuGLM.ChatCompletionRequest.Message>
+                {
+                    new()
+                    {
+                        role = "user",
+                        content = prompt
+                    }
+                },
+                stream = true
+            };
+
+            return GenerateStream(request);
+        }
+
+        public static IAsyncEnumerable<string> GenerateChatStream(string prompt, AIHelper.AIChatModel chat)
+        {
+            chat.AddMessage("user", prompt);
+            var request = new ZhipuGLM.ChatCompletionRequest(chat)
             {
                 stream = true
             };
-            string body = JsonConvert.SerializeObject(requestBody);
+            return GenerateStream(request, r => chat.AddMessage("assistant", r));
+        }
+
+        public static async IAsyncEnumerable<string> GenerateStream(ZhipuGLM.ChatCompletionRequest request,
+            UnityAction<string> onOver = null)
+        {
+            var body = JsonConvert.SerializeObject(request);
 
             string OnJson(ChatCompletionStreamResponse json)
             {
-                return json.choices[0].ToString();
+                return json.choices[0].delta.content;
             }
 
             string OnText(string text)
@@ -37,31 +95,19 @@ namespace YuoTools.Extend.AI
                 return OperateMessage(text, OnJson);
             }
 
+            string result = "";
             await foreach (var line in AIServerHelper.GetResponseStream(AIHelper.ApiKey, URL, body, OnText))
             {
-                if (line != null) yield return line;
-            }
-        }
-
-        public static async Task<string> GenerateText(string prompt)
-        {
-            var model = AIHelper.AIModel;
-            if (string.IsNullOrEmpty(model))
-            {
-                Debug.LogError("模型不能为空");
-                return "模型不能为空";
+                if (line != null)
+                {
+                    result = line;
+                    yield return line;
+                }
             }
 
-            var requestBody = new ChatCompletionRequest(model, prompt);
-
-            string body = JsonConvert.SerializeObject(requestBody);
-            var responseJson = await AIServerHelper.GetResponse(AIHelper.ApiKey, URL, body);
-
-            if (string.IsNullOrEmpty(responseJson)) return "发生错误";
-            var parsedJson = JsonConvert.DeserializeObject<ChatCompletionResponse>(responseJson);
-            return parsedJson.choices[0].message.content;
+            onOver?.Invoke(result);
         }
-        
+
         public static string OperateMessage(string str, Func<ChatCompletionStreamResponse, string> onJson)
         {
             string split = "data:";
@@ -84,7 +130,6 @@ namespace YuoTools.Extend.AI
                             var json = JsonConvert.DeserializeObject<ChatCompletionStreamResponse>(trimmedLine);
                             if (json is { choices: { Count: > 0 } })
                             {
-                                //处理新的返回结构
                                 result.Append(onJson?.Invoke(json));
                             }
                         }
@@ -101,6 +146,73 @@ namespace YuoTools.Extend.AI
             }
 
             return result.ToString();
+        }
+
+        [Serializable]
+        public class ChatCompletionRequest
+        {
+            /// <summary>
+            /// 要调用的模型编码
+            /// </summary>
+            public string model;
+
+            /// <summary>
+            /// 调用语言模型时的当前对话消息列表
+            /// </summary>
+            public List<Message> messages;
+
+            /// <summary>
+            /// 是否使用流式输出
+            /// </summary>
+            public bool stream = false;
+
+            [Serializable]
+            public class Message
+            {
+                /// <summary>
+                /// 消息的角色信息
+                /// 可选值:system、user、assistant
+                /// </summary>
+                public string role;
+
+                /// <summary>
+                /// 消息内容
+                /// </summary>
+                public string content;
+            }
+
+            public ChatCompletionRequest()
+            {
+            }
+
+            public AIHelper.AIChatModel ToChatModel()
+            {
+                var chatModel = new AIHelper.AIChatModel();
+                foreach (var message in messages)
+                {
+                    chatModel.messages.Add(new()
+                    {
+                        role = message.role,
+                        content = message.content
+                    });
+                }
+
+                return chatModel;
+            }
+
+            public ChatCompletionRequest(AIHelper.AIChatModel chat)
+            {
+                model = AIHelper.AIModel;
+                messages = new();
+                foreach (var message in chat.messages)
+                {
+                    messages.Add(new()
+                    {
+                        role = message.role,
+                        content = message.content
+                    });
+                }
+            }
         }
 
         [Serializable]
@@ -167,31 +279,64 @@ namespace YuoTools.Extend.AI
             public int total_tokens { get; set; }
         }
 
-        [Serializable]
-        public class ChatCompletionRequest
-        {
-            public string model { get; set; }
-            public bool stream { get; set; }
-
-            public List<Message> messages { get; set; }
-            // public int max_tokens { get; set; } = 4096;
-            // public List<string> stop { get; set; } = new();
-            // public float frequency_penalty { get; set; } = 0.0f;
-            // public float presence_penalty { get; set; } = 0.0f;
-            // public float temperature { get; set; } = 1f;
-            // public float top_p { get; set; } = 0.7f;
-            // public bool logprobs { get; set; } = false;
-            // public int top_logprobs { get; set; } = 0;
-            // public Dictionary<int, float> logit_bias { get; set; } = new();
-
-            public ChatCompletionRequest(string model, string prompt)
-            {
-                this.model = model;
-                this.messages = new List<Message>
-                {
-                    new() { role = "user", content = prompt }
-                };
-            }
-        }
+        // [Serializable]
+        // public class ChatCompletionRequest
+        // {
+        //     public string model { get; set; }
+        //     public bool stream { get; set; }
+        //
+        //     public List<Message> messages { get; set; }
+        //     // public int max_tokens { get; set; } = 4096;
+        //     // public List<string> stop { get; set; } = new();
+        //     // public float frequency_penalty { get; set; } = 0.0f;
+        //     // public float presence_penalty { get; set; } = 0.0f;
+        //     // public float temperature { get; set; } = 1f;
+        //     // public float top_p { get; set; } = 0.7f;
+        //     // public bool logprobs { get; set; } = false;
+        //     // public int top_logprobs { get; set; } = 0;
+        //     // public Dictionary<int, float> logit_bias { get; set; } = new();
+        //
+        //     public ChatCompletionRequest(string prompt)
+        //     {
+        //         model = AIHelper.AIModel;
+        //         messages = new List<Message>
+        //         {
+        //             new() { role = "user", content = prompt }
+        //         };
+        //     }
+        //
+        //     public ChatCompletionRequest()
+        //     {
+        //     }
+        //
+        //     public AIHelper.AIChatModel ToChatModel()
+        //     {
+        //         var chatModel = new AIHelper.AIChatModel();
+        //         foreach (var message in messages)
+        //         {
+        //             chatModel.messages.Add(new()
+        //             {
+        //                 role = message.role,
+        //                 content = message.content
+        //             });
+        //         }
+        //
+        //         return chatModel;
+        //     }
+        //
+        //     public ChatCompletionRequest(AIHelper.AIChatModel chat)
+        //     {
+        //         model = AIHelper.AIModel;
+        //         messages = new();
+        //         foreach (var message in chat.messages)
+        //         {
+        //             messages.Add(new()
+        //             {
+        //                 role = message.role,
+        //                 content = message.content
+        //             });
+        //         }
+        //     }
+        // }
     }
 }

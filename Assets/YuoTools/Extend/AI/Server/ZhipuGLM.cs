@@ -4,6 +4,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace YuoTools.Extend.AI
 {
@@ -30,13 +31,22 @@ namespace YuoTools.Extend.AI
             return GenerateText(request);
         }
 
+        public static async Task<string> GenerateChat(string prompt, AIHelper.AIChatModel chat)
+        {
+            chat.AddMessage("user", prompt);
+            var request = new ChatCompletionRequest(chat);
+            var response = await GenerateText(request);
+            chat.AddMessage("assistant", response);
+            return response;
+        }
+
         public static async Task<string> GenerateText(ChatCompletionRequest request)
         {
             var body = JsonConvert.SerializeObject(request);
             var responseJson = await AIServerHelper.GetResponse(AIHelper.ApiKey, URL, body);
 
             if (string.IsNullOrEmpty(responseJson)) return "发生错误";
-            Debug.Log(responseJson);
+            // Debug.Log(responseJson);
             var parsedJson = JsonConvert.DeserializeObject<ChatCompletionResponse>(responseJson);
             return parsedJson.choices[0].message.content;
         }
@@ -60,7 +70,18 @@ namespace YuoTools.Extend.AI
             return GenerateStream(request);
         }
 
-        public static async IAsyncEnumerable<string> GenerateStream(ChatCompletionRequest request)
+        public static IAsyncEnumerable<string> GenerateChatStream(string prompt, AIHelper.AIChatModel chat)
+        {
+            chat.AddMessage("user", prompt);
+            var request = new ChatCompletionRequest(chat)
+            {
+                stream = true
+            };
+            return GenerateStream(request, r => chat.AddMessage("assistant", r));
+        }
+
+        public static async IAsyncEnumerable<string> GenerateStream(ChatCompletionRequest request,
+            UnityAction<string> onOver = null)
         {
             var body = JsonConvert.SerializeObject(request);
 
@@ -74,10 +95,17 @@ namespace YuoTools.Extend.AI
                 return OperateMessage(text, OnJson);
             }
 
+            string result = "";
             await foreach (var line in AIServerHelper.GetResponseStream(AIHelper.ApiKey, URL, body, OnText))
             {
-                if (line != null) yield return line;
+                if (line != null)
+                {
+                    result = line;
+                    yield return line;
+                }
             }
+
+            onOver?.Invoke(result);
         }
 
         public static string OperateMessage(string str, Func<ChatCompletionStreamResponse, string> onJson)
@@ -122,7 +150,7 @@ namespace YuoTools.Extend.AI
         }
 
         [Serializable]
-        public class ChatCompletionRequest : AIHelper.IChat
+        public class ChatCompletionRequest
         {
             /// <summary>
             /// 要调用的模型编码
@@ -146,7 +174,7 @@ namespace YuoTools.Extend.AI
             public bool stream = false;
 
             [Serializable]
-            public class Message : AIHelper.IChatMessage
+            public class Message
             {
                 /// <summary>
                 /// 消息的角色信息
@@ -171,9 +199,6 @@ namespace YuoTools.Extend.AI
                 /// 仅当role为tool时必需
                 /// </summary>
                 public string tool_call_id;
-
-                public string MessageRole => role;
-                public string MessageContent => content;
             }
 
             #region 非必须参数
@@ -404,7 +429,38 @@ namespace YuoTools.Extend.AI
 
             #endregion
 
-            public List<AIHelper.IChatMessage> ChatMessages => new(messages);
+            public ChatCompletionRequest()
+            {
+            }
+
+            public AIHelper.AIChatModel ToChatModel()
+            {
+                var chatModel = new AIHelper.AIChatModel();
+                foreach (var message in messages)
+                {
+                    chatModel.messages.Add(new()
+                    {
+                        role = message.role,
+                        content = message.content
+                    });
+                }
+
+                return chatModel;
+            }
+
+            public ChatCompletionRequest(AIHelper.AIChatModel chat)
+            {
+                model = AIHelper.AIModel;
+                messages = new();
+                foreach (var message in chat.messages)
+                {
+                    messages.Add(new()
+                    {
+                        role = message.role,
+                        content = message.content
+                    });
+                }
+            }
         }
 
         [Serializable]

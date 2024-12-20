@@ -65,3 +65,11 @@ The following packages were 已添加:
   com.unity.multiplayer.center@1.0.0
 The following packages were 已更新:
   com.unity.inputsystem 从版本 1.9.0 到 1.11.1
+
+=== Tue Nov 26 15:46:14 2024
+
+Packages were changed.
+Update Mode: updateDependencies
+
+The following packages were 已更新:
+  com.unity.2d.tilemap.extras 从版本 4.0.2 到 4.1.0

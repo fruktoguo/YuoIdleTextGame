@@ -64,7 +64,7 @@ public class YuoAStarSearch
         // StopwatchHelper.Start();
         int maxSearchNum = MapSizeX * MapSizeY * 100;
 
-        double ms;
+        // double ms;
         while (openQueue.Count > 0)
         {
             maxSearchNum--;

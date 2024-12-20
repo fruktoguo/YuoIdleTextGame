@@ -415,8 +415,8 @@ namespace YuoTools.UI
         public static string CodeSpawn_AddComponent(string type, string name, string relativePath)
         {
             StringBuilder strBuilder = new StringBuilder();
-            
-            string get =$@"=> m{type}_{name} ??= rectTransform.Find(""{relativePath}"").GetComponent<{type}>();";
+
+            string get = $@"=> m{type}_{name} ??= rectTransform.Find(""{relativePath}"").GetComponent<{type}>();";
             strBuilder.AppendLine($"\n\t\tprivate {type} m{type}_{name};");
 
             strBuilder.AppendLine($"\n\t\tpublic {type} {type}_{name} {get}");
@@ -647,74 +647,50 @@ namespace YuoTools.UI
         {
             List<string> ts = new List<string>();
 
-            foreach (var item in SpawnConfig.SpawnType)
+            foreach (var item in transform.GetComponents<Component>())
             {
-                Get(item);
-            }
-
-            foreach (var item in transform.GetComponents<IGenerateCode>())
-            {
-                ts.Add(item.GetType().Name);
+                if (!ts.Contains(item.GetType().Name))
+                    ts.Add(item.GetType().Name);
             }
 
             foreach (var item in SpawnConfig.RemoveType)
             {
-                if (ts.Contains(item.Key.Name)) ts.Remove(item.Value.Name);
+                if (ts.Contains(item.Key.Name))
+                    ts.Remove(item.Value.Name);
             }
 
-
-            if (ts.Count == 0)
+            foreach (var item in SpawnConfig.NoneSpawnType)
             {
-                ts.Add(nameof(RectTransform));
+                if (ts.Contains(item.Name))
+                    ts.Remove(item.Name);
             }
 
             return ts;
-
-            void Get(Type type)
-            {
-                var t = transform.GetComponent(type);
-                if (t != null)
-                {
-                    ts.Add(t.GetType().Name);
-                }
-            }
         }
 
         private static List<Type> GetOriginalTypes(Transform transform)
         {
             List<Type> ts = new List<Type>();
 
-            foreach (var item in SpawnConfig.SpawnType)
+            foreach (var item in transform.GetComponents<Component>())
             {
-                Get(item);
-            }
-
-            foreach (var item in transform.GetComponents<IGenerateCode>())
-            {
-                ts.Add(item.GetType());
+                if (!ts.Contains(item.GetType()))
+                    ts.Add(item.GetType());
             }
 
             foreach (var item in SpawnConfig.RemoveType)
             {
-                if (ts.Contains(item.Key)) ts.Remove(item.Value);
+                if (ts.Contains(item.Key))
+                    ts.Remove(item.Value);
             }
 
-
-            if (ts.Count == 0)
+            foreach (var item in SpawnConfig.NoneSpawnType)
             {
-                ts.Add(typeof(RectTransform));
+                if (ts.Contains(item))
+                    ts.Remove(item);
             }
 
             return ts;
-
-            void Get(Type type)
-            {
-                var t = transform.GetComponent(type);
-                if (t != null)
-                {
-                    ts.Add(t.GetType());
-                }
-            }
         }
 
         private static string GetRelativePath(Transform child, Transform parent)
@@ -734,7 +710,7 @@ namespace YuoTools.UI
 
             return path;
         }
-        
+
         class TransformInfo
         {
             public readonly Transform transform;

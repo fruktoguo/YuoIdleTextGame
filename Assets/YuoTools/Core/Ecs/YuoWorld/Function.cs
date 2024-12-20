@@ -52,7 +52,6 @@ namespace YuoTools.Main.Ecs
             return components.ContainsKey(typeof(T)) ? components[typeof(T)] : null;
         }
 
-
         /// <summary>
         /// 根据类型名称获取组件类型
         /// </summary>
@@ -235,14 +234,6 @@ namespace YuoTools.Main.Ecs
         public Dictionary<string, Type> GetAllComponentOfType()
         {
             return allComponentType;
-        }
-
-        public static void DisableSystem<T>() where T : SystemBase
-        {
-            var type = typeof(T);
-            var system = Instance.systemDic[type];
-            if (system != null)
-                system.Enabled = false;
         }
     }
 }
