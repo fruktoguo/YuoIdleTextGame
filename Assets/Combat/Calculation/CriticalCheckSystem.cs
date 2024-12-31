@@ -11,7 +11,7 @@ namespace Combat.Role
 
         public override string Name => "暴击检测系统";
 
-        protected override void Run(ValueComponent value, AtkValueComponent atkValue)
+        public override void Run(ValueComponent value, AtkValueComponent atkValue)
         {
             var attackerData = atkValue.Initiator.GetComponent<RoleDataComponent>();
 

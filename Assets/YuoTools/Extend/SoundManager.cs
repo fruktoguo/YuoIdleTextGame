@@ -154,7 +154,7 @@ namespace YuoTools.Main.Ecs
     {
         public override string Group => "Main/Sound";
 
-        protected override void Run(SoundManager component)
+        public override void Run(SoundManager component)
         {
             component.gameObject = new GameObject("SoundManager");
             Object.DontDestroyOnLoad(component.gameObject);

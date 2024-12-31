@@ -3,164 +3,166 @@ using UnityEditor;
 using UnityEditor.UI;
 using UnityEngine;
 
-
-[CustomEditor(typeof(YuoImage), true)]
-[CanEditMultipleObjects]
-public class YuoImageEditor : ImageEditor
+namespace YuoTools
 {
-    private SerializedProperty mUseCustomShape;
-    private SerializedProperty mShape;
-    private GUIStyle headerStyle;
-
-    protected override void OnEnable()
+    [CustomEditor(typeof(YuoImage), true)]
+    [CanEditMultipleObjects]
+    public class YuoImageEditor : ImageEditor
     {
-        base.OnEnable();
-        mUseCustomShape = serializedObject.FindProperty("UseCustomShape");
-        mShape = serializedObject.FindProperty("Shape");
-    }
+        private SerializedProperty mUseCustomShape;
+        private SerializedProperty mShape;
+        private GUIStyle headerStyle;
 
-    private void InitStyles()
-    {
-        if (headerStyle == null)
+        protected override void OnEnable()
         {
-            headerStyle = new GUIStyle(EditorStyles.boldLabel)
-            {
-                fontSize = 12,
-                margin = new RectOffset(0, 0, 8, 8)
-            };
+            base.OnEnable();
+            mUseCustomShape = serializedObject.FindProperty("UseCustomShape");
+            mShape = serializedObject.FindProperty("Shape");
         }
-    }
 
-    public override void OnInspectorGUI()
-    {
-        InitStyles();
-
-        EditorGUILayout.Space(8);
-        DrawSeparator();
-        EditorGUILayout.LabelField("自定义形状设置", headerStyle);
-
-        EditorGUI.BeginChangeCheck();
-
-        using (new EditorGUILayout.VerticalScope(EditorStyles.helpBox))
+        private void InitStyles()
         {
-            EditorGUILayout.PropertyField(mUseCustomShape, new GUIContent("启用自定义形状"));
-
-            if (mUseCustomShape.boolValue)
+            if (headerStyle == null)
             {
-                EditorGUI.indentLevel++;
-                EditorGUILayout.Space(2);
-
-                // 当前形状类型和更改按钮放在同一行
-                using (new EditorGUILayout.HorizontalScope())
+                headerStyle = new GUIStyle(EditorStyles.boldLabel)
                 {
-                    EditorGUILayout.LabelField("当前类型:", GUILayout.Width(80));
+                    fontSize = 12,
+                    margin = new RectOffset(0, 0, 8, 8)
+                };
+            }
+        }
 
-                    // 左半部分：显示当前类型
-                    using (new EditorGUILayout.HorizontalScope(
-                               GUILayout.Width(EditorGUIUtility.currentViewWidth / 2 - 65)))
+        public override void OnInspectorGUI()
+        {
+            InitStyles();
+
+            EditorGUILayout.Space(8);
+            DrawSeparator();
+            EditorGUILayout.LabelField("自定义形状设置", headerStyle);
+
+            EditorGUI.BeginChangeCheck();
+
+            using (new EditorGUILayout.VerticalScope(EditorStyles.helpBox))
+            {
+                EditorGUILayout.PropertyField(mUseCustomShape, new GUIContent("启用自定义形状"));
+
+                if (mUseCustomShape.boolValue)
+                {
+                    EditorGUI.indentLevel++;
+                    EditorGUILayout.Space(2);
+
+                    // 当前形状类型和更改按钮放在同一行
+                    using (new EditorGUILayout.HorizontalScope())
                     {
-                        if (mShape.managedReferenceValue != null)
+                        EditorGUILayout.LabelField("当前类型:", GUILayout.Width(80));
+
+                        // 左半部分：显示当前类型
+                        using (new EditorGUILayout.HorizontalScope(
+                                   GUILayout.Width(EditorGUIUtility.currentViewWidth / 2 - 65)))
                         {
-                            // 修改这里，使用 ShapeName 而不是类型名
-                            var shape = mShape.managedReferenceValue as IYuoUIShape;
-                            EditorGUILayout.LabelField(shape?.ShapeName ?? "未知形状",
-                                EditorStyles.boldLabel);
+                            if (mShape.managedReferenceValue != null)
+                            {
+                                // 修改这里，使用 ShapeName 而不是类型名
+                                var shape = mShape.managedReferenceValue as IYuoUIShape;
+                                EditorGUILayout.LabelField(shape?.ShapeName ?? "未知形状",
+                                    EditorStyles.boldLabel);
+                            }
+                        }
+
+
+                        // 右半部分：类型选择按钮
+                        if (GUILayout.Button("更改类型", EditorStyles.miniButton,
+                                GUILayout.Width(EditorGUIUtility.currentViewWidth / 2 - 65)))
+                        {
+                            ShowShapeTypeMenu();
                         }
                     }
 
-
-                    // 右半部分：类型选择按钮
-                    if (GUILayout.Button("更改类型", EditorStyles.miniButton,
-                            GUILayout.Width(EditorGUIUtility.currentViewWidth / 2 - 65)))
+                    // 形状属性
+                    if (mShape.managedReferenceValue != null)
                     {
-                        ShowShapeTypeMenu();
+                        EditorGUILayout.Space(5);
+                        DrawPropertiesBox();
                     }
-                }
 
-                // 形状属性
-                if (mShape.managedReferenceValue != null)
+                    EditorGUI.indentLevel--;
+                }
+            }
+
+            if (EditorGUI.EndChangeCheck())
+            {
+                serializedObject.ApplyModifiedProperties();
+            }
+
+            EditorGUILayout.Space(8);
+            DrawSeparator();
+            base.OnInspectorGUI();
+        }
+
+        private void DrawPropertiesBox()
+        {
+            EditorGUILayout.LabelField("形状参数", EditorStyles.boldLabel);
+            using (new EditorGUILayout.VerticalScope(EditorStyles.helpBox))
+            {
+                SerializedProperty iterator = mShape.Copy();
+                SerializedProperty endProperty = iterator.GetEndProperty();
+                bool enterChildren = true;
+
+                while (iterator.NextVisible(enterChildren) && !SerializedProperty.EqualContents(iterator, endProperty))
                 {
-                    EditorGUILayout.Space(5);
-                    DrawPropertiesBox();
-                }
+                    if (iterator.propertyPath == mShape.propertyPath) continue;
 
-                EditorGUI.indentLevel--;
+                    EditorGUILayout.PropertyField(iterator, true);
+                    enterChildren = false;
+                }
             }
         }
 
-        if (EditorGUI.EndChangeCheck())
+        private void ShowShapeTypeMenu()
         {
-            serializedObject.ApplyModifiedProperties();
-        }
+            var menu = new GenericMenu();
+            var types = GetShapeTypes();
 
-        EditorGUILayout.Space(8);
-        DrawSeparator();
-        base.OnInspectorGUI();
-    }
+            // 获取当前类型
+            var currentShape = mShape.managedReferenceValue as IYuoUIShape;
+            var currentType = currentShape?.GetType();
 
-    private void DrawPropertiesBox()
-    {
-        EditorGUILayout.LabelField("形状参数", EditorStyles.boldLabel);
-        using (new EditorGUILayout.VerticalScope(EditorStyles.helpBox))
-        {
-            SerializedProperty iterator = mShape.Copy();
-            SerializedProperty endProperty = iterator.GetEndProperty();
-            bool enterChildren = true;
-
-            while (iterator.NextVisible(enterChildren) && !SerializedProperty.EqualContents(iterator, endProperty))
+            foreach (var type in types)
             {
-                if (iterator.propertyPath == mShape.propertyPath) continue;
-
-                EditorGUILayout.PropertyField(iterator, true);
-                enterChildren = false;
-            }
-        }
-    }
-
-    private void ShowShapeTypeMenu()
-    {
-        var menu = new GenericMenu();
-        var types = GetShapeTypes();
-
-        // 获取当前类型
-        var currentShape = mShape.managedReferenceValue as IYuoUIShape;
-        var currentType = currentShape?.GetType();
-
-        foreach (var type in types)
-        {
-            // 创建临时实例以获取 ShapeName
-            var tempInstance = System.Activator.CreateInstance(type) as IYuoUIShape;
-            if (tempInstance != null)
-            {
-                // 检查是否与当前类型相同
-                bool isCurrentType = currentType == type;
-
-                menu.AddItem(new GUIContent(tempInstance.ShapeName), isCurrentType, () =>
+                // 创建临时实例以获取 ShapeName
+                var tempInstance = System.Activator.CreateInstance(type) as IYuoUIShape;
+                if (tempInstance != null)
                 {
-                    // 如果选择的类型与当前类型不同，才进行更改
-                    if (!isCurrentType)
+                    // 检查是否与当前类型相同
+                    bool isCurrentType = currentType == type;
+
+                    menu.AddItem(new GUIContent(tempInstance.ShapeName), isCurrentType, () =>
                     {
-                        mShape.managedReferenceValue = System.Activator.CreateInstance(type);
-                        serializedObject.ApplyModifiedProperties();
-                    }
-                });
+                        // 如果选择的类型与当前类型不同，才进行更改
+                        if (!isCurrentType)
+                        {
+                            mShape.managedReferenceValue = System.Activator.CreateInstance(type);
+                            serializedObject.ApplyModifiedProperties();
+                        }
+                    });
+                }
             }
+
+            menu.ShowAsContext();
         }
 
-        menu.ShowAsContext();
-    }
 
+        private System.Type[] GetShapeTypes()
+        {
+            return System.AppDomain.CurrentDomain.GetAssemblies()
+                .SelectMany(assembly => assembly.GetTypes())
+                .Where(type => typeof(IYuoUIShape).IsAssignableFrom(type) && !type.IsInterface && !type.IsAbstract)
+                .ToArray();
+        }
 
-    private System.Type[] GetShapeTypes()
-    {
-        return System.AppDomain.CurrentDomain.GetAssemblies()
-            .SelectMany(assembly => assembly.GetTypes())
-            .Where(type => typeof(IYuoUIShape).IsAssignableFrom(type) && !type.IsInterface && !type.IsAbstract)
-            .ToArray();
-    }
-
-    private void DrawSeparator()
-    {
-        EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
+        private void DrawSeparator()
+        {
+            EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
+        }
     }
 }

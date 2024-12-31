@@ -1,165 +1,169 @@
   using UnityEngine;
   using UnityEngine.UI;
 
-  [System.Serializable]
-  public class YuoUIShapeCircle : IYuoUIShape
+  namespace YuoTools
   {
-      [Range(3, 64)] public int SegmentCount = 32;        // 圆形段数
-      [Range(0, 1.0f)] public float InnerRadius = 0f;     // 内圆半径比例
-      [Range(0, 360)] public float Rotation = 0f;         // 旋转角度
-
-      public string ShapeName => "圆形";
-
-      private Vector2 mPivotVector;
-      private Vector2 mCenter;
-      private Vector4 mUv;
-      private float uvScaleX;
-      private float uvScaleY;
-
-      public bool UseOriginalUV = true;
-
-      public void Draw(VertexHelper vh, YuoImage image)
+      [System.Serializable]
+      public class YuoUIShapeCircle : IYuoUIShape
       {
-          vh.Clear();
-          ComputeUV(image);
-          var rect = image.rectTransform.rect;
+          [Range(3, 64)] public int SegmentCount = 32;        // 圆形段数
+          [Range(0, 1.0f)] public float InnerRadius = 0f;     // 内圆半径比例
+          [Range(0, 360)] public float Rotation = 0f;         // 旋转角度
+          public bool UseOriginalUV = true;                   // 是否使用原始UV
 
-          // 使用较小的边作为圆的直径
-          float radius = Mathf.Min(rect.width, rect.height) * 0.5f;
-          float innerRadius = radius * InnerRadius;
+          public string ShapeName => "圆形";
 
-          // 计算缩放比例，使圆形在矩形区域内居中
-          float scaleX = rect.width / (radius * 2);
-          float scaleY = rect.height / (radius * 2);
+          private Vector2 mPivotVector;
+          private Vector2 mCenter;
+          private Vector4 mUv;
+          private float uvScaleX;
+          private float uvScaleY;
 
-          // 如果是实心圆（没有内圆）
-          if (InnerRadius <= 0)
+          private void ComputeUV(YuoImage image)
           {
-              DrawSolidCircle(vh, radius, scaleX, scaleY, image.color);
-          }
-          // 如果是圆环
-          else
-          {
-              DrawRingCircle(vh, radius, innerRadius, scaleX, scaleY, image.color);
-          }
-      }
+              var rect = image.rectTransform.rect;
+              var pivot = image.rectTransform.pivot;
+              mCenter = new Vector2(rect.width * 0.5f, rect.height * 0.5f);
+              mPivotVector = new Vector2(rect.width * pivot.x, rect.height * pivot.y);
 
-      private void DrawSolidCircle(VertexHelper vh, float radius, float scaleX, float scaleY, Color color)
-      {
-          // 添加中心点
-          vh.AddVert(GetUIVertex(Vector2.zero, true, color));
-
-          // 转换旋转角度为弧度
-          float rotationRad = Rotation * Mathf.Deg2Rad;
-
-          // 添加圆周上的点
-          float anglePerSegment = (2f * Mathf.PI) / SegmentCount;
-          for (int i = 0; i <= SegmentCount; i++)
-          {
-              float angle = anglePerSegment * i + rotationRad; // 加上旋转角度
-              Vector2 point = new Vector2(
-                  Mathf.Cos(angle) * radius,
-                  Mathf.Sin(angle) * radius
-              );
-              // 应用缩放
-              point.x *= scaleX;
-              point.y *= scaleY;
-              vh.AddVert(GetUIVertex(point, false, color));
+              if (image.overrideSprite != null)
+              {
+                  mUv = UnityEngine.Sprites.DataUtility.GetOuterUV(image.overrideSprite);
+                  var inner = UnityEngine.Sprites.DataUtility.GetInnerUV(image.overrideSprite);
+                  uvScaleX = (inner.z - inner.x) / rect.width;
+                  uvScaleY = (inner.w - inner.y) / rect.height;
+              }
+              else
+              {
+                  mUv = new Vector4(0, 0, 1, 1);
+                  uvScaleX = 1f / rect.width;
+                  uvScaleY = 1f / rect.height;
+              }
           }
 
-          // 构建三角形
-          for (int i = 0; i < SegmentCount; i++)
+          public void Draw(VertexHelper vh, YuoImage image)
           {
-              vh.AddTriangle(0, i + 1, i + 2);
-          }
-      }
+              vh.Clear();
+              ComputeUV(image);
+              var rect = image.rectTransform.rect;
 
-      private void DrawRingCircle(VertexHelper vh, float outerRadius, float innerRadius, float scaleX, float scaleY, Color color)
-      {
-          float anglePerSegment = (2f * Mathf.PI) / SegmentCount;
-          float rotationRad = Rotation * Mathf.Deg2Rad; // 转换旋转角度为弧度
+              // 使用较小的边作为圆的直径
+              float radius = Mathf.Min(rect.width, rect.height) * 0.5f;
+              float innerRadius = radius * InnerRadius;
 
-          // 添加外圈和内圈的顶点
-          for (int i = 0; i <= SegmentCount; i++)
-          {
-              float angle = anglePerSegment * i + rotationRad; // 加上旋转角度
-              float cos = Mathf.Cos(angle);
-              float sin = Mathf.Sin(angle);
-
-              // 外圈顶点
-              Vector2 outerPoint = new Vector2(
-                  cos * outerRadius * scaleX,
-                  sin * outerRadius * scaleY
-              );
-              vh.AddVert(GetUIVertex(outerPoint, false, color));
-
-              // 内圈顶点
-              Vector2 innerPoint = new Vector2(
-                  cos * innerRadius * scaleX,
-                  sin * innerRadius * scaleY
-              );
-              vh.AddVert(GetUIVertex(innerPoint, false, color));
+              if (InnerRadius <= 0)
+              {
+                  DrawSolidCircle(vh, radius, image.color, rect);
+              }
+              else
+              {
+                  DrawRingCircle(vh, radius, innerRadius, image.color, rect);
+              }
           }
 
-          // 构建三角形
-          for (int i = 0; i < SegmentCount; i++)
+          private Vector2 GetUV(Vector2 position, Rect rect)
           {
-              int currentOuterVertex = i * 2;
-              int nextOuterVertex = (i + 1) * 2;
-              int currentInnerVertex = currentOuterVertex + 1;
-              int nextInnerVertex = nextOuterVertex + 1;
+              if (UseOriginalUV)
+              {
+                  // 考虑pivot偏移的UV计算
+                  float u = (position.x + mPivotVector.x) * uvScaleX;
+                  float v = (position.y + mPivotVector.y) * uvScaleY;
+                  return new Vector2(
+                      Mathf.Lerp(mUv.x, mUv.z, u),
+                      Mathf.Lerp(mUv.y, mUv.w, v)
+                  );
+              }
+              else
+              {
+                  // 将位置从圆形映射回方形，考虑pivot
+                  float x = (position.x + mPivotVector.x - mCenter.x) / mCenter.x;
+                  float y = (position.y + mPivotVector.y - mCenter.y) / mCenter.y;
+                  float magnitude = Mathf.Sqrt(x * x + y * y);
 
-              // 添加两个三角形形成一个四边形
-              vh.AddTriangle(currentOuterVertex, nextOuterVertex, currentInnerVertex);
-              vh.AddTriangle(currentInnerVertex, nextOuterVertex, nextInnerVertex);
+                  if (magnitude > 0)
+                  {
+                      // 保持方形边界的映射
+                      float scale = Mathf.Max(Mathf.Abs(x), Mathf.Abs(y));
+                      x = (x / scale * 0.5f + 0.5f);
+                      y = (y / scale * 0.5f + 0.5f);
+                  }
+                  else
+                  {
+                      x = y = 0.5f;
+                  }
+
+                  return new Vector2(
+                      Mathf.Lerp(mUv.x, mUv.z, x),
+                      Mathf.Lerp(mUv.y, mUv.w, y)
+                  );
+              }
           }
-      }
 
-      private void ComputeUV(YuoImage image)
-      {
-          var rect = image.rectTransform.rect;
-          var pivot = image.rectTransform.pivot;
-          float tw = rect.width;
-          float th = rect.height;
-          mPivotVector = new Vector2(tw * (0.5f - pivot.x), th * (0.5f - pivot.y));
-          mUv = image.overrideSprite != null
-              ? UnityEngine.Sprites.DataUtility.GetOuterUV(image.overrideSprite)
-              : Vector4.zero;
-          mCenter = new Vector2(mUv.x + mUv.z, mUv.y + mUv.w) * 0.5f;
-          uvScaleX = (mUv.z - mUv.x) / tw;
-          uvScaleY = (mUv.w - mUv.y) / th;
-      }
-
-      private UIVertex GetUIVertex(Vector2 point, bool isCenter, Color color)
-      {
-          return new UIVertex
+          private void DrawSolidCircle(VertexHelper vh, float radius, Color color, Rect rect)
           {
-              color = color,
-              position = point + mPivotVector,
-              uv0 = UseOriginalUV || isCenter
-                  ? new Vector2(point.x * uvScaleX, point.y * uvScaleY) + mCenter
-                  : Vector2.zero
-          };
-      }
+              // 添加中心点
+              vh.AddVert(GetUIVertex(Vector2.zero, color));
 
-      public void SetSegmentCount(int count)
-      {
-          SegmentCount = Mathf.Clamp(count, 3, 64);
-      }
+              float rotationRad = Rotation * Mathf.Deg2Rad;
+              float anglePerSegment = (2f * Mathf.PI) / SegmentCount;
 
-      public void SetInnerRadius(float radius)
-      {
-          InnerRadius = Mathf.Clamp01(radius);
-      }
+              for (int i = 0; i <= SegmentCount; i++)
+              {
+                  float angle = anglePerSegment * i + rotationRad;
+                  Vector2 point = new Vector2(
+                      Mathf.Cos(angle) * radius,
+                      Mathf.Sin(angle) * radius
+                  );
+                  vh.AddVert(GetUIVertex(point, color));
+              }
 
-      public void SetRotation(float angle)
-      {
-          Rotation = angle % 360f;
-      }
+              for (int i = 0; i < SegmentCount; i++)
+              {
+                  vh.AddTriangle(0, i + 1, i + 2);
+              }
+          }
 
-      // 增加旋转的辅助方法
-      public void Rotate(float deltaAngle)
-      {
-          Rotation = (Rotation + deltaAngle) % 360f;
+          private void DrawRingCircle(VertexHelper vh, float outerRadius, float innerRadius, Color color, Rect rect)
+          {
+              float rotationRad = Rotation * Mathf.Deg2Rad;
+              float anglePerSegment = (2f * Mathf.PI) / SegmentCount;
+
+              for (int i = 0; i <= SegmentCount; i++)
+              {
+                  float angle = anglePerSegment * i + rotationRad;
+                  float cos = Mathf.Cos(angle);
+                  float sin = Mathf.Sin(angle);
+
+                  // 外圈顶点
+                  Vector2 outerPoint = new Vector2(cos * outerRadius, sin * outerRadius);
+                  vh.AddVert(GetUIVertex(outerPoint, color));
+
+                  // 内圈顶点
+                  Vector2 innerPoint = new Vector2(cos * innerRadius, sin * innerRadius);
+                  vh.AddVert(GetUIVertex(innerPoint, color));
+              }
+
+              for (int i = 0; i < SegmentCount; i++)
+              {
+                  int currentOuterVertex = i * 2;
+                  int nextOuterVertex = (i + 1) * 2;
+                  int currentInnerVertex = currentOuterVertex + 1;
+                  int nextInnerVertex = nextOuterVertex + 1;
+
+                  vh.AddTriangle(currentOuterVertex, nextOuterVertex, currentInnerVertex);
+                  vh.AddTriangle(currentInnerVertex, nextOuterVertex, nextInnerVertex);
+              }
+          }
+
+          private UIVertex GetUIVertex(Vector2 point, Color color)
+          {
+              var uv = GetUV(point, new Rect(-mCenter.x, -mCenter.y, mCenter.x * 2, mCenter.y * 2));
+              return new UIVertex
+              {
+                  position = (Vector3)point,
+                  color = color,
+                  uv0 = uv
+              };
+          }
       }
   }

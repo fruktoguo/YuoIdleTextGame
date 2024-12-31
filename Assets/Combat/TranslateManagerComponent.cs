@@ -83,7 +83,7 @@ namespace YuoTools.Extend
     {
         public override string Group => "Translate";
 
-        protected override void Run(TranslateManagerComponent component)
+        public override void Run(TranslateManagerComponent component)
         {
             component.LoadBasePathFile();
             component.DataOfEnum.Clear();
@@ -160,7 +160,7 @@ namespace YuoTools.Extend
     //destroy
     public class TranslateManagerDestroySystem : YuoSystem<TranslateManagerComponent>, IExitGame
     {
-        protected override void Run(TranslateManagerComponent component)
+        public override void Run(TranslateManagerComponent component)
         {
             component.Save();
         }

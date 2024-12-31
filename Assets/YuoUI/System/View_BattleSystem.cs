@@ -14,7 +14,7 @@ namespace YuoTools.UI
     {
         public override string Group => "UI/Battle";
 
-        protected override void Run(View_BattleComponent view)
+        public override void Run(View_BattleComponent view)
         {
             view.FindAll();
         }
@@ -24,7 +24,7 @@ namespace YuoTools.UI
     {
         public override string Group => "UI/Battle";
 
-        protected override async void Run(View_BattleComponent view)
+        public override async void Run(View_BattleComponent view)
         {
             var role1 = view.AddChildAndInstantiate(view.Child_Role);
             role1.rectTransform.Hide();
@@ -71,7 +71,7 @@ namespace YuoTools.UI
     {
         public override string Group => "UI/Battle";
 
-        protected override void Run(View_BattleComponent view)
+        public override void Run(View_BattleComponent view)
         {
             view.TextMeshProUGUI_Role1.text = view.role1.totalDamage.ToString();
             view.TextMeshProUGUI_Role2.text = view.role2.totalDamage.ToString();

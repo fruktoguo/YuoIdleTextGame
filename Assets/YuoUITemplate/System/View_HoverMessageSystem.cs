@@ -31,7 +31,7 @@ namespace YuoTools.UI
     {
         public override string Group => "UI/HoverMessage";
 
-        protected override void Run(View_HoverMessageComponent view)
+        public override void Run(View_HoverMessageComponent view)
         {
             view.FindAll();
             view.messagePool =
@@ -56,7 +56,7 @@ namespace YuoTools.UI
     {
         private int a = 1;
 
-        protected override void Run(View_HoverMessageComponent view)
+        public override void Run(View_HoverMessageComponent view)
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {

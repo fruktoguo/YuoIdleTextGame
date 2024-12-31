@@ -71,7 +71,7 @@ namespace YuoTools.Extend.PhysicalCallback
     {
         public override string Group => SystemGroupConst.CallBack;
 
-        protected override void Run(PhysicalCallbackTrigger2DComponent component, TransformComponent tran)
+        public override void Run(PhysicalCallbackTrigger2DComponent component, TransformComponent tran)
         {
             if (RunType == SystemTagType.Awake)
             {

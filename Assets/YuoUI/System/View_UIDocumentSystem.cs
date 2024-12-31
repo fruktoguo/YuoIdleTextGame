@@ -15,7 +15,7 @@ namespace YuoTools.UI
     {
         public override string Group => "UI/UIDocument";
 
-        protected override async void Run(View_UIDocumentComponent view)
+        public override async void Run(View_UIDocumentComponent view)
         {
             view.FindAll();
 
@@ -42,7 +42,7 @@ namespace YuoTools.UI
     {
         public override string Group => "UI/UIDocument";
 
-        protected override void Run(View_UIDocumentComponent view)
+        public override void Run(View_UIDocumentComponent view)
         {
         }
     }
@@ -51,7 +51,7 @@ namespace YuoTools.UI
     {
         public override string Group => "UI/UIDocument";
 
-        protected override void Run(View_UIDocumentComponent view)
+        public override void Run(View_UIDocumentComponent view)
         {
             view.MainUIDocument.rootVisualElement.RemoveFromClassList("show");
         }

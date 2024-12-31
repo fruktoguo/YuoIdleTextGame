@@ -249,7 +249,7 @@ namespace YuoTools.Extend
     {
         public override string Group => SystemGroupConst.Main;
 
-        protected override void Run(ConfigHelper component)
+        public override void Run(ConfigHelper component)
         {
             if (component.isChange)
             {

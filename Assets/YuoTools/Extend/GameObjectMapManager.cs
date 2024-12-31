@@ -67,7 +67,7 @@ namespace YuoTools.Extend
 
     public class GameObjectMapTagComponentDestroySystem : YuoSystem<GameObjectMapTagComponent>, IAwake, IDestroy
     {
-        protected override void Run(GameObjectMapTagComponent go)
+        public override void Run(GameObjectMapTagComponent go)
         {
             if (RunType == SystemTagType.Awake)
             {

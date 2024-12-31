@@ -60,7 +60,7 @@ namespace YuoTools.UI
     {
         public override string Group => "UI/Role";
 
-        protected override void Run(View_RoleComponent view)
+        public override void Run(View_RoleComponent view)
         {
             view.FindAll();
 
@@ -80,7 +80,7 @@ namespace YuoTools.UI
     {
         public override string Group => "UI/Role";
 
-        protected override void Run(View_RoleComponent view)
+        public override void Run(View_RoleComponent view)
         {
         }
     }
@@ -89,7 +89,7 @@ namespace YuoTools.UI
     {
         public override string Group => "UI/Role";
 
-        protected override void Run(View_RoleComponent view)
+        public override void Run(View_RoleComponent view)
         {
             if (view.Target != null)
             {
@@ -106,7 +106,7 @@ namespace YuoTools.UI
     {
         public override string Group => "UI/Role";
 
-        protected override void Run(View_RoleComponent view, PhysicalCallback2DComponent callback)
+        public override void Run(View_RoleComponent view, PhysicalCallback2DComponent callback)
         {
             var collider = callback.eventData;
 

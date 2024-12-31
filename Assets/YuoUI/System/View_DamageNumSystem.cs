@@ -23,7 +23,7 @@ namespace YuoTools.UI
     {
         public override string Group => "UI/DamageNum";
 
-        protected override void Run(View_DamageNumComponent view)
+        public override void Run(View_DamageNumComponent view)
         {
             view.FindAll();
             view.numPool = new ObjectPool<View_NumComponent>(() => view.AddChildAndInstantiate(view.Child_Num),
@@ -35,7 +35,7 @@ namespace YuoTools.UI
     {
         public override string Group => "UI/DamageNum";
 
-        protected override void Run(View_DamageNumComponent view)
+        public override void Run(View_DamageNumComponent view)
         {
         }
     }
@@ -44,7 +44,7 @@ namespace YuoTools.UI
     {
         public override string Group => "UI/DamageNum";
 
-        protected override void Run(View_DamageNumComponent view)
+        public override void Run(View_DamageNumComponent view)
         {
         }
     }

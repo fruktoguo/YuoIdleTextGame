@@ -93,10 +93,11 @@ namespace Combat.Role
 
     public class RoleDataAwakeSystem : YuoSystem<RoleDataComponent>, IAwake
     {
-        protected override void Run(RoleDataComponent component)
+        public override void Run(RoleDataComponent component)
         {
-            component.Entity.AddComponent<EntitySelectComponent, GameObject>(component.GetComponent<RoleComponent>()
-                .transform.gameObject);
+            var role = component.GetComponent<RoleComponent>();
+            component.Entity.AddComponent<EntitySelectComponent, GameObject>(
+                role.transform.gameObject);
 
             void OnMaxHpOnValueChange(double oldHp, double maxHp)
             {
@@ -115,6 +116,15 @@ namespace Combat.Role
             }
 
             component.MaxHp.OnValueChange += OnMaxHpOnValueChange;
+
+            var hpBar = View_FollowBarComponent.GetView().Follow(role.transform,
+                () => (float)component.MaxHp.Value, () => (float)component.Hp);
+            hpBar.MainYuoBar.textFormat = "f0";
+            var mpBar = View_FollowBarComponent.GetView().Follow(role.transform,
+                () => (float)component.MaxMana.Value, () => (float)component.Mana);
+            mpBar.MainYuoBar.textFormat = "f0";
+            hpBar.Open();
+            mpBar.Open();
         }
     }
 }

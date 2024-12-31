@@ -24,7 +24,7 @@ namespace YuoTools.Extend
             }
         }
 
-        protected override void Run(SceneComponent component)
+        public override void Run(SceneComponent component)
         {
             Main.Ecs.YuoLog.Open(new UnityEngineLog());
 
@@ -77,7 +77,8 @@ namespace YuoTools.Extend
     public class SceneDestroySystem : YuoSystem<SceneComponent>, IDestroy
     {
         public override string Group => SystemGroupConst.Main;
-        protected override void Run(SceneComponent component)
+
+        public override void Run(SceneComponent component)
         {
             YuoWorld.Instance.AllScenes.Remove(component.Entity);
         }

@@ -1,4 +1,5 @@
-﻿using DG.Tweening;
+﻿using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Pool;
 using YuoTools.Extend.Helper;
@@ -11,13 +12,13 @@ namespace YuoTools.UI
         public ObjectPool<View_FollowBarItemComponent> barPool;
 
         public DicList<Transform, View_FollowBarItemComponent> itemDic = new();
+        public float Space = 10;
 
-        public float offset;
-
-        public View_FollowBarItemComponent Follow(Transform target)
+        public View_FollowBarItemComponent Follow(Transform target,FloatAction maxValueGetter, FloatAction valueGetter)
         {
             var item = barPool.Get();
-
+            item.ValueGetter = valueGetter;
+            item.MaxValueGetter = maxValueGetter;
             itemDic[target].Add(item);
             return item;
         }
@@ -41,7 +42,7 @@ namespace YuoTools.UI
                     value.Clear();
                 }
             }
-            
+
             //移除空的字典
             itemDic.RemoveLinq(x => x.Value.Count == 0);
         }
@@ -51,30 +52,34 @@ namespace YuoTools.UI
     {
         public override string Group => "UI/FollowBar";
 
-        protected override void Run(View_FollowBarComponent view)
+        public override void Run(View_FollowBarComponent view)
         {
             view.FindAll();
             view.barPool = new ObjectPool<View_FollowBarItemComponent>(
                 () => view.AddChildAndInstantiate(view.Child_FollowBarItem),
-                actionOnRelease: item => item.rectTransform.Hide(),
-                actionOnGet: item => item.rectTransform.Show(), actionOnDestroy: item => item.Entity.Destroy());
+                actionOnRelease: item =>
+                {
+                    item.RunSystem<IUIClose>();
+                    item.rectTransform.Hide();
+                },
+                actionOnGet: item => { }, actionOnDestroy: item => item.Entity.Destroy());
         }
     }
-    
+
     public class ViewFollowBarUpdateSystem : YuoSystem<View_FollowBarComponent>, IUIUpdate
     {
         public override string Group => "UI/FollowBar";
 
-        protected override void Run(View_FollowBarComponent view)
+        public override void Run(View_FollowBarComponent view)
         {
             foreach (var (tran, barList) in view.itemDic)
             {
                 float offset = 0;
                 foreach (var bar in barList)
                 {
-                    bar.rectTransform.position = tran.position;
-                    bar.rectTransform.AddAnchoredPosY(offset);
-                    offset -= bar.rectTransform.rect.height + view.offset;
+                    bar.targetPos = bar.rectTransform.parent.InverseTransformPoint(tran.position).xy() +
+                                    Vector2.up * offset;
+                    offset -= bar.rectTransform.rect.height + view.Space;
                 }
             }
         }

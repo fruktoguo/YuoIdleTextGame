@@ -66,7 +66,7 @@ namespace YuoTools.UI
     {
         public override string Group => SystemGroupConst.Input;
 
-        protected override void Run(YuoUIDragManager component)
+        public override void Run(YuoUIDragManager component)
         {
             if (component.DragItem != null)
             {

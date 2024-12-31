@@ -53,7 +53,8 @@ namespace YuoTools.Extend
     public class ComponentManagerSystem : YuoSystem<ComponentManager>, IAwake, IExitGame
     {
         public override string Group => SystemGroupConst.Main;
-        protected override void Run(ComponentManager component)
+
+        public override void Run(ComponentManager component)
         {
             if (RunType == SystemTagType.ExitGame)
             {

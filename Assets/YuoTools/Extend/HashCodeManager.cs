@@ -42,7 +42,8 @@ public class HashCodeManager : YuoComponentInstance<HashCodeManager>
 public class HashCodeManagerAwakeSystem : YuoSystem<HashCodeManager>, IAwake
 {
     public override string Group => SystemGroupConst.Main;
-    protected override void Run(HashCodeManager component)
+
+    public override void Run(HashCodeManager component)
     {
         var data = Resources.Load<HashCodeData>("HashCodeData");
         if (data != null)

@@ -61,7 +61,7 @@ namespace YuoTools.Extend.PhysicalCallback
     public class PhysicalCallback2DComponentStartSystem : YuoSystem<PhysicalCallback2DComponent, TransformComponent>,
         IAwake, IDestroy
     {
-        protected override void Run(PhysicalCallback2DComponent component, TransformComponent tran)
+        public override void Run(PhysicalCallback2DComponent component, TransformComponent tran)
         {
             if (RunType == SystemTagType.Awake)
             {

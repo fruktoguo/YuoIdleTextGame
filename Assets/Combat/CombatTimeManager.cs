@@ -16,7 +16,7 @@ public class CombatTimeComponent : YuoComponent
 
 public class CombatTimeManagerUpdateSystem : YuoSystem<CombatTimeComponent,RoleComponent>, IUpdate
 {
-    protected override void Run(CombatTimeComponent time, RoleComponent role)
+    public override void Run(CombatTimeComponent time, RoleComponent role)
     {
         throw new System.NotImplementedException();
     }

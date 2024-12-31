@@ -7,7 +7,7 @@ namespace YuoTools.Main.Ecs
     {
         public override string Group => SystemGroupConst.Main;
 
-        protected override void Run(EntityComponent component)
+        public override void Run(EntityComponent component)
         {
         }
     }
@@ -67,7 +67,7 @@ namespace YuoTools.Main.Ecs
             base.Clear();
         }
 
-        protected abstract void Run(T1 component);
+        public abstract void Run(T1 component);
     }
 
     public abstract class YuoSystem<T1, T2> : SystemBase where T1 : YuoComponent where T2 : YuoComponent
@@ -155,7 +155,7 @@ namespace YuoTools.Main.Ecs
             base.Clear();
         }
 
-        protected abstract void Run(T1 component1, T2 component2);
+        public abstract void Run(T1 component1, T2 component2);
     }
 
     public abstract class YuoSystem<T1, T2, T3> : SystemBase where T1 : YuoComponent
@@ -258,7 +258,7 @@ namespace YuoTools.Main.Ecs
             base.Clear();
         }
 
-        protected abstract void Run(T1 component1, T2 component2, T3 component3);
+        public abstract void Run(T1 component1, T2 component2, T3 component3);
     }
 
     public abstract class YuoSystem<T1, T2, T3, T4> : SystemBase where T1 : YuoComponent
@@ -379,7 +379,7 @@ namespace YuoTools.Main.Ecs
             base.Clear();
         }
 
-        protected abstract void Run(T1 component1, T2 component2, T3 component3, T4 component4);
+        public abstract void Run(T1 component1, T2 component2, T3 component3, T4 component4);
     }
 
     public abstract class YuoSystem<T1, T2, T3, T4, T5> : SystemBase where T1 : YuoComponent
@@ -520,7 +520,7 @@ namespace YuoTools.Main.Ecs
             Entities.Clear();
         }
 
-        protected abstract void Run(T1 component1, T2 component2, T3 component3, T4 component4, T5 component5);
+        public abstract void Run(T1 component1, T2 component2, T3 component3, T4 component4, T5 component5);
     }
 
     /// <summary>
@@ -627,7 +627,7 @@ namespace YuoTools.Main.Ecs
             Entities.Clear();
         }
 
-        protected abstract void Run(TB baseComponent);
+        public abstract void Run(TB baseComponent);
     }
 
     public abstract class YuoSystemOfBase<TB, T2> : SystemBaseBase where TB : YuoComponent where T2 : YuoComponent
@@ -746,6 +746,6 @@ namespace YuoTools.Main.Ecs
             }
         }
 
-        protected abstract void Run(TB baseComponent, T2 component2);
+        public abstract void Run(TB baseComponent, T2 component2);
     }
 }

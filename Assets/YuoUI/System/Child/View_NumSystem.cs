@@ -29,7 +29,7 @@ namespace YuoTools.UI
     {
         public override string Group => "UI/Num";
 
-        protected override void Run(View_NumComponent view)
+        public override void Run(View_NumComponent view)
         {
             view.FindAll();
         }
@@ -39,7 +39,7 @@ namespace YuoTools.UI
     {
         public override string Group => "UI/Num";
 
-        protected override void Run(View_NumComponent view)
+        public override void Run(View_NumComponent view)
         {
             if (RunType == SystemTagType.UIOpen)
             {
@@ -57,7 +57,7 @@ namespace YuoTools.UI
     {
         public override string Group => "UI/Num";
 
-        protected override void Run(View_NumComponent view)
+        public override void Run(View_NumComponent view)
         {
             if (view.IsShow)
             {

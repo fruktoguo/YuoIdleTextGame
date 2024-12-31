@@ -485,7 +485,8 @@ namespace YuoTools.Main.Ecs
     public class YuoSaveLoadSystem : YuoSystem<YuoSaveComponent>, IAwake
     {
         public override string Group => SystemGroupConst.Save;
-        protected override void Run(YuoSaveComponent component)
+
+        public override void Run(YuoSaveComponent component)
         {
             component.Init();
             component.savePath = $"{Application.persistentDataPath}".Log();
@@ -498,7 +499,8 @@ namespace YuoTools.Main.Ecs
     public class YuoSaveSaveSystem : YuoSystem<YuoSaveComponent>, IExitGame
     {
         public override string Group => SystemGroupConst.Save;
-        protected override void Run(YuoSaveComponent component)
+
+        public override void Run(YuoSaveComponent component)
         {
             component.SaveDataOfType(SaveType.Config);
             component.SaveDataOfType(SaveType.SettingInfo);

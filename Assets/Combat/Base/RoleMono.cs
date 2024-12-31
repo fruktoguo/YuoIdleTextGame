@@ -17,10 +17,4 @@ public class RoleMono : MonoBehaviour
 
         var anima = role.Entity.AddComponent<RoleAttackAnimator, Transform>(transform);
     }
-
-    [Button]
-    public void TestAddBar()
-    {
-        var bar = View_FollowBarComponent.GetView().Follow(transform);
-    }
 }

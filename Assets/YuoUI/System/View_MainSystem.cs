@@ -73,7 +73,7 @@ namespace YuoTools.UI
     {
         public override string Group => "UI/Main";
 
-        protected override async void Run(View_MainComponent view)
+        public override async void Run(View_MainComponent view)
         {
             view.FindAll();
             //关闭窗口的事件注册,名字不同请自行更
@@ -119,7 +119,7 @@ namespace YuoTools.UI
     {
         public override string Group => "UI/Main";
 
-        protected override void Run(View_MainComponent view)
+        public override void Run(View_MainComponent view)
         {
             YuoViewLogHelper.OnLog.AddListener(view.Log);
         }
@@ -129,7 +129,7 @@ namespace YuoTools.UI
     {
         public override string Group => "UI/Main";
 
-        protected override void Run(View_MainComponent view)
+        public override void Run(View_MainComponent view)
         {
             YuoViewLogHelper.OnLog.RemoveListener(view.Log);
         }

@@ -90,7 +90,7 @@ namespace YuoTools.UI
     {
         public override string Group => "UI/TipWindow";
 
-        protected override void Run(View_TipWindowComponent view)
+        public override void Run(View_TipWindowComponent view)
         {
             view.FindAll();
         }

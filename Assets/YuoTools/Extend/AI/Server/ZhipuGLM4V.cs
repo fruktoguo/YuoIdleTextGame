@@ -17,7 +17,7 @@ namespace YuoTools.Extend.AI
         public static string ApiKey = "";
         
         // private static string Model => "glm-4v";
-        private static string Model => "glm-4v-plus";
+        private static string Model => "glm-4v-flash";
 
         public static async Task<string> RecognizeImageFromUrl(string imageUrl, string prompt = "请描述这个图片",
             int maxRetries = 3)

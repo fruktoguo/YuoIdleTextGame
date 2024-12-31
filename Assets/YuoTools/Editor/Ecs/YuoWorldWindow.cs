@@ -444,6 +444,15 @@ namespace YuoTools.Editor.Ecs
 
         public class SystemView
         {
+            [PropertyOrder(-99)]
+            [ShowInInspector]
+            [LabelText("系统启用")]
+            public bool Enabled
+            {
+                get => System.Enabled;
+                set => System.Enabled = value;
+            }
+
             [HorizontalGroup()]
             [ListDrawerSettings(ShowFoldout = true, HideAddButton = true, HideRemoveButton = true,
                 DraggableItems = false,

@@ -149,7 +149,8 @@ namespace YuoAnima
     public class YuoAnima2DUpdateSystem : YuoSystem<YuoAnima2DComponent>, IUpdate
     {
         public override string Group => SystemGroupConst.Anima;
-        protected override void Run(YuoAnima2DComponent anima)
+
+        public override void Run(YuoAnima2DComponent anima)
         {
             anima.Animator.Update();
         }

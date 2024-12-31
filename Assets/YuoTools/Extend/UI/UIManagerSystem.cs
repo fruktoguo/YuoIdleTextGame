@@ -402,7 +402,7 @@ namespace YuoTools.UI
     {
         public override string Group => SystemGroupConst.MainUI;
 
-        protected override void Run(UIManagerComponent component)
+        public override void Run(UIManagerComponent component)
         {
             if (component != UIManagerComponent.Get) return;
             if (component.Transform == null)
@@ -441,7 +441,7 @@ namespace YuoTools.UI
     {
         public override string Group => SystemGroupConst.MainUI;
 
-        protected override void Run(UIComponent component, UIActiveComponent _)
+        public override void Run(UIComponent component, UIActiveComponent _)
         {
             // component.SetWindowLayer(YuoWorld.Main.GetComponent<UIManagerComponent>().WindowCount);
             UIManagerComponent.ResetWindowLayer(component);
@@ -454,7 +454,7 @@ namespace YuoTools.UI
     {
         public override string Group => SystemGroupConst.MainUI;
 
-        protected override void Run(UIComponent baseComponent)
+        public override void Run(UIComponent baseComponent)
         {
             if (baseComponent.rectTransform != null)
             {
@@ -472,7 +472,7 @@ namespace YuoTools.UI
     {
         public override string Group => SystemGroupConst.MainUI;
 
-        protected override void Run(UIManagerComponent component)
+        public override void Run(UIManagerComponent component)
         {
         }
     }
@@ -489,7 +489,7 @@ namespace YuoTools.UI
     {
         public override string Group => SystemGroupConst.MainUI;
 
-        protected override void Run(UIAutoExitComponent component)
+        public override void Run(UIAutoExitComponent component)
         {
             component.Entity.Destroy();
         }
@@ -499,7 +499,7 @@ namespace YuoTools.UI
     {
         public override string Group => SystemGroupConst.MainUI;
 
-        protected override void Run(UIComponent baseComponent)
+        public override void Run(UIComponent baseComponent)
         {
             if (baseComponent.rectTransform != null)
             {
@@ -512,7 +512,7 @@ namespace YuoTools.UI
     {
         public override string Group => SystemGroupConst.MainUI;
 
-        protected override void Run(UIManagerComponent manager)
+        public override void Run(UIManagerComponent manager)
         {
             foreach (var uiComponent in manager.GetOpenItems())
             {

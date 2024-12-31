@@ -253,7 +253,7 @@ namespace YuoTools.Main.Ecs
     {
         public override string Group => "BuffManager";
 
-        protected override void Run(BuffManagerComponent component)
+        public override void Run(BuffManagerComponent component)
         {
             var types = ReflexHelper.GetTypesOfBase<BuffComponent>();
             component.buffTypes.Clear();
@@ -268,7 +268,7 @@ namespace YuoTools.Main.Ecs
     {
         public override string Group => "BuffManager";
 
-        protected override void Run(BuffManagerComponent component)
+        public override void Run(BuffManagerComponent component)
         {
             component.Update();
         }

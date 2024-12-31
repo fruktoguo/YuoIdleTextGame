@@ -58,7 +58,7 @@ namespace YuoTools.UI
 
     public class ViewItemComponentUpdateSystem : YuoSystem<View_ItemComponent>, IUIUpdate
     {
-        protected override void Run(View_ItemComponent view)
+        public override void Run(View_ItemComponent view)
         {
             if (view.countTimer > 0)
             {

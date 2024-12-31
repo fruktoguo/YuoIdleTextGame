@@ -118,13 +118,15 @@ namespace YuoTools.Main.Ecs
 
         internal bool m_Run(YuoEntity entity)
         {
-            if (!Enabled || !Entities.Contains(entity)) return false;
+            if (!Enabled ) return false;
+            var entityIndex = Entities.IndexOf(entity);
+            if (entityIndex == -1) return false;
 #if UNITY_EDITOR
             StartClock();
 #endif
             if (YuoWorld.CloseSystemTry)
             {
-                m_Run(Entities.IndexOf(entity));
+                m_Run(entityIndex);
 #if UNITY_EDITOR
                 StopClock();
 #endif
@@ -133,7 +135,7 @@ namespace YuoTools.Main.Ecs
 
             try
             {
-                m_Run(Entities.IndexOf(entity));
+                m_Run(entityIndex);
             }
             catch (Exception e)
             {

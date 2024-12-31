@@ -57,7 +57,7 @@ namespace Combat.Role
 
         public override string Name => "测试攻击系统";
 
-        protected override void Run(AttackAIComponent atk, RoleComponent role,
+        public override void Run(AttackAIComponent atk, RoleComponent role,
             RoleDataComponent data,
             ValueComponent value)
         {
@@ -71,7 +71,7 @@ namespace Combat.Role
     {
         private static readonly int atkSpeed = Animator.StringToHash("AtkSpeed");
 
-        protected override void Run(AttackAIComponent atk, RoleComponent role,
+        public override void Run(AttackAIComponent atk, RoleComponent role,
             RoleDataComponent data,
             ValueComponent value)
         {
@@ -85,7 +85,7 @@ namespace Combat.Role
     {
         public override string Group => "Mana";
 
-        protected override void Run(RoleComponent role, RoleDataComponent data, ValueComponent value)
+        public override void Run(RoleComponent role, RoleDataComponent data, ValueComponent value)
         {
             if (data.Mana >= data.MaxMana.Value)
             {

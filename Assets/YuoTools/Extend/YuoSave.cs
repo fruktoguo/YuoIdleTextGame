@@ -568,7 +568,7 @@ namespace YuoTools.Main.Ecs
     {
         public override string Group => SystemGroupConst.Save;
 
-        protected override void Run(SaveManagerComponent component)
+        public override void Run(SaveManagerComponent component)
         {
             component.Init();
             component.savePath = $"{Application.persistentDataPath}".Log();
@@ -580,7 +580,7 @@ namespace YuoTools.Main.Ecs
     {
         public override string Group => SystemGroupConst.Save;
 
-        protected override void Run(SaveManagerComponent component)
+        public override void Run(SaveManagerComponent component)
         {
             component.SaveGroup(SaveGroup.Config);
         }

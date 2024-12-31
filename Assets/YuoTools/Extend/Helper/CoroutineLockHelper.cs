@@ -42,7 +42,7 @@ namespace YuoTools.Extend.Helper
     {
         public override string Group => SystemGroupConst.Main;
 
-        protected override void Run(CoroutineLockHelper self)
+        public override void Run(CoroutineLockHelper self)
         {
             self.Entity.EntityName = "CoroutineLockComponent";
         }
@@ -53,7 +53,7 @@ namespace YuoTools.Extend.Helper
         private int index;
         public override string Group => SystemGroupConst.Main;
 
-        protected override void Run(CoroutineLockItem self)
+        public override void Run(CoroutineLockItem self)
         {
             self.AddComponent<CoroutineLockQueue>();
             self.Entity.EntityName = $"CoroutineLock_{index++}";
@@ -68,7 +68,7 @@ namespace YuoTools.Extend.Helper
     {
         public override string Group => SystemGroupConst.Main;
 
-        protected override void Run(CoroutineLock self)
+        public override void Run(CoroutineLock self)
         {
             // Debug.Log($"销毁了 {self.Entity.EntityName}");
             self.Entity.Parent.GetComponent<CoroutineLockQueue>().Execute();

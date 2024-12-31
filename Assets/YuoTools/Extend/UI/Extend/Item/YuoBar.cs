@@ -19,22 +19,33 @@ public class YuoBar : MonoBehaviour
     [PropertyRange(nameof(minValue), nameof(maxValue))]
     [OnValueChanged(nameof(OnSliderValueChanged))]
     [LabelText("当前值")]
-    public float sliderValue;
+    [SerializeField]
+    private float sliderValue;
+
+    public float SliderValue
+    {
+        get => sliderValue;
+        set
+        {
+            sliderValue = Mathf.Clamp(value, minValue, maxValue);
+            OnSliderValueChanged(sliderValue);
+        }
+    }
 
     [BoxGroup("Display Settings")] [LabelText("文本格式")] [Tooltip("使用标准字符串格式。例如：\nf2 - 保留2位小数\np0 - 百分比格式\nn0 - 数字格式")]
     public string textFormat = "f2";
 
     [FoldoutGroup("References")] [Required] [SerializeField]
-    private Image background;
+    public Image background;
 
     [FoldoutGroup("References")] [Required] [SerializeField]
-    private Image bar;
+    public Image bar;
 
     [FoldoutGroup("References")] [Required] [SerializeField]
-    private TextMeshProUGUI text;
+    public TextMeshProUGUI text;
 
     [FoldoutGroup("References")] [ReadOnly] [SerializeField]
-    private RectTransform rectTransform;
+    public RectTransform rectTransform;
 
     private void OnValidate()
     {

@@ -297,7 +297,8 @@ namespace YuoAnima
     public class YuoAnimaUpdateSystem : YuoSystem<YuoAnimaComponent>, IFixedUpdate, IUpdate
     {
         public override string Group => SystemGroupConst.Anima;
-        protected override void Run(YuoAnimaComponent component)
+
+        public override void Run(YuoAnimaComponent component)
         {
             if (component.isUpdateMode)
                 component.Update();

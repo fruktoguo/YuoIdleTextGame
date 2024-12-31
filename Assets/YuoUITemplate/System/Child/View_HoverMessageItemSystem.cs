@@ -12,7 +12,7 @@ namespace YuoTools.UI
     {
         public override string Group => "UI/HoverMessageItem";
 
-        protected override void Run(View_HoverMessageItemComponent view)
+        public override void Run(View_HoverMessageItemComponent view)
         {
             view.FindAll();
             var anima = view.AddComponent<UIAnimaComponent>();
@@ -24,7 +24,7 @@ namespace YuoTools.UI
     {
         public override string Group => "UI/HoverMessageItem";
 
-        protected override void Run(View_HoverMessageItemComponent view)
+        public override void Run(View_HoverMessageItemComponent view)
         {
             view.rectTransform.SetSizeX(800);
         }
@@ -35,7 +35,7 @@ namespace YuoTools.UI
     {
         public override string Group => "UI/HoverMessageItem";
 
-        protected override void Run(View_HoverMessageItemComponent view, UIAnimaComponent anima)
+        public override void Run(View_HoverMessageItemComponent view, UIAnimaComponent anima)
         {
             0f.To(1, anima.AnimaDuration, x =>
             {
@@ -50,7 +50,7 @@ namespace YuoTools.UI
     {
         public override string Group => "UI/HoverMessageItem";
 
-        protected override void Run(View_HoverMessageItemComponent view, UIAnimaComponent anima)
+        public override void Run(View_HoverMessageItemComponent view, UIAnimaComponent anima)
         {
             1f.To(0, anima.AnimaDuration, x =>
             {

@@ -101,7 +101,7 @@ namespace Manager.Tool
 
     public class LanguageToolsAwakeSystem : YuoSystem<LanguageTools>, IAwake
     {
-        protected override void Run(LanguageTools component)
+        public override void Run(LanguageTools component)
         {
             component.InitTable();
         }

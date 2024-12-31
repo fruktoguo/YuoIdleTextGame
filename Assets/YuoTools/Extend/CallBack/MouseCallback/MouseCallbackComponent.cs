@@ -19,7 +19,8 @@ namespace YuoTools.Extend.MouseCallback
     public class MouseCallbackComponentStartSystem : YuoSystem<MouseCallbackComponent>, IStart
     {
         public override string Group => SystemGroupConst.CallBack;
-        protected override void Run(MouseCallbackComponent component)
+
+        public override void Run(MouseCallbackComponent component)
         {
             //检查是否有鼠标回调组件
             if (component.transform.GetComponent<MouseCallback>() == null)
@@ -33,7 +34,8 @@ namespace YuoTools.Extend.MouseCallback
     public class MouseCallbackComponentDestroySystem : YuoSystem<MouseCallbackComponent>, IDestroy
     {
         public override string Group => SystemGroupConst.CallBack;
-        protected override void Run(MouseCallbackComponent component)
+
+        public override void Run(MouseCallbackComponent component)
         {
             component.mouseCallback.TryDestroy();
         }

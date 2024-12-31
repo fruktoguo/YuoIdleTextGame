@@ -15,7 +15,7 @@ namespace YuoTools.UI
     {
         public override string Group => "UI/Property";
 
-        protected override void Run(View_PropertyComponent view)
+        public override void Run(View_PropertyComponent view)
         {
             view.FindAll();
         }
@@ -23,7 +23,7 @@ namespace YuoTools.UI
 
     public class ViewPropertyUpdateSystem : YuoSystem<View_PropertyComponent>, IUIUpdate
     {
-        protected override void Run(View_PropertyComponent view)
+        public override void Run(View_PropertyComponent view)
         {
             view.Image_Mask.fillAmount = view.value / view.maxValue;
         }

@@ -142,7 +142,8 @@ namespace YuoTools.Main.Ecs
     public class YuoRandomSystem : YuoSystem<YuoRandom>, IAwake, IOnLoad
     {
         public override string Group => SystemGroupConst.Main;
-        protected override void Run(YuoRandom component)
+
+        public override void Run(YuoRandom component)
         {
             if (RunType == SystemTagType.Awake)
             {

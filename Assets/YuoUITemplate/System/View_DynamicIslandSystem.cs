@@ -12,7 +12,7 @@ namespace YuoTools.UI
     {
         public override string Group => "UI/DynamicIsland";
 
-        protected override void Run(View_DynamicIslandComponent view)
+        public override void Run(View_DynamicIslandComponent view)
         {
             view.FindAll();
         }
@@ -22,7 +22,7 @@ namespace YuoTools.UI
     {
         public override string Group => "UI/DynamicIsland";
 
-        protected override void Run(View_DynamicIslandComponent view)
+        public override void Run(View_DynamicIslandComponent view)
         {
         }
     }
@@ -31,7 +31,7 @@ namespace YuoTools.UI
     {
         public override string Group => "UI/DynamicIsland";
 
-        protected override void Run(View_DynamicIslandComponent view)
+        public override void Run(View_DynamicIslandComponent view)
         {
         }
     }
