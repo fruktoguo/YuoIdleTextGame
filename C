@@ -1,138 +1,35 @@
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.Jobs;
-using Unity.Collections;
-using Unity.Burst;
-using Unity.Jobs;
-using Unity.Mathematics;
+using Sirenix.OdinInspector;
+using YuoTools.Extend.AI;
 
-// Handles the construction and updating of the scalar field using the Job system.
-public class Potential : MonoBehaviour
+public class Test : SerializedMonoBehaviour
 {
-    List<PointCharge> chargesInScene = new List<PointCharge>();
-    public ScalarFieldPoint[] scalarField;
-    public NativeArray<ScalarFieldPoint> scalarFieldNative; // 改用 NativeArray 替代 HashMap
+    public int TestNum = 0;
 
-    public UpdatePotentialJob potentialModificationJob;
-    public JobHandle potentialModificationJobHandle;
-
-    public float fieldExponent = 1.0f;
-
-    public void RegisterCharge(PointCharge input)
+    public void Start()
     {
-        chargesInScene.Add(input);
-    }
-
-    public void RemoveCharge(PointCharge input)
-    {
-        chargesInScene.Remove(input);
-    }
-
-    public void BuildScalarField(int nX, int nY, int nZ, float gridSize)
-    {
-        int totalSize = nX * nY * nZ;
-        scalarField = new ScalarFieldPoint[totalSize];
-        scalarFieldNative = new NativeArray<ScalarFieldPoint>(totalSize, Allocator.TempJob);
-
-        NativeArray<PointCharge> chargesInSceneNative = 
-            new NativeArray<PointCharge>(chargesInScene.Count, Allocator.TempJob);
-
-        for (int i = 0; i < chargesInScene.Count; i++)
-            chargesInSceneNative[i] = chargesInScene[i];
-
-        potentialModificationJob = new UpdatePotentialJob()
+        for (int i = 0; i < TestNum; i++)
         {
-            nX = nX,
-            nY = nY,
-            nZ = nZ,
-            gridSize = gridSize,
-            chargesInScene = chargesInSceneNative,
-            ScalarFieldWriter = scalarFieldNative,
-            fieldExponent = fieldExponent
-        };
-
-        potentialModificationJobHandle = potentialModificationJob.Schedule(totalSize, 64);
-        potentialModificationJobHandle.Complete();
-
-        // 复制结果到主数组
-        scalarFieldNative.CopyTo(scalarField);
-
-        // 清理原生数组
-        chargesInSceneNative.Dispose();
-        scalarFieldNative.Dispose();
-    }
-
-    private void OnDestroy()
-    {
-        // Ensure we clean up any potentially undisposed native arrays
-        if (scalarFieldNative.IsCreated)
-            scalarFieldNative.Dispose();
-    }
-
-    [BurstCompile]
-    public struct UpdatePotentialJob : IJobParallelFor
-    {
-        [ReadOnly] public int nX;
-        [ReadOnly] public int nY;
-        [ReadOnly] public int nZ;
-        [ReadOnly] public float gridSize;
-        [ReadOnly] public NativeArray<PointCharge> chargesInScene;
-        [ReadOnly] public float fieldExponent;
-
-        public NativeArray<ScalarFieldPoint> ScalarFieldWriter;
-        public void Execute(int i)
-        {
-            BuildScalarField(i);
-        }
-
-        float GetPotential(Vector3 Position)
-        {
-            float potential = 0;
-            for (int i = 0; i < chargesInScene.Length; i++)
-            {
-                PointCharge x = chargesInScene[i];
-                potential += x.charge / math.pow((Position - x.position).magnitude, fieldExponent);
-            }
-            return potential;
-        }
-
-        void BuildScalarField(int i)
-        {
-            Position position = GetCoordsFromLinear(i);
-            ScalarFieldPoint scalarFieldPoint;
-            scalarFieldPoint.position = 
-                new Vector3(position.x * gridSize, position.y * gridSize, position.z * gridSize);
-            scalarFieldPoint.potential = GetPotential(scalarFieldPoint.position);
-            ScalarFieldWriter[i] = scalarFieldPoint;
-        }
-
-        struct Position
-        {
-            public int x;
-            public int y;
-            public int z;
-        }
-
-        Position GetCoordsFromLinear(int index)
-        {
-            Position output;
-            output.x = index / (nY * nZ);
-            output.y = (index % (nY * nZ)) / nZ;
-            output.z = index % nZ;
-            return output;
+            Ask("写一个五百字的笑话", i);
         }
     }
-}
+    
+    [ShowInInspector]
+    [DictionaryDrawerSettings(DisplayMode = DictionaryDisplayOptions.OneLine)]
+    [ListDrawerSettings(ShowIndexLabels = true, CustomAddFunction = null)]
+    private Dictionary<int, string> result = new();
 
-public struct ScalarFieldPoint
-{
-    public Vector3 position;
-    public float potential;
-}
+    public async void Ask(string question, int resultIndex)
+    {
+        await foreach (var content in AIHelper.GenerateTextStream(question))
+        {
+            result[resultIndex] = content;
+        }
+    }
 
-public struct PointCharge
-{
-    public Vector3 position;
-    public float charge;
+    // 添加一个用于在Inspector中显示完整内容的属性
+    [ShowInInspector]
+    [ListDrawerSettings(ShowIndexLabels = true)]
+    [PropertyOrder(1)]
+    public IEnumerable<string> FullResults => result.Values;
 }

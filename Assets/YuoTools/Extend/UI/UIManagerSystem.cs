@@ -345,6 +345,8 @@ namespace YuoTools.UI
         public void RunSystemAndChild<T>(UIComponent component) where T : ISystemTag
         {
             component.Entity.RunSystem<T>();
+            var children = component.Entity.GetAllChildren();
+            
             YuoWorld.RunSystem<T>(component.Entity.GetAllChildren());
         }
 

@@ -58,36 +58,51 @@ public class SpawnUICodeEditor
         }
     }
 
-    [MenuItem("GameObject/YuoUI命名/将UI的名字改成图片的名字", false, -2)]
+    [MenuItem("GameObject/YuoUI命名/将UI物体的名字改成身上脚本的", false, -2)]
     public static void ChangeNameForSprite()
     {
-        var sprites = EditorTools.GetAllSelectComponent<Image>(true);
-        Undo.RecordObjects(sprites.ToArray(), "ChangeNameForSprite");
-        foreach (var image in sprites)
-        {
-            image.name = image.sprite?.name;
-        }
-    }
-
-    [MenuItem("GameObject/YuoUI命名/将UI的名字改成文本", false, -2)]
-    public static void ChangeNameForText()
-    {
         if (!SingleCheck()) return;
+        Undo.SetCurrentGroupName($"将UI物体的名字改成身上脚本的");
+        var images = EditorTools.GetAllSelectComponent<Image>(true);
+        if (images?.Count > 0)
+        {
+            Undo.RecordObjects(images.ToArray(), "ChangeName");
+            foreach (var image in images)
+            {
+                image.name = image.sprite?.name;
+            }
+        }
+
         var texts = EditorTools.GetAllSelectComponent<Text>(true);
         var tmps = EditorTools.GetAllSelectComponent<TextMeshProUGUI>(true);
         var all = new List<Object>();
         all.AddRange(texts);
         all.AddRange(tmps);
-        Undo.RecordObjects(all.ToArray(), "ChangeNameForText");
-        foreach (var text in texts)
+        if (all.Count > 0)
         {
-            text.name = text.text;
+            Undo.RecordObjects(all.ToArray(), "ChangeName");
+            foreach (var text in texts)
+            {
+                text.name = text.text;
+            }
+
+            foreach (var text in tmps)
+            {
+                text.name = text.text;
+            }
         }
 
-        foreach (var text in tmps)
+        var sprites = EditorTools.GetAllSelectComponent<SpriteRenderer>(true);
+        if (sprites?.Count > 0)
         {
-            text.name = text.text;
+            Undo.RecordObjects(sprites.ToArray(), "ChangeName");
+            foreach (var sprite in sprites)
+            {
+                sprite.name = sprite.sprite.name;
+            }
         }
+
+        Undo.CollapseUndoOperations(Undo.GetCurrentGroup());
     }
 
     [MenuItem("GameObject/YuoUI命名/将文本改成UI名字", false, -2)]
@@ -96,16 +111,17 @@ public class SpawnUICodeEditor
         if (!SingleCheck()) return;
         var texts = EditorTools.GetAllSelectComponent<Text>(true);
         var tmps = EditorTools.GetAllSelectComponent<TextMeshProUGUI>(true);
-        
+
         var all = new List<Object>();
         all.AddRange(texts);
         all.AddRange(tmps);
         Undo.RecordObjects(all.ToArray(), "ChangeTextForName");
-        
+
         foreach (var text in texts)
         {
             text.text = text.name;
         }
+
         foreach (var text in tmps)
         {
             text.text = text.name;

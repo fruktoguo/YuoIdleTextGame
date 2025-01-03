@@ -42,6 +42,7 @@ namespace YuoTools.UI
 
         public override void Run(View_FollowBarItemComponent view)
         {
+            if (view.ValueGetter == null || view.MaxValueGetter == null) return;
             view.inAnima = true;
             //播放一个展开的动画
             var rect = view.rectTransform;
@@ -85,7 +86,7 @@ namespace YuoTools.UI
             );
 
             // 播放整个序列
-            sequence.Play().OnComplete(()=>view.inAnima = false);
+            sequence.Play().OnComplete(() => view.inAnima = false);
         }
     }
 
@@ -103,7 +104,7 @@ namespace YuoTools.UI
         public override void Run(View_FollowBarItemComponent view)
         {
             view.rectTransform.anchoredPosition = view.filter.Step(view.targetPos, Time.deltaTime);
-            if (!view.inAnima)
+            if (!view.inAnima && view.ValueGetter != null && view.MaxValueGetter != null)
             {
                 view.MainYuoBar.maxValue = view.MaxValueGetter.Invoke();
                 view.MainYuoBar.SliderValue = view.ValueGetter.Invoke();
