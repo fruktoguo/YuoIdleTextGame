@@ -8,9 +8,10 @@ namespace YuoTools.UI
     {
         public ObjectPool<View_NumComponent> numPool;
 
-        public async void ShowNum(long num, Vector3 pos)
+        public async void ShowNum(long num, Vector3 pos,int fontSize = 20)
         {
             var numView = numPool.Get();
+            numView.MainTextMeshProUGUI.fontSize = fontSize;
             numView.MainTextMeshProUGUI.text = (-num).ToString();
             numView.rectTransform.position = pos;
             numView.rectTransform.anchoredPosition += new Vector2(Random.Range(-50, 50), Random.Range(0, 50));

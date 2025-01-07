@@ -54,7 +54,7 @@ namespace YuoTools.UI
             bg.transform.localScale = Vector3.one.x0z();
 
             var currentWidth = rect.rect.width;
-            var startWidth = 100f;
+            var startWidth = 60f;
             rect.SetSizeX(startWidth);
             text.alpha = 0;
             var currentBarValue = view.ValueGetter.Invoke();
@@ -75,13 +75,15 @@ namespace YuoTools.UI
                     .SetEase(Ease.InOutSine)
             );
 
+            float t = 0;
             // 3. 进度条填充动画 (0.4秒)
             sequence.Append(
-                DOTween.To(() => bar.SliderValue, x =>
+                DOTween.To(() => t, x =>
                     {
-                        bar.SliderValue = x;
-                        rect.SetSizeX(Mathf.Lerp(startWidth, currentWidth, x / currentBarValue));
-                    }, currentBarValue, 1f)
+                        t = x;
+                        bar.SliderValue = x * currentBarValue;
+                        rect.SetSizeX(Mathf.Lerp(startWidth, currentWidth, x / 1));
+                    }, 1, 0.4f)
                     .SetEase(Ease.InOutQuad)
             );
 

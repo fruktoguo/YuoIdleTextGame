@@ -92,14 +92,6 @@ namespace Combat
     #endregion
 
     #region 攻击治疗行为
-
-    /// <summary>
-    ///  攻击前,动画播放前会调用
-    /// </summary>
-    public interface IOnAttackBeforeBehaviour : ISystemTag
-    {
-    }
-
     /// <summary>
     ///  普通攻击触发时调用
     /// </summary>
@@ -129,6 +121,10 @@ namespace Combat
     ///  被攻击后
     /// </summary>
     public interface IOnHurtAfter : ISystemTag
+    {
+    }
+    
+    public interface IOnHurt : ISystemTag
     {
     }
 
@@ -220,7 +216,6 @@ namespace Combat
 
     public class AtkSystemTagType
     {
-        public static readonly Type IOnAttackBeforeBehaviour = typeof(IOnAttackBeforeBehaviour);
         public static readonly Type IOnAttackValueBefore = typeof(IOnAttackValueBefore);
         public static readonly Type IOnAttackValueAfter = typeof(IOnAttackValueAfter);
         public static readonly Type IOnAttackValue = typeof(IOnAttackValue);

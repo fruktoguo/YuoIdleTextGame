@@ -4,16 +4,15 @@ using YuoTools.Main.Ecs;
 
 namespace Combat.Role
 {
-    public class CriticalCheckSystem : YuoSystem<ValueComponent, AtkValueComponent>, IOnAttackValueBefore,
-        IOnAttackBeforeBehaviour
+    public class CriticalCheckSystem : YuoSystem<ValueComponent, AtkInfoComponent>, IOnAttackValueBefore
     {
-        public override string Group => "AttackSystem";
+        public override string Group => "Combat/Base";
 
         public override string Name => "暴击检测系统";
 
-        public override void Run(ValueComponent value, AtkValueComponent atkValue)
+        public override void Run(ValueComponent value, AtkInfoComponent atkValue)
         {
-            var attackerData = atkValue.Initiator.GetComponent<RoleDataComponent>();
+            var attackerData = atkValue.Entity.GetComponent<RoleDataComponent>();
 
             //只有没有暴击标签时才会计算暴击
             //如果有无法暴击标签则不会计算暴击

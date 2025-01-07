@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using Combat;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using YuoTools;
@@ -72,70 +71,21 @@ namespace Combat.Role
         {
             return valueTags.Contains(tag);
         }
-        
+
         public List<string> GetAllValueTag() => valueTags;
 
         [ShowInInspector] private List<string> valueTags = new();
     }
 
-    public class AtkValueComponent : YuoComponent
+    public class AtkInfoComponent : YuoComponent, IComponentInit<AttackType, CureType>
     {
         public AttackType AttackType;
         public CureType CureType;
 
-        /// <summary>
-        ///  发起者
-        /// </summary>
-        public RoleComponent Initiator;
-
-        /// <summary>
-        ///  接受者
-        /// </summary>
-        public RoleComponent Taker;
-
-        bool end = true;
-
-        public void Start()
+        public void ComponentInit(AttackType attackType, CureType cureType)
         {
-            if (!end)
-            {
-                "当前计算未结束".LogError();
-                return;
-            }
-
-            end = false;
-            AttackType = AttackType.Physical;
-            CureType = CureType.Heal;
-            // Initiator = null;
-            // Taker = null;
-        }
-
-        public void End()
-        {
-            if (end)
-            {
-                "当前计算已结束".LogError();
-                return;
-            }
-
-            end = true;
-        }
-
-        public void TransmitTo(AtkValueComponent newAtkValueComponent)
-        {
-            if (newAtkValueComponent == null)
-            {
-                Debug.LogError($"{Entity.EntityName} newAtkValueComponent == null");
-                return;
-            }
-
-            if (newAtkValueComponent == this)
-                return;
-
-            newAtkValueComponent.AttackType = AttackType;
-            newAtkValueComponent.CureType = CureType;
-            // newAtkValueComponent.Initiator = Initiator;
-            // newAtkValueComponent.Taker = Taker;
+            AttackType = attackType;
+            CureType = cureType;
         }
     }
 
@@ -175,7 +125,7 @@ namespace Combat.Role
         ///  免疫控制
         /// </summary>
         public const string ImmuneControl = "ImmuneControl";
-        
+
         /// <summary>
         ///  是技能
         /// </summary>

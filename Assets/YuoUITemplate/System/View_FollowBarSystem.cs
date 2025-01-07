@@ -74,7 +74,7 @@ namespace YuoTools.UI
         {
             foreach (var (tran, barList) in view.itemDic)
             {
-                float offset = 0;
+                float offset = -50;
                 foreach (var bar in barList)
                 {
                     bar.targetPos = bar.rectTransform.parent.InverseTransformPoint(tran.position).xy() +

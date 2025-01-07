@@ -424,6 +424,17 @@ namespace YuoTools.Main.Ecs
             return component;
         }
 
+        public T AddComponent<T, T2, T3>(T2 componentInitData2, T3 componentInitData3)
+            where T : YuoComponent, IComponentInit<T2, T3>, new()
+        {
+            if (GetComponent<T>() != null) return GetComponent<T>();
+            T component = new T();
+            component.Entity = this;
+            component.ComponentInit(componentInitData2, componentInitData3);
+            SetComponent(typeof(T), component);
+            return component;
+        }
+
         public YuoComponent AddChild<T2>(Type type, T2 componentInitData, long entityID = long.MinValue)
         {
             var child = entityID != long.MinValue ? new YuoEntity(entityID) : new YuoEntity();
@@ -439,6 +450,41 @@ namespace YuoTools.Main.Ecs
             child.Parent = this;
             var component = child.AddComponent<T, T2>(componentInitData);
             AddChildComponent(typeof(T), component);
+            return component;
+        }
+
+        public T AddChild<T, T2, T3>(T2 componentInitData2, T3 componentInitData3)
+            where T : YuoComponent, IComponentInit<T2, T3>, new()
+        {
+            var child = new YuoEntity();
+            child.Parent = this;
+            var component = child.AddComponent<T, T2, T3>(componentInitData2, componentInitData3);
+            AddChildComponent(typeof(T), component);
+            return component;
+        }
+
+        public T GetOrAddComponent<T, T2>(T2 componentInitData) where T : YuoComponent, IComponentInit<T2>, new()
+        {
+            if (TryGetComponent<T>(out var component))
+            {
+                component.ComponentInit(componentInitData);
+                return component;
+            }
+
+            component = AddComponent<T, T2>(componentInitData);
+            return component;
+        }
+
+        public T GetOrAddComponent<T, T2, T3>(T2 componentInitData2, T3 componentInitData3)
+            where T : YuoComponent, IComponentInit<T2, T3>, new()
+        {
+            if (TryGetComponent<T>(out var component))
+            {
+                component.ComponentInit(componentInitData2, componentInitData3);
+                return component;
+            }
+
+            component = AddComponent<T, T2, T3>(componentInitData2, componentInitData3);
             return component;
         }
 

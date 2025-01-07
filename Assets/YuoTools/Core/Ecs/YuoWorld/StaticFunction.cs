@@ -174,10 +174,56 @@ namespace YuoTools.Main.Ecs
             return result;
         }
 
+        public static List<SystemBase> BuildSystemOfComponent(params Type[] components)
+        {
+            List<SystemBase> result = new();
+            foreach (var system in Instance.allSystem)
+            {
+                bool hasComponent = true;
+                foreach (var component in components)
+                {
+                    if (!system.InfluenceTypes().Contains(component))
+                    {
+                        hasComponent = false;
+                        break;
+                    }
+                }
+
+                if (hasComponent)
+                {
+                    result.Add(system);
+                }
+            }
+
+            return result;
+        }
+
+        public static List<SystemBase> BuildSystemOfComponent(params YuoComponent[] components)
+        {
+            List<SystemBase> result = new();
+            List<Type> componentsType = new();
+            foreach (var component in components)
+            {
+                componentsType.Add(component.Type);
+            }
+
+            var systems = BuildSystemOfComponent(componentsType.ToArray());
+            foreach (var system in systems)
+            {
+                if (system.Entities.Contains(components[0].Entity))
+                {
+                    result.Add(system);
+                }
+            }
+
+            return result;
+        }
+
+
         /// <summary>
         /// 静态方法：为指定组件构建系统列表
         /// </summary>
-        public static List<SystemBase> BuildSystemOfComponent(Type tagType, params Type[] components)
+        public static List<SystemBase> BuildSystemOfTagAndComponent(Type tagType, params Type[] components)
         {
             List<SystemBase> result = new();
             if (Instance.GetSystemOfTag(tagType, out var systems))
@@ -204,35 +250,36 @@ namespace YuoTools.Main.Ecs
             return result;
         }
 
-        public static List<SystemBase> BuildSystemOfComponent<T>(params Type[] components) where T : ISystemTag
+        public static List<SystemBase> BuildSystemOfTagAndComponent<T>(params Type[] components) where T : ISystemTag
         {
-            return BuildSystemOfComponent(typeof(T), components);
+            return BuildSystemOfTagAndComponent(typeof(T), components);
         }
 
-        public static List<SystemBase> BuildSystemOfComponent<T, TC1>() where T : ISystemTag where TC1 : YuoComponent
+        public static List<SystemBase> BuildSystemOfTagAndComponent<T, TC1>()
+            where T : ISystemTag where TC1 : YuoComponent
         {
-            return BuildSystemOfComponent(typeof(T), typeof(TC1));
+            return BuildSystemOfTagAndComponent(typeof(T), typeof(TC1));
         }
 
-        public static List<SystemBase> BuildSystemOfComponent<T, TC1, TC2>() where T : ISystemTag
+        public static List<SystemBase> BuildSystemOfTagAndComponent<T, TC1, TC2>() where T : ISystemTag
             where TC1 : YuoComponent
             where TC2 : YuoComponent
         {
-            return BuildSystemOfComponent(typeof(T), typeof(TC1), typeof(TC2));
+            return BuildSystemOfTagAndComponent(typeof(T), typeof(TC1), typeof(TC2));
         }
 
-        public static List<SystemBase> BuildSystemOfComponent<T, TC1, TC2, TC3>() where T : ISystemTag
+        public static List<SystemBase> BuildSystemOfTagAndComponent<T, TC1, TC2, TC3>() where T : ISystemTag
             where TC1 : YuoComponent
             where TC2 : YuoComponent
             where TC3 : YuoComponent
         {
-            return BuildSystemOfComponent(typeof(T), typeof(TC1), typeof(TC2), typeof(TC3));
+            return BuildSystemOfTagAndComponent(typeof(T), typeof(TC1), typeof(TC2), typeof(TC3));
         }
 
-        public static List<SystemBase> BuildSystemOfComponent<T, TC1, TC2, TC3, TC4>()
+        public static List<SystemBase> BuildSystemOfTagAndComponent<T, TC1, TC2, TC3, TC4>()
             where T : ISystemTag where TC1 : YuoComponent
         {
-            return BuildSystemOfComponent(typeof(T), typeof(TC1), typeof(TC2), typeof(TC3), typeof(TC4));
+            return BuildSystemOfTagAndComponent(typeof(T), typeof(TC1), typeof(TC2), typeof(TC3), typeof(TC4));
         }
 
         /// <summary>
@@ -395,6 +442,23 @@ namespace YuoTools.Main.Ecs
             var system = Instance.systemDic[type];
             if (system != null)
                 system.Enabled = true;
+        }
+    }
+
+    public static class YuoWorldExtension
+    {
+        public static List<SystemBase> SplitOfTag<T>(this List<SystemBase> systems) where T : ISystemTag
+        {
+            List<SystemBase> result = new();
+            foreach (var system in systems)
+            {
+                if (system.HasTag<T>())
+                {
+                    result.Add(system);
+                }
+            }
+
+            return result;
         }
     }
 }
