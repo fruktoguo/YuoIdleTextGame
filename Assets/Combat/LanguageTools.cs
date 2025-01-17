@@ -101,6 +101,8 @@ namespace Manager.Tool
 
     public class LanguageToolsAwakeSystem : YuoSystem<LanguageTools>, IAwake
     {
+        public override string Group => "Language";
+
         public override void Run(LanguageTools component)
         {
             component.InitTable();

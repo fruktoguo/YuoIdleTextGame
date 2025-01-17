@@ -46,8 +46,6 @@ public class RoleAttackAnimator : YuoComponent, IComponentInit<Transform>
             targetTransform.localPosition = originalLocalPosition;
         }
 
-        attackDirection = targetTransform.right;
-
         // 确保位置正确
         originalLocalPosition = targetTransform.localPosition;
 

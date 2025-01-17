@@ -10,7 +10,7 @@
         public const string Input = "Input";
         public const string CallBack = "CallBack";
         public const string Translate = "Translate";
-        public static string Anima { get; set; }
-        public static string Save { get; set; }
+        public static string Anima = "Anima";
+        public static string Save = "Save";
     }
 }

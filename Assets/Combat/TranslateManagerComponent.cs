@@ -160,6 +160,7 @@ namespace YuoTools.Extend
     //destroy
     public class TranslateManagerDestroySystem : YuoSystem<TranslateManagerComponent>, IExitGame
     {
+        public override string Group => "Translate";
         public override void Run(TranslateManagerComponent component)
         {
             component.Save();

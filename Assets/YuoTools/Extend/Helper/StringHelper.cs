@@ -437,6 +437,11 @@ namespace YuoTools.Extend.Helper
         {
             return str.Contains("-") ? -int.Parse(str.Replace("-", "")) : int.Parse(str);
         }
+        
+        public static float ToFloat(this string str)
+        {
+            return str.Contains("-") ? -float.Parse(str.Replace("-", "")) : float.Parse(str);
+        }
 
         /// <summary>
         ///  判断一个字符串是什么类型,数字,布尔,字符串等

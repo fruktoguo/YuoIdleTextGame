@@ -346,8 +346,7 @@ namespace YuoTools.UI
         {
             component.Entity.RunSystem<T>();
             var children = component.Entity.GetAllChildren();
-            
-            YuoWorld.RunSystem<T>(component.Entity.GetAllChildren());
+            YuoWorld.RunSystem<T>(children);
         }
 
         public List<UIComponent> GetOpenItems() => openItems;

@@ -7,6 +7,8 @@ namespace Combat.Role
 {
     public class RoleDataAwakeSystem : YuoSystem<RoleDataComponent>, IAwake
     {
+        public override string Group => "Combat/Base";
+
         public override void Run(RoleDataComponent component)
         {
             var role = component.GetComponent<RoleComponent>();

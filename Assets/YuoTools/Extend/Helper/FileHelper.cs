@@ -50,6 +50,85 @@ namespace YuoTools.Extend.Helper
         }
 
         /// <summary>
+        /// 获取指定目录及其所有子目录下的文件
+        /// </summary>
+        /// <param name="path">起始目录路径</param>
+        /// <param name="patterns">文件匹配模式，例如 "*.txt", "*.jpg" 等</param>
+        /// <returns>所有匹配文件的完整路径列表</returns>
+        public static List<string> GetAllFileNested(string path, params string[] patterns)
+        {
+            var result = new List<string>();
+
+            try
+            {
+                // 如果路径不存在，返回空列表
+                if (!Directory.Exists(path))
+                {
+                    return result;
+                }
+
+                // 如果没有指定匹配模式，默认获取所有文件
+                if (patterns == null || patterns.Length == 0)
+                {
+                    patterns = new[] { "*.*" };
+                }
+
+                // 获取当前目录下所有匹配的文件
+                foreach (string pattern in patterns)
+                {
+                    try
+                    {
+                        result.AddRange(Directory.GetFiles(path, pattern, SearchOption.TopDirectoryOnly));
+                    }
+                    catch (UnauthorizedAccessException)
+                    {
+                        // 忽略没有访问权限的文件
+                        continue;
+                    }
+                    catch (Exception)
+                    {
+                        // 忽略其他可能的异常
+                        continue;
+                    }
+                }
+
+                // 递归处理所有子目录
+                try
+                {
+                    foreach (string subDir in Directory.GetDirectories(path))
+                    {
+                        try
+                        {
+                            // 递归获取子目录中的文件
+                            result.AddRange(GetAllFileNested(subDir, patterns));
+                        }
+                        catch (UnauthorizedAccessException)
+                        {
+                            // 忽略没有访问权限的目录
+                            continue;
+                        }
+                        catch (Exception)
+                        {
+                            // 忽略其他可能的异常
+                            continue;
+                        }
+                    }
+                }
+                catch (UnauthorizedAccessException)
+                {
+                    // 忽略无法访问子目录列表的情况
+                }
+            }
+            catch (Exception ex)
+            {
+                // 可以根据需要处理或记录异常
+                System.Diagnostics.Debug.WriteLine($"访问路径时发生错误: {ex.Message}");
+            }
+
+            return result;
+        }
+
+        /// <summary>
         /// 获取文件（多个目录）
         /// </summary>
         /// <param name="paths">路径（支持多个路径）</param>
@@ -362,6 +441,7 @@ namespace YuoTools.Extend.Helper
 
             return p;
         }
+
         /// <summary>
         /// 获取路径索引的文件名
         /// </summary>
@@ -418,7 +498,7 @@ namespace YuoTools.Extend.Helper
         /// <returns></returns>
         public static bool IsDriver(string path)
         {
-            if (path != null && path.Length >= 2)
+            if (path is { Length: >= 2 })
             {
                 if (path.Substring(1, 1) == ":")
                 {
@@ -430,20 +510,28 @@ namespace YuoTools.Extend.Helper
         }
 
         /// <summary>
-        /// 获取文件所在的目录
+        /// 获取文件或目录所在的目录路径
         /// </summary>
-        /// <param name="filePath"></param>
-        /// <returns></returns>
-        public static string GetFilePath(string filePath)
+        /// <param name="path">文件路径或目录路径</param>
+        /// <returns>父目录路径，如果输入无效则返回空字符串</returns>
+        public static string GetFilePath(string path)
         {
-            string result = "";
-            if (!string.IsNullOrWhiteSpace(filePath))
+            try
             {
-                string fileName = Path.GetFileName(filePath);
-                result = filePath.Substring(0, filePath.Length - fileName.Length);
-            }
+                if (string.IsNullOrWhiteSpace(path))
+                    return "";
 
-            return result;
+                // 使用 Path.GetDirectoryName 可以同时处理文件路径和目录路径
+                string directoryPath = Path.GetDirectoryName(path);
+
+                // Path.GetDirectoryName 对根目录返回 null
+                return directoryPath ?? "";
+            }
+            catch (Exception)
+            {
+                // 处理非法字符等异常情况
+                return "";
+            }
         }
 
         /// <summary>

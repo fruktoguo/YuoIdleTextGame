@@ -8,6 +8,8 @@ namespace Combat.Systems
     [SystemOrder(short.MaxValue)]
     public class HurtOverSystem : YuoSystem<HurtBehaviourComponent, ValueComponent>, IOnHurtAfter
     {
+        public override string Group => "Combat/Base";
+
         public override void Run(HurtBehaviourComponent hurt, ValueComponent value)
         {
             var damage = value.Value;

@@ -60,6 +60,12 @@ namespace YuoTools
             component.gameObject.Show();
             return component;
         }
+        
+        public static T FlipActiveState<T>(this T component) where T : Component
+        {
+            component.gameObject.SetActive(!component.gameObject.activeSelf);
+            return component;
+        }
 
         public static IEnumerable<T> ShowAll<T>(this IEnumerable<T> collection) where T : Component
         {
@@ -137,6 +143,12 @@ namespace YuoTools
             gameObject.SetActive(true);
             return gameObject;
         }
+        
+        public static GameObject FlipActiveState(this GameObject gameObject)
+        {
+            gameObject.SetActive(!gameObject.activeSelf);
+            return gameObject;
+        }
 
         public static List<Transform> GetChildren(this Transform transform)
         {
@@ -173,6 +185,11 @@ namespace YuoTools
         public static GameObject Instantiate(this GameObject gameObject, Vector3 position, Quaternion rotation)
         {
             return Object.Instantiate(gameObject, position, rotation);
+        }
+        
+        public static void Destroy(this GameObject gameObject)
+        {
+            Object.Destroy(gameObject);
         }
     }
 }

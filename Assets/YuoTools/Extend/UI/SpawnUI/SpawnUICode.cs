@@ -498,7 +498,7 @@ namespace YuoTools.UI
                     strBuilder.Append(@$"public override string Group =>""UI/{name}"";");
                     strBuilder.AppendLine("");
                     strBuilder.AppendLine("");
-                    strBuilder.AppendLine($"\t\tprotected override void Run(View_{name}Component view)");
+                    strBuilder.AppendLine($"\t\tpublic override void Run(View_{name}Component view)");
                     strBuilder.AppendLine($"\t\t{{");
                     strBuilder.AppendLine("\t\t\tview.FindAll();");
                     strBuilder.AppendLine("\t\t\t//关闭窗口的事件注册,名字不同请自行更");
@@ -515,7 +515,7 @@ namespace YuoTools.UI
                     strBuilder.AppendLine("");
                     strBuilder.AppendLine("");
                     strBuilder.AppendLine(
-                        $"\t\tprotected override void Run(View_{name}Component view)");
+                        $"\t\tpublic override void Run(View_{name}Component view)");
                     strBuilder.AppendLine($"\t\t{{");
                     strBuilder.AppendLine("\t\t}");
                     strBuilder.AppendLine("\t}");
@@ -528,7 +528,7 @@ namespace YuoTools.UI
                     strBuilder.AppendLine("");
                     strBuilder.AppendLine("");
                     strBuilder.AppendLine(
-                        $"\t\tprotected override void Run(View_{name}Component view)");
+                        $"\t\tpublic override void Run(View_{name}Component view)");
                     strBuilder.AppendLine($"\t\t{{");
                     strBuilder.AppendLine("\t\t}");
                     strBuilder.AppendLine("\t}");
@@ -541,7 +541,7 @@ namespace YuoTools.UI
                     strBuilder.AppendLine("");
                     strBuilder.AppendLine("");
                     strBuilder.AppendLine(
-                        $"\t\tprotected override void Run(View_{name}Component view, UIAnimaComponent anima)");
+                        $"\t\tpublic override void Run(View_{name}Component view, UIAnimaComponent anima)");
                     strBuilder.AppendLine($"\t\t{{");
                     strBuilder.AppendLine("\t\t\tview.Button_Mask.image.SetColorA(0);\n");
                     strBuilder.AppendLine("\t\t\tview.Button_Mask.image.DOFade(0.6f, anima.AnimaDuration);");
@@ -556,7 +556,7 @@ namespace YuoTools.UI
                     strBuilder.AppendLine("");
                     strBuilder.AppendLine("");
                     strBuilder.AppendLine(
-                        $"\t\tprotected override void Run(View_{name}Component view, UIAnimaComponent anima)");
+                        $"\t\tpublic override void Run(View_{name}Component view, UIAnimaComponent anima)");
                     strBuilder.AppendLine("\t\t{");
                     strBuilder.AppendLine("\t\t\tview.Button_Mask.image.DOFade(0f, anima.AnimaDuration);");
                     strBuilder.AppendLine("\t\t}");
@@ -570,7 +570,7 @@ namespace YuoTools.UI
                     strBuilder.Append(@$"public override string Group =>""UI/{name}"";");
                     strBuilder.AppendLine("");
                     strBuilder.AppendLine("");
-                    strBuilder.AppendLine($"\t\tprotected override void Run(View_{name}Component view)");
+                    strBuilder.AppendLine($"\t\tpublic override void Run(View_{name}Component view)");
                     strBuilder.AppendLine($"\t\t{{");
                     strBuilder.AppendLine("\t\t\tview.FindAll();");
                     strBuilder.AppendLine("\t\t}");
@@ -584,7 +584,7 @@ namespace YuoTools.UI
                     strBuilder.Append(@$"public override string Group =>""UI/{name}"";");
                     strBuilder.AppendLine("");
                     strBuilder.AppendLine("");
-                    strBuilder.AppendLine($"\t\tprotected override void Run(View_{name}Component view)");
+                    strBuilder.AppendLine($"\t\tpublic override void Run(View_{name}Component view)");
                     strBuilder.AppendLine($"\t\t{{");
                     strBuilder.AppendLine("\t\t\tview.FindAll();");
                     strBuilder.AppendLine("\t\t}");
@@ -598,7 +598,7 @@ namespace YuoTools.UI
                     strBuilder.AppendLine("");
                     strBuilder.AppendLine("");
                     strBuilder.AppendLine(
-                        $"\t\tprotected override void Run(View_{name}Component view)");
+                        $"\t\tpublic override void Run(View_{name}Component view)");
                     strBuilder.AppendLine($"\t\t{{");
                     strBuilder.AppendLine("\t\t}");
                     strBuilder.AppendLine("\t}");
@@ -611,7 +611,7 @@ namespace YuoTools.UI
                     strBuilder.AppendLine("");
                     strBuilder.AppendLine("");
                     strBuilder.AppendLine(
-                        $"\t\tprotected override void Run(View_{name}Component view)");
+                        $"\t\tpublic override void Run(View_{name}Component view)");
                     strBuilder.AppendLine($"\t\t{{");
                     strBuilder.AppendLine("\t\t}");
                     strBuilder.AppendLine("\t}");

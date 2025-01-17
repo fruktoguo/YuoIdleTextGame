@@ -6,9 +6,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using Object = UnityEngine.Object;
 
-namespace YuoTools.YuoEditor
+namespace YuoTools.Editor
 {
-    [Obsolete("Obsolete")]
     public class EditorTools : UnityEditor.Editor
     {
         [MenuItem("GameObject/YuoTool通用工具/精灵切换UI", false, -3)]

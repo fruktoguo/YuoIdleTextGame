@@ -42,8 +42,9 @@ namespace YuoTools.Extend
 
             return false;
         }
-        
-        public static void TryGet(string group, YuoEntity entity, out GameObject go) => Get.TryGetGameObject(group, entity, out go);
+
+        public static void TryGet(string group, YuoEntity entity, out GameObject go) =>
+            Get.TryGetGameObject(group, entity, out go);
 
         private void Instantiate(string group, YuoEntity entity, GameObject go)
         {
@@ -51,7 +52,7 @@ namespace YuoTools.Extend
             tag.GameObject = go;
             tag.Group = group;
         }
-        
+
         public static void AddTag(string group, YuoEntity entity, GameObject go) => Get.Instantiate(group, entity, go);
 
         private void DestroyGameObject(GameObjectMapTagComponent go)
@@ -60,18 +61,19 @@ namespace YuoTools.Extend
             gameObjectMap.Remove(go.GameObject);
             goPool.AddItem(go.Group, go.GameObject);
         }
-        
+
         public static void Destroy(GameObjectMapTagComponent go) => Get.DestroyGameObject(go);
     }
 
 
     public class GameObjectMapTagComponentDestroySystem : YuoSystem<GameObjectMapTagComponent>, IAwake, IDestroy
     {
+        public override string Group => "GameObjectMap";
+
         public override void Run(GameObjectMapTagComponent go)
         {
             if (RunType == SystemTagType.Awake)
             {
-                
             }
 
             if (RunType == SystemTagType.Destroy)

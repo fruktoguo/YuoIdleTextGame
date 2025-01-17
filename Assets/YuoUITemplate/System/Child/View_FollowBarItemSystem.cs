@@ -103,6 +103,7 @@ namespace YuoTools.UI
 
     public class ViewFollowBarItemUpdateSystem : YuoSystem<View_FollowBarItemComponent>, IUIUpdate
     {
+        public override string Group => "UI/FollowBarItem";
         public override void Run(View_FollowBarItemComponent view)
         {
             view.rectTransform.anchoredPosition = view.filter.Step(view.targetPos, Time.deltaTime);

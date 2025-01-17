@@ -35,7 +35,8 @@ namespace YuoTools.UI
         {
             view.FindAll();
             view.messagePool =
-                new ObjectPool<View_HoverMessageItemComponent>(CreateFunc, actionOnRelease: ActionOnRelease,actionOnGet: ActionOnGet);
+                new ObjectPool<View_HoverMessageItemComponent>(CreateFunc, actionOnRelease: ActionOnRelease,
+                    actionOnGet: ActionOnGet);
 
             View_HoverMessageItemComponent CreateFunc() => view.AddChildAndInstantiate(view.Child_HoverMessageItem);
 
@@ -43,7 +44,7 @@ namespace YuoTools.UI
             {
                 messageItem.rectTransform.Hide();
             }
-            
+
             void ActionOnGet(View_HoverMessageItemComponent messageItem)
             {
                 messageItem.rectTransform.Show();
@@ -55,6 +56,8 @@ namespace YuoTools.UI
     public class ViewHoverMessageOpenSystem : YuoSystem<View_HoverMessageComponent>, IUpdate
     {
         private int a = 1;
+
+        public override string Group => "UI/HoverMessage";
 
         public override void Run(View_HoverMessageComponent view)
         {

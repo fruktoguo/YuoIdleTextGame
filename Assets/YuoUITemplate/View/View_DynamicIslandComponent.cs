@@ -28,18 +28,6 @@ namespace YuoTools.UI
 			}
 		}
 
-		private Test mainTest;
-
-		public Test MainTest
-		{
-			get
-			{
-				if (mainTest == null)
-					mainTest = rectTransform.GetComponent<Test>();
-				return mainTest;
-			}
-		}
-
 		private RectTransform mRectTransform_Tip;
 
 		public RectTransform RectTransform_Tip => mRectTransform_Tip ??= rectTransform.Find("C_Tip").GetComponent<RectTransform>();
@@ -58,8 +46,6 @@ namespace YuoTools.UI
 		[FoldoutGroup("ALL")]
 		public List<RectTransform> all_RectTransform = new();
 		[FoldoutGroup("ALL")]
-		public List<Test> all_Test = new();
-		[FoldoutGroup("ALL")]
 		public List<UILerp> all_UILerp = new();
 		[FoldoutGroup("ALL")]
 		public List<Image> all_Image = new();
@@ -69,8 +55,6 @@ namespace YuoTools.UI
 				
 			all_RectTransform.Add(MainRectTransform);
 			all_RectTransform.Add(RectTransform_Tip);
-				
-			all_Test.Add(MainTest);
 				
 			all_UILerp.Add(UILerp_Tip);
 				

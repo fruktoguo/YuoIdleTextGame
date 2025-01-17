@@ -11,6 +11,8 @@ namespace YuoTools.UI
         public TextMeshProUGUI Title;
         public TMP_InputField InputField;
 
+        public float value => Slider.value;
+
         public string Format = "F2";
 
         public UnityEvent<float> OnValueChange;

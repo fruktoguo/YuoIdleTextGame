@@ -43,12 +43,10 @@ namespace YuoTools.UI
         {
             if (RunType == SystemTagType.UIOpen)
             {
-                view.Show();
             }
 
             if (RunType == SystemTagType.UIClose)
             {
-                view.Hide();
             }
         }
     }

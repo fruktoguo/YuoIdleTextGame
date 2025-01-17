@@ -206,7 +206,7 @@ namespace YuoTools.Editor
                 WriteTime(LocalPath, DateTime.Now.ToString(CultureInfo.InvariantCulture));
                 FileHelper.CleanDirectory(FilePath);
                 FileHelper.CopyDirectory(LocalPath, FilePath);
-                WindowsHelper.OpenDirectory(FilePath);
+                WindowsHelper.OpenFolder(FilePath);
             }, cts.Token);
 
             float progress = 0.0f;

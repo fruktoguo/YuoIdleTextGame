@@ -12,6 +12,7 @@ namespace Combat.Role
     public class RoleActionComponentUpdateSystem : YuoSystem<RoleBehaviourComponent, RoleDataComponent, RoleActiveTag>,
         IUpdate
     {
+        public override string Group => "Combat/Base";
         public override void Run(RoleBehaviourComponent action, RoleDataComponent data, RoleActiveTag active)
         {
             action.Progress += data.AttackSpeed * Time.deltaTime;
@@ -35,17 +36,19 @@ namespace Combat.Role
 
     public class RoleBehaviourExecuteSystem : YuoSystem<RoleComponent, RoleAttackComponent>, IOnBehaviourExecute
     {
+        public override string Group => "Combat/Base";
         public override void Run(RoleComponent role, RoleAttackComponent attack)
         {
             if (attack.target)
             {
                 if (role.TryGetComponent<RoleAttackAnimator>(out var animator))
                 {
+                    animator.attackDirection = (attack.target.transform.position - role.transform.position).normalized;
                     animator.PlayAttack();
                 }
 
                 var attackerData = role.RoleData;
-                
+
                 AttackHelper.Atk(new AttackData()
                 {
                     Initiator = role,

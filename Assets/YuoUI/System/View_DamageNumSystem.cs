@@ -8,7 +8,7 @@ namespace YuoTools.UI
     {
         public ObjectPool<View_NumComponent> numPool;
 
-        public async void ShowNum(long num, Vector3 pos,int fontSize = 20)
+        public async void ShowNum(long num, Vector3 pos, int fontSize = 20)
         {
             var numView = numPool.Get();
             numView.MainTextMeshProUGUI.fontSize = fontSize;
@@ -28,7 +28,15 @@ namespace YuoTools.UI
         {
             view.FindAll();
             view.numPool = new ObjectPool<View_NumComponent>(() => view.AddChildAndInstantiate(view.Child_Num),
-                YuoWorld.RunSystem<IUIOpen>, YuoWorld.RunSystem<IUIClose>);
+                x =>
+                {
+                    x.Show();
+                    YuoWorld.RunSystem<IUIOpen>(x);
+                }, x =>
+                {
+                    YuoWorld.RunSystem<IUIClose>(x);
+                    x.Hide();
+                });
         }
     }
 

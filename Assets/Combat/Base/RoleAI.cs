@@ -4,6 +4,7 @@ namespace Combat.Role
 {
     public class RoleFindTargetSystem : YuoSystem<RoleAttackComponent, RoleActiveTag>, IOnBehaviourExecute
     {
+        public override string Group => "Combat/Base";
         public override void Run(RoleAttackComponent attack, RoleActiveTag active)
         {
             if (!attack.target)

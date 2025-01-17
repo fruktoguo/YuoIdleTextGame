@@ -16,6 +16,8 @@ namespace Combat.Role
 
     public class AttackProcessingSystem : YuoSystem<AttackDataListComponent>, IUpdate
     {
+        public override string Group => "Combat";
+
         public override void Run(AttackDataListComponent component)
         {
             var dataCount = component.DataList.Count;
