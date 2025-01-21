@@ -19,6 +19,7 @@ namespace YuoTools.UI
             var item = barPool.Get();
             item.ValueGetter = valueGetter;
             item.MaxValueGetter = maxValueGetter;
+            item.target = target;
             itemDic[target].Add(item);
             return item;
         }

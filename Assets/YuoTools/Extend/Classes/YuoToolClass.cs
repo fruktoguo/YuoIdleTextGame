@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.Serialization;
 
 namespace YuoTools
@@ -11,6 +12,8 @@ namespace YuoTools
     public delegate float FloatAction();
 
     public delegate int IntAction();
+    
+    public delegate Vector3 Vector3Action();
 
     public delegate string StringAction();
 
@@ -23,6 +26,8 @@ namespace YuoTools
     public delegate decimal DecimalAction<T>(T t);
 
     public delegate long LongAction<T>(T t);
+    
+    public delegate Vector3 Vector3Action<T>(T t);
 
     public delegate int IntAction<T>(T t);
 

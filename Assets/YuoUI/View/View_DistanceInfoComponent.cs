@@ -40,10 +40,29 @@ namespace YuoTools.UI
 			}
 		}
 
+		private View_DistanceItemComponent mChild_DistanceItem;
+
+		public View_DistanceItemComponent Child_DistanceItem
+		{
+            get
+            {
+                if (mChild_DistanceItem == null)
+                {
+                    mChild_DistanceItem = Entity.AddChild<View_DistanceItemComponent>();
+                    mChild_DistanceItem.Entity.EntityName = "DistanceItem";
+                    mChild_DistanceItem.rectTransform = rectTransform.Find("Item/D_DistanceItem") as RectTransform;
+                    mChild_DistanceItem.RunSystem<IUICreate>();
+                }
+                return mChild_DistanceItem;
+            }
+        }
+
 		[FoldoutGroup("ALL")]
 		public List<RectTransform> all_RectTransform = new();
 		[FoldoutGroup("ALL")]
 		public List<DOTweenAnimation> all_DOTweenAnimation = new();
+		[FoldoutGroup("ALL")]
+		public List<View_DistanceItemComponent> all_View_DistanceItemComponent = new();
 
 		public void FindAll()
 		{
@@ -51,6 +70,8 @@ namespace YuoTools.UI
 			all_RectTransform.Add(MainRectTransform);
 				
 			all_DOTweenAnimation.Add(MainDOTweenAnimation);
+				
+			all_View_DistanceItemComponent.Add(Child_DistanceItem);
 
 		}
 	}}

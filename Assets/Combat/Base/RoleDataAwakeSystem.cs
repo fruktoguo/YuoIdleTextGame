@@ -52,6 +52,7 @@ namespace Combat.Role
             var hpBar = View_FollowBarComponent.GetView().Follow(role.transform,
                 () => (float)component.MaxHp.Value, () => (float)component.Hp);
             hpBar.MainYuoBar.textFormat = "f0";
+            
             var mpBar = View_FollowBarComponent.GetView().Follow(role.transform,
                 () => (float)component.MaxMana.Value, () => (float)component.Mana);
             mpBar.MainYuoBar.textFormat = "f0";
