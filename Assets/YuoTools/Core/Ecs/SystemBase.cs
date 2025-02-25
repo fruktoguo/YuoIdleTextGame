@@ -68,6 +68,35 @@ namespace YuoTools.Main.Ecs
 
         public Type RunType;
 
+        internal bool hasCoverSystem;
+
+        internal bool CheckCoverSystem(YuoEntity entity)
+        {
+            if (!hasCoverSystem) return false;
+            if (YuoWorld.Instance is { } world && world.coverSystemDic.TryGetValue(RunType, out var cover))
+            {
+                foreach (var component in cover.componentTypes)
+                {
+                    if (world.baseComponents.TryGetValue(component, out var baseComponent))
+                    {
+                        if (!entity.HasBaseComponent(baseComponent))
+                            return false;
+                    }
+                    else
+                    {
+                        if (!entity.HasComponent(component))
+                            return false;
+                    }
+                }
+            }
+
+            return false;
+        }
+
+        internal bool CheckCoverSystem(int entityIndex) => entityIndex >= 0 && entityIndex < Entities.Count &&
+                                                           CheckCoverSystem(Entities[entityIndex]);
+
+
         internal void m_Run()
         {
             if (!Enabled) return;
@@ -75,6 +104,7 @@ namespace YuoTools.Main.Ecs
             {
                 return;
             }
+
 #if UNITY_EDITOR
             StartClock();
 #endif
@@ -82,7 +112,7 @@ namespace YuoTools.Main.Ecs
             {
                 for (int i = 0; i < Entities.Count; i++)
                 {
-                    m_Run(i);
+                    RunForIndex(i);
                 }
 #if UNITY_EDITOR
                 StopClock();
@@ -94,7 +124,7 @@ namespace YuoTools.Main.Ecs
             {
                 try
                 {
-                    m_Run(i);
+                    RunForIndex(i);
                 }
                 catch (Exception e)
                 {
@@ -114,19 +144,27 @@ namespace YuoTools.Main.Ecs
             InfluenceTypes().Clear();
         }
 
-        internal abstract void m_Run(int entityIndex);
+        internal void RunForIndex(int entityIndex)
+        {
+            if (CheckCoverSystem(entityIndex)) return;
+            m_Run(entityIndex);
+        }
+
+        protected internal abstract void m_Run(int entityIndex);
 
         internal bool m_Run(YuoEntity entity)
         {
-            if (!Enabled ) return false;
+            if (!Enabled) return false;
             var entityIndex = Entities.IndexOf(entity);
             if (entityIndex == -1) return false;
+            if (CheckCoverSystem(entity)) return false;
+
 #if UNITY_EDITOR
             StartClock();
 #endif
             if (YuoWorld.CloseSystemTry)
             {
-                m_Run(entityIndex);
+                RunForIndex(entityIndex);
 #if UNITY_EDITOR
                 StopClock();
 #endif
@@ -135,7 +173,7 @@ namespace YuoTools.Main.Ecs
 
             try
             {
-                m_Run(entityIndex);
+                RunForIndex(entityIndex);
             }
             catch (Exception e)
             {

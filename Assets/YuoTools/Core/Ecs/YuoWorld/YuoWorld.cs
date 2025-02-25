@@ -46,6 +46,8 @@ namespace YuoTools.Main.Ecs
         /// 系统类型到系统实例的字典
         /// </summary>
         private Dictionary<Type, SystemBase> systemDic = new();
+        
+        internal Dictionary<Type, CoverSystemAttribute> coverSystemDic = new();
 
         #endregion
 
@@ -92,8 +94,7 @@ namespace YuoTools.Main.Ecs
         /// <summary>
         /// 基础组件类型映射
         /// </summary>
-        [Sirenix.OdinInspector.ShowInInspector]
-        private Dictionary<Type, Type> baseComponents = new();
+        internal Dictionary<Type, Type> baseComponents = new();
 
         /// <summary>
         /// IStart 需要在所有组件添加完成后，在每一帧的末尾才会调用

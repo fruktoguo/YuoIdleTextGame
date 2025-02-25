@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 2560
     height: 1349
   m_ShowMode: 4
-  m_Title: "\u573A\u666F"
+  m_Title: "\u68C0\u67E5\u5668"
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 75
+  controlID: 15
   draggingID: 0
 --- !u!114 &5
 MonoBehaviour:
@@ -174,7 +174,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 85
+  controlID: 25
   draggingID: 0
 --- !u!114 &8
 MonoBehaviour:
@@ -459,7 +459,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/YuoTools/Extend/UI/Extend/Resources/Fonts/ResourceHanRounded
+    - Assets/Combat/Base
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -469,15 +469,15 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/YuoTools/Extend/UI/Extend/Resources/Fonts/ResourceHanRounded
+  - Assets/Combat/Base
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Users\Admin\Documents\GitHub\YuoIdleTextGame
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: b2da0000
-    m_LastClickedID: 55986
+    m_SelectedIDs: dcaf0000
+    m_LastClickedID: 45020
     m_ExpandedIDs: 00000000e2ae0000e4ae0000e6ae0000e8ae0000eaae0000ecae0000eeae0000f0ae0000f2ae0000f4ae0000f6ae0000f8ae0000faae0000fcae0000feae000000af000002af000004af000006af000008af00000aaf00000caf00000eaf000010af000012af000014af000016af000018af00001aaf00001caf00001eaf000020af000022af000024af000026af000028af00002aaf00002caf00002eaf000030af000032af000034af000036af000038af00003aaf00003caf00003eaf000040af000042af000044af000046af000048af00004aaf00004caf00004eaf000050af000052af000054af000056af000058af00005aaf00005caf00005eaf000060af000062af0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -535,7 +535,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c623000048bb000092bb00002eb0000024b0000088ba00007cba0000ecb4000022f103001eb600005cb90000a4b0000010d4ffff60c600006cd30000c8c80000ece90000e8c8000088eb000070ec000000000000fae90000f6cd00008eba0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -634,7 +634,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 1
+    m_EnableMouseInput: 0
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -1245,9 +1245,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: -1.0378895, y: -0.1425878, z: 299.62012}
+    m_Target: {x: 2.3570364, y: 0.17523645, z: 192.96596}
     speed: 2
-    m_Value: {x: 0.30955085, y: -1.4601878, z: 762.55176}
+    m_Value: {x: 2.3570364, y: 0.17523645, z: 192.96596}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1297,9 +1297,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 4.5944552
+    m_Target: 3.3256943
     speed: 2
-    m_Value: 3.985092
+    m_Value: 3.3256943
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1371,7 +1371,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 8619ffffc81cffff2442ffff3642ffffc85effffce6affff6a77ffff6e77ffff7277ffff7677ffff7a77ffff7e77ffff8277ffff8677ffff8a77ffff9477ffffca7dffffc485ffff6cdaffff70daffff74daffff7cdaffff80daffff84daffff8cdaffff90daffff94daffff9cdaffffa0daffffa4daffffacdaffffb0daffffb4daffffb8daffffbcdaffffc0daffffc4daffffccdaffffd0daffffd8daffffdcdaffffe0daffffe8daffffecdafffff0dafffff8dafffffcdaffff00dbffff08dbffff0cdbffff10dbffff18dbffff1cdbffff20dbffff24dbffff28dbffff2cdbffff30dbffff34dbffff38dbffff3cdbffff44dbffff48dbffff4cdbffff50dbffff5cdbffff60dbffff64dbffff68dbffff14e3ffff4ef6ffff52f6ffff56f6ffff5ef6ffff62f6ffff66f6ffff6ef6ffff72f6ffff76f6ffff7ef6ffff82f6ffff86f6ffff8ef6ffff92f6ffff96f6ffff9af6ffff9ef6ffffa2f6ffffa6f6ffffaef6ffffb2f6ffffbaf6ffffbef6ffffc2f6ffffcaf6ffffcef6ffffd2f6ffffdaf6ffffdef6ffffe2f6ffffeaf6ffffeef6fffff2f6fffffaf6fffffef6ffff02f7ffff06f7ffff0af7ffff0ef7ffff12f7ffff16f7ffff1af7ffff26f7ffff2af7ffff2ef7ffff3af7ffff3ef7ffff42f7ffff4af7ffff5af7ffff04fbffff5cd1000060d1000014d50000
+      m_ExpandedIDs: 04fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 

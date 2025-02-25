@@ -191,7 +191,7 @@ namespace YuoTools.Main.Ecs
                         try
                         {
                             if (system.Enabled)
-                                system.m_Run(system.EntityCount - 1);
+                                system.RunForIndex(system.EntityCount - 1);
 #if UNITY_EDITOR
                             system.StopClock();
 #endif
@@ -225,7 +225,7 @@ namespace YuoTools.Main.Ecs
                             try
                             {
                                 if (system.Enabled)
-                                    system.m_Run(system.EntityCount - 1);
+                                    system.RunForIndex(system.EntityCount - 1);
 #if UNITY_EDITOR
                                 system.StopClock();
 #endif
@@ -260,7 +260,7 @@ namespace YuoTools.Main.Ecs
                         try
                         {
                             if (system.Enabled)
-                                system.m_Run(system.EntityCount - 1);
+                                system.RunForIndex(system.EntityCount - 1);
 #if UNITY_EDITOR
                             system.StopClock();
 #endif
@@ -295,7 +295,7 @@ namespace YuoTools.Main.Ecs
                             try
                             {
                                 if (system.Enabled)
-                                    system.m_Run(system.EntityCount - 1);
+                                    system.RunForIndex(system.EntityCount - 1);
 #if UNITY_EDITOR
                                 system.StopClock();
 #endif

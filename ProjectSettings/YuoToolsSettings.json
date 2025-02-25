@@ -1,6 +1,6 @@
 {
     "AISetting": {
-        "Server": 1,
+        "Server": 0,
         "Servers": {
             "mKeys": [
                 "智谱",
@@ -13,7 +13,7 @@
                 },
                 {
                     "APIKey": "ac93ee32-a7b4-4910-bfc7-a58aed7f6152",
-                    "Model": "ep-20240924155253-kv5b6"
+                    "Model": "deepseek-r1-250120"
                 }
             ]
         }

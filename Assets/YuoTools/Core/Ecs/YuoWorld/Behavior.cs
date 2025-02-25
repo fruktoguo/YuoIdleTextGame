@@ -6,8 +6,6 @@ namespace YuoTools.Main.Ecs
 {
     public partial class YuoWorld
     {
-        #region 基础生命周期
-
         /// <summary>
         /// 初始化 YuoWorld
         /// </summary>
@@ -129,7 +127,5 @@ namespace YuoTools.Main.Ecs
             RunSystemForAllEntity(SystemType.LateUpdate);
             ClearTrash();
         }
-
-        #endregion
     }
 }

@@ -56,7 +56,7 @@ namespace YuoTools.Main.Ecs
             _components1.RemoveAt(index);
         }
 
-        internal override void m_Run(int entityIndex)
+        protected internal override void m_Run(int entityIndex)
         {
             Run(_components1[entityIndex]);
         }
@@ -129,7 +129,7 @@ namespace YuoTools.Main.Ecs
             }
         }
 
-        internal override void m_Run(int entityIndex)
+        protected internal override void m_Run(int entityIndex)
         {
             if (YuoWorld.CloseSystemTry)
             {
@@ -231,7 +231,7 @@ namespace YuoTools.Main.Ecs
             _components3.RemoveAt(index);
         }
 
-        internal override void m_Run(int entityIndex)
+        protected internal override void m_Run(int entityIndex)
         {
             if (YuoWorld.CloseSystemTry)
             {
@@ -347,7 +347,7 @@ namespace YuoTools.Main.Ecs
             _components4.RemoveAt(index);
         }
 
-        internal override void m_Run(int entityIndex)
+        protected internal override void m_Run(int entityIndex)
         {
             if (YuoWorld.CloseSystemTry)
             {
@@ -487,7 +487,7 @@ namespace YuoTools.Main.Ecs
             _components5.RemoveAt(index);
         }
 
-        internal override void m_Run(int entityIndex)
+        protected internal override void m_Run(int entityIndex)
         {
             if (YuoWorld.CloseSystemTry)
             {
@@ -592,7 +592,7 @@ namespace YuoTools.Main.Ecs
             baseComponents.RemoveAt(index);
         }
 
-        internal override void m_Run(int entityIndex)
+        protected internal override void m_Run(int entityIndex)
         {
             var component1 = baseComponents[entityIndex];
             var entity = Entities[entityIndex];
@@ -711,7 +711,7 @@ namespace YuoTools.Main.Ecs
             Components2.RemoveAt(index);
         }
 
-        internal override void m_Run(int entityIndex)
+        protected internal override void m_Run(int entityIndex)
         {
             var component1 = BaseComponents[entityIndex];
             var component2 = Components2[entityIndex];

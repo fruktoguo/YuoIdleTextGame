@@ -219,7 +219,7 @@ namespace YuoTools.Main.Ecs
             return component;
         }
 
-        private void SetComponent(Type type, YuoComponent component)
+        public void SetComponent(Type type, YuoComponent component)
         {
             // $"{this} AddComponent:{component.Name}".Log();
             component.Entity = this;

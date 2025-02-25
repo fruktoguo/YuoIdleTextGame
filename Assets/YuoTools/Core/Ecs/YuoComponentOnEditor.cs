@@ -73,21 +73,19 @@ namespace YuoTools.Main.Ecs
             }
         }
 
-        [ButtonGroup]
-        [Button("RemoveComponent")]
-        [HorizontalGroup("SelectField")]
-        [ShowIf("_privateSelect")]
-        void S_Remove()
+        [Button("移除组件")]
+        [HorizontalGroup(nameof(editorTools))]
+        [ShowIf(nameof(editorTools))]
+        void Editor_RemoveThisComponent()
         {
             $"{Entity.EntityName}移除组件{Type.Name}".Log();
             Entity.RemoveComponent(this);
         }
 
-                [ButtonGroup]
-        [Button]
-        [HorizontalGroup("SelectField")]
-        [ShowIf("_privateSelect")]
-        void SelectField()
+        [Button("定位文件")]
+        [HorizontalGroup(nameof(editorTools))]
+        [ShowIf(nameof(editorTools))]
+        void Editor_SelectComponentFile()
         {
             var result = AssetDatabase.FindAssets(Type.Name);
             if (result.Length > 0)
@@ -97,11 +95,10 @@ namespace YuoTools.Main.Ecs
             }
         }
 
-             [ButtonGroup]
-        [Button]
-        [HorizontalGroup("SelectField")]
-        [ShowIf("_privateSelect")]
-        void OpenField()
+        [Button("打开文件")]
+        [HorizontalGroup(nameof(editorTools))]
+        [ShowIf(nameof(editorTools))]
+        void Editor_OpenComponentFile()
         {
             var result = AssetDatabase.FindAssets(Type.Name);
             if (result.Length > 0)
@@ -112,15 +109,14 @@ namespace YuoTools.Main.Ecs
 
             //只是为了去掉警告
             _privateTips = _privateTips.ToString();
-            _privateSelect = !_privateSelect;
-            _privateSelect = false;
+            editorTools = !editorTools;
+            editorTools = false;
         }
 
-               [ButtonGroup]
-        [Button]
-        [HorizontalGroup("SelectField")]
-        [ShowIf("_privateSelect")]
-        void CopyComponentName()
+        [Button("复制名称")]
+        [HorizontalGroup(nameof(editorTools))]
+        [ShowIf(nameof(editorTools))]
+        void Editor_CopyComponentTypeName()
         {
             //复制到剪切板
             GUIUtility.systemCopyBuffer = Type.Name;
@@ -128,22 +124,21 @@ namespace YuoTools.Main.Ecs
 
         private bool _isPlaying => Application.isPlaying;
 
-        [ShowInInspector] [HorizontalGroup("SelectField", width: 50)] [HideLabel] [ShowIf("_isPlaying")]
-        private bool _privateSelect;
+        [ShowInInspector] [HorizontalGroup(nameof(editorTools), width: 50)] [HideLabel] [ShowIf("_isPlaying")]
+        private bool editorTools;
 
-        [ShowInInspector] [HorizontalGroup("SelectField")] [HideLabel] [HideIf("_privateSelect")] [ReadOnly]
-        private string _privateTips = "选择或者打开组件对应的文件(如果文件名和组件不一致,请手动查找)";
+        [ShowInInspector] [HorizontalGroup(nameof(editorTools))] [HideLabel] [HideIf(nameof(editorTools))] [ReadOnly]
+        private string _privateTips = "额外工具";
 
         [ShowIf("BaseComponentType", null)]
         [ShowInInspector]
         [LabelText("父组件类型")]
         private string ShowBase => BaseComponentType?.Name;
 
-        [HorizontalGroup("SelectField")]
-             [ButtonGroup]
-        [Button(ButtonSizes.Medium)]
-        [ShowIf("_privateSelect")]
-        private void SavePrefab()
+        [HorizontalGroup(nameof(editorTools))]
+        [Button("保存预制体", ButtonSizes.Medium)]
+        [ShowIf(nameof(editorTools))]
+        private void Editor_SaveComponentAsPrefab()
         {
             var path = EditorUtility.OpenFolderPanel("选择保存路径", Application.dataPath, "").Log();
             path = $"{path}/{Type.Name}_Prefab.asset";

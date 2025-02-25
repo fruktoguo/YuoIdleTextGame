@@ -12,37 +12,39 @@ namespace YuoTools.Main.Ecs
         /// </summary>
         private void CoverSystem()
         {
-            // 查找所有需要覆盖的系统类型
-            var coverSystems = new List<Type>();
+            coverSystemDic.Clear();
+
             foreach (var system in allSystem)
             {
-                var coverSystem = system.GetType().GetCustomAttribute<CoverSystemAttribute>();
-                if (coverSystem != null)
+                if (system.Type.GetCustomAttribute<CoverSystemAttribute>() is { } coverSystemAttribute)
                 {
-                    coverSystems.Add(coverSystem.CoverType);
+                    coverSystemDic.Add(coverSystemAttribute.coverSystemType, coverSystemAttribute);
+                    system.hasCoverSystem = true;
                 }
+                else
+                    system.hasCoverSystem = false;
             }
 
-            // 在所有系统中查找需要覆盖的系统
-            var tempSystem = new List<SystemBase>();
-            foreach (var system in allSystem)
-            {
-                if (coverSystems.Contains(system.Type))
-                    tempSystem.Add(system);
-            }
-
-            // 移除需要覆盖的系统
-            foreach (var system in tempSystem)
-            {
-                RemoveSystem(system);
-            }
-
-            // 重新构建系统字典
-            systemDic.Clear();
-            foreach (var systemBase in allSystem)
-            {
-                systemDic.Add(systemBase.Type, systemBase);
-            }
+            // // 在所有系统中查找需要覆盖的系统
+            // var tempSystem = new List<SystemBase>();
+            // foreach (var system in allSystem)
+            // {
+            //     if (coverSystems.Contains(system.Type))
+            //         tempSystem.Add(system);
+            // }
+            //
+            // // 移除需要覆盖的系统
+            // foreach (var system in tempSystem)
+            // {
+            //     RemoveSystem(system);
+            // }
+            //
+            // // 重新构建系统字典
+            // systemDic.Clear();
+            // foreach (var systemBase in allSystem)
+            // {
+            //     systemDic.Add(systemBase.Type, systemBase);
+            // }
         }
 
         /// <summary>
@@ -55,8 +57,7 @@ namespace YuoTools.Main.Ecs
             systemsOfComponent.Remove(system.GetType());
         }
 
-        [ShowInInspector]
-        private List<YuoEntity> entityTrashTemp = new();
+        [ShowInInspector] private List<YuoEntity> entityTrashTemp = new();
         private List<YuoComponent> componentsTrashTemp = new();
 
         /// <summary>
@@ -69,7 +70,7 @@ namespace YuoTools.Main.Ecs
             componentsTrashTemp.Clear();
             componentsTrashTemp.AddRange(componentsTrash);
             componentsTrash.Clear();
-            
+
             foreach (var yuoComponent in componentsTrashTemp)
             {
                 yuoComponent.Dispose();
@@ -78,7 +79,7 @@ namespace YuoTools.Main.Ecs
             entityTrashTemp.Clear();
             entityTrashTemp.AddRange(entityTrash);
             entityTrash.Clear();
-            
+
             foreach (var entity in entityTrashTemp)
             {
                 entity.Dispose();
