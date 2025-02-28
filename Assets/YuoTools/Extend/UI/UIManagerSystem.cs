@@ -168,12 +168,27 @@ namespace YuoTools.UI
                     component.AddComponent<TopViewComponent>();
                 }
 
-                component.rectTransform.SetAsLastSibling();
+                SortModuleWindowLayer(sort, component);
+                // component.rectTransform.SetAsLastSibling();
             }
             else
             {
                 component.SetWindowLayer(sort.Root.childCount - 1 - sort.moduleUiItems.Count);
             }
+        }
+
+        public static void SortModuleWindowLayer(UIViewSort sort, UIComponent view)
+        {
+            var modules = sort.moduleUiItems;
+            modules.Sort((x, y) => x.ModuleLayer - y.ModuleLayer);
+            var viewLayer = view.ModuleLayer;
+            var greaterCount = 0;
+            foreach (var item in modules)
+            {
+                if (item.ModuleLayer > viewLayer) greaterCount++;
+                item.rectTransform.SetAsLastSibling();
+            }
+            view.SetWindowLayer(sort.Root.childCount - 1 - greaterCount);
         }
 
         [ShowInInspector] Dictionary<Transform, UIViewSort> uiSortDic = new();
@@ -221,6 +236,7 @@ namespace YuoTools.UI
                 if (uiSetting.HasAnima())
                     component.Entity.AddComponent<UIAnimaComponent>().From(uiSetting);
                 component.ModuleUI = uiSetting.ModuleUI;
+                component.ModuleLayer = uiSetting.ModuleLayer;
                 go.SetActive(uiSetting.Active);
                 Object.Destroy(uiSetting);
             }

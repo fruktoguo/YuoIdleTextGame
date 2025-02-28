@@ -24,7 +24,6 @@ namespace YuoTools.Extend.Helper
 
             var queue = coroutineLock.Entity.GetComponent<CoroutineLockQueue>();
 
-
             if (queue.Count == 0)
             {
                 return queue.Enqueue(tcs, time).Entity;

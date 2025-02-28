@@ -20,6 +20,9 @@ namespace YuoTools.UI
         [HorizontalGroup("2")] [LabelText("模块UI")]
         public bool ModuleUI;
 
+        [HorizontalGroup("2")] [LabelText("层级")] [ShowIf(nameof(ModuleUI))]
+        public short ModuleLayer;
+
         [ShowIf(nameof(HasAnimator))] public float AnimatorLength = 0.5f;
 
         bool HasAnimator => UIAnimator != null;
@@ -46,6 +49,7 @@ namespace YuoTools.UI
                 Debug.LogError("目标窗口没有RectTransform");
                 return;
             }
+
             SpawnUICode.BasePath = useCustomDirectory ? customDirectory : SpawnUICode.DefaultBasePath;
             SpawnUICode.SpawnCode(gameObject);
             if (useCustomDirectory && customDirectory == "YuoUITemplate")
@@ -141,7 +145,7 @@ namespace YuoTools.UI
                 if (uiComponent == null) $"创建View失败_{o.name}".LogError();
             }
         }
-        
+
         public bool HasAnima()
         {
             return gameObject.TryGetComponent<DOTweenAnimation>(out var _) ||

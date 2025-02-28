@@ -2,7 +2,7 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 using YuoTools.Main.Ecs;
 
-namespace YuoTools.Extend.PhysicalCallback
+namespace YuoTools.Extend
 {
     public class PhysicalCallbackTrigger2D : MonoBehaviour
     {

@@ -16,11 +16,14 @@ namespace YuoTools.UI
         public const string DefaultBasePath = "YuoUI";
         public static string BasePath = DefaultBasePath;
 
+        private static GameObject nowWindowGo;
+
         public static void SpawnCode(GameObject gameObject)
         {
             if (null == gameObject) return;
-            string UIName = gameObject.name;
-            string strDlgName = $"View_{UIName}Component";
+            nowWindowGo = gameObject;
+            string uiName = gameObject.name;
+            string strDlgName = $"View_{uiName}Component";
 
             string strFilePath = $"{Application.dataPath}/{BasePath}/View";
 
@@ -56,7 +59,7 @@ namespace YuoTools.UI
 
             final.AppendLine("\tpublic static partial class ViewType");
             final.AppendLine("\t{");
-            final.AppendLine($"\t\tpublic const string {UIName} = \"{UIName}\";");
+            final.AppendLine($"\t\tpublic const string {uiName} = \"{uiName}\";");
             final.AppendLine("\t}");
             final.AppendLine();
 
@@ -73,14 +76,14 @@ namespace YuoTools.UI
 
             sw.Close();
 
-            SpawnSystemCode(UIName);
+            SpawnSystemCode(uiName);
 
 #if UNITY_EDITOR
             AssetDatabase.Refresh();
 #endif
         }
 
-        public static void SpawnGeneralUICode(GameObject gameObject)
+        private static void SpawnGeneralUICode(GameObject gameObject)
         {
             SpawnUICodeBase(gameObject, SpawnUICodeConfig.GeneralUITag, "General", UIType.General);
         }
@@ -491,76 +494,7 @@ namespace YuoTools.UI
             switch (uiType)
             {
                 case UIType.Window:
-                    strBuilder.AppendLine(
-                        $"\tpublic class View{name}CreateSystem :YuoSystem<View_{name}Component>, IUICreate");
-                    strBuilder.AppendLine("\t{");
-                    strBuilder.Append("\t\t");
-                    strBuilder.Append(@$"public override string Group =>""UI/{name}"";");
-                    strBuilder.AppendLine("");
-                    strBuilder.AppendLine("");
-                    strBuilder.AppendLine($"\t\tpublic override void Run(View_{name}Component view)");
-                    strBuilder.AppendLine($"\t\t{{");
-                    strBuilder.AppendLine("\t\t\tview.FindAll();");
-                    strBuilder.AppendLine("\t\t\t//关闭窗口的事件注册,名字不同请自行更");
-                    strBuilder.AppendLine("\t\t\tview.Button_Close.SetUIClose(view.ViewName);");
-                    strBuilder.AppendLine(" \t\t\tview.Button_Mask.SetUIClose(view.ViewName);");
-                    strBuilder.AppendLine("\t\t}");
-                    strBuilder.AppendLine("\t}");
-
-                    strBuilder.AppendLine(
-                        $"\tpublic class View{name}OpenSystem :YuoSystem<View_{name}Component>, IUIOpen");
-                    strBuilder.AppendLine("\t{");
-                    strBuilder.Append("\t\t");
-                    strBuilder.Append(@$"public override string Group =>""UI/{name}"";");
-                    strBuilder.AppendLine("");
-                    strBuilder.AppendLine("");
-                    strBuilder.AppendLine(
-                        $"\t\tpublic override void Run(View_{name}Component view)");
-                    strBuilder.AppendLine($"\t\t{{");
-                    strBuilder.AppendLine("\t\t}");
-                    strBuilder.AppendLine("\t}");
-
-                    strBuilder.AppendLine(
-                        $"\tpublic class View{name}CloseSystem :YuoSystem<View_{name}Component>, IUIClose");
-                    strBuilder.AppendLine("\t{");
-                    strBuilder.Append("\t\t");
-                    strBuilder.Append(@$"public override string Group =>""UI/{name}"";");
-                    strBuilder.AppendLine("");
-                    strBuilder.AppendLine("");
-                    strBuilder.AppendLine(
-                        $"\t\tpublic override void Run(View_{name}Component view)");
-                    strBuilder.AppendLine($"\t\t{{");
-                    strBuilder.AppendLine("\t\t}");
-                    strBuilder.AppendLine("\t}");
-
-                    strBuilder.AppendLine(
-                        $"\tpublic class View{name}OpenAnimaSystem :YuoSystem<View_{name}Component,UIAnimaComponent>, IUIOpen");
-                    strBuilder.AppendLine("\t{");
-                    strBuilder.Append("\t\t");
-                    strBuilder.Append(@$"public override string Group =>""UI/{name}"";");
-                    strBuilder.AppendLine("");
-                    strBuilder.AppendLine("");
-                    strBuilder.AppendLine(
-                        $"\t\tpublic override void Run(View_{name}Component view, UIAnimaComponent anima)");
-                    strBuilder.AppendLine($"\t\t{{");
-                    strBuilder.AppendLine("\t\t\tview.Button_Mask.image.SetColorA(0);\n");
-                    strBuilder.AppendLine("\t\t\tview.Button_Mask.image.DOFade(0.6f, anima.AnimaDuration);");
-                    strBuilder.AppendLine("\t\t}");
-                    strBuilder.AppendLine("\t}");
-
-                    strBuilder.AppendLine(
-                        $"\tpublic class View{name}CloseAnimaSystem :YuoSystem<View_{name}Component,UIAnimaComponent>, IUIClose");
-                    strBuilder.AppendLine("\t{");
-                    strBuilder.Append("\t\t");
-                    strBuilder.Append(@$"public override string Group =>""UI/{name}"";");
-                    strBuilder.AppendLine("");
-                    strBuilder.AppendLine("");
-                    strBuilder.AppendLine(
-                        $"\t\tpublic override void Run(View_{name}Component view, UIAnimaComponent anima)");
-                    strBuilder.AppendLine("\t\t{");
-                    strBuilder.AppendLine("\t\t\tview.Button_Mask.image.DOFade(0f, anima.AnimaDuration);");
-                    strBuilder.AppendLine("\t\t}");
-                    strBuilder.AppendLine("\t}");
+                    CodeSpawn_WindowSystem(name, strBuilder);
                     break;
                 case UIType.General:
                     strBuilder.AppendLine(
@@ -624,6 +558,87 @@ namespace YuoTools.UI
 
             sw.Write(strBuilder.ToString());
             sw.Close();
+        }
+
+        private static void CodeSpawn_WindowSystem(string name, StringBuilder strBuilder)
+        {
+            strBuilder.AppendLine(
+                $"\tpublic class View{name}CreateSystem :YuoSystem<View_{name}Component>, IUICreate");
+            strBuilder.AppendLine("\t{");
+            strBuilder.Append("\t\t");
+            strBuilder.Append(@$"public override string Group =>""UI/{name}"";");
+            strBuilder.AppendLine("");
+            strBuilder.AppendLine("");
+            strBuilder.AppendLine($"\t\tpublic override void Run(View_{name}Component view)");
+            strBuilder.AppendLine($"\t\t{{");
+            strBuilder.AppendLine("\t\t\tview.FindAll();");
+
+            //注册事件
+            if (nowWindowGo.transform.FindAnyChild("Close"))
+                strBuilder.AppendLine("\t\t\tview.Button_Close.SetUIClose(view.ViewName);");
+            if (nowWindowGo.transform.FindAnyChild("Mask"))
+                strBuilder.AppendLine(" \t\t\tview.Button_Mask.SetUIClose(view.ViewName);");
+
+            strBuilder.AppendLine("\t\t}");
+            strBuilder.AppendLine("\t}");
+
+            strBuilder.AppendLine(
+                $"\tpublic class View{name}OpenSystem :YuoSystem<View_{name}Component>, IUIOpen");
+            strBuilder.AppendLine("\t{");
+            strBuilder.Append("\t\t");
+            strBuilder.Append(@$"public override string Group =>""UI/{name}"";");
+            strBuilder.AppendLine("");
+            strBuilder.AppendLine("");
+            strBuilder.AppendLine(
+                $"\t\tpublic override void Run(View_{name}Component view)");
+            strBuilder.AppendLine($"\t\t{{");
+            strBuilder.AppendLine("\t\t}");
+            strBuilder.AppendLine("\t}");
+
+            strBuilder.AppendLine(
+                $"\tpublic class View{name}CloseSystem :YuoSystem<View_{name}Component>, IUIClose");
+            strBuilder.AppendLine("\t{");
+            strBuilder.Append("\t\t");
+            strBuilder.Append(@$"public override string Group =>""UI/{name}"";");
+            strBuilder.AppendLine("");
+            strBuilder.AppendLine("");
+            strBuilder.AppendLine(
+                $"\t\tpublic override void Run(View_{name}Component view)");
+            strBuilder.AppendLine($"\t\t{{");
+            strBuilder.AppendLine("\t\t}");
+            strBuilder.AppendLine("\t}");
+
+            if (nowWindowGo.transform.FindAnyChild("Mask"))
+            {
+                strBuilder.AppendLine(
+                    $"\tpublic class View{name}OpenAnimaSystem :YuoSystem<View_{name}Component,UIAnimaComponent>, IUIOpen");
+                strBuilder.AppendLine("\t{");
+                strBuilder.Append("\t\t");
+                strBuilder.Append(@$"public override string Group =>""UI/{name}"";");
+                strBuilder.AppendLine("");
+                strBuilder.AppendLine("");
+                strBuilder.AppendLine(
+                    $"\t\tpublic override void Run(View_{name}Component view, UIAnimaComponent anima)");
+                strBuilder.AppendLine($"\t\t{{");
+                strBuilder.AppendLine("\t\t\tview.Button_Mask.image.SetColorA(0);\n");
+                strBuilder.AppendLine("\t\t\tview.Button_Mask.image.DOFade(0.6f, anima.AnimaDuration);");
+                strBuilder.AppendLine("\t\t}");
+                strBuilder.AppendLine("\t}");
+
+                strBuilder.AppendLine(
+                    $"\tpublic class View{name}CloseAnimaSystem :YuoSystem<View_{name}Component,UIAnimaComponent>, IUIClose");
+                strBuilder.AppendLine("\t{");
+                strBuilder.Append("\t\t");
+                strBuilder.Append(@$"public override string Group =>""UI/{name}"";");
+                strBuilder.AppendLine("");
+                strBuilder.AppendLine("");
+                strBuilder.AppendLine(
+                    $"\t\tpublic override void Run(View_{name}Component view, UIAnimaComponent anima)");
+                strBuilder.AppendLine("\t\t{");
+                strBuilder.AppendLine("\t\t\tview.Button_Mask.image.DOFade(0f, anima.AnimaDuration);");
+                strBuilder.AppendLine("\t\t}");
+                strBuilder.AppendLine("\t}");
+            }
         }
 
         public static SpawnUICodeConfig SpawnConfig

@@ -2,7 +2,7 @@
 using UnityEngine.EventSystems;
 using YuoTools.Main.Ecs;
 
-namespace YuoTools.Extend.MouseCallback
+namespace YuoTools.Extend
 {
     public class MouseCallback : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerEnterHandler,
         IPointerExitHandler, IPointerClickHandler

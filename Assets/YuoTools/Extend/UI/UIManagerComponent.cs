@@ -15,7 +15,8 @@ namespace YuoTools.UI
 
         public string ViewName;
 
-        [ReadOnly] [SerializeField] int layer;
+        [ShowIf(nameof(ModuleUI))]
+        [ReadOnly] [SerializeField] public int ModuleLayer;
 
         [LabelText("模块UI")] [ReadOnly] [Tooltip("悬浮在其他界面之上的UI")]
         public bool ModuleUI = false;

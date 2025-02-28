@@ -1,33 +1,33 @@
-﻿using System;
-using UnityEngine;
-using YuoTools.Extend.MouseCallback;
+﻿using UnityEngine;
 using YuoTools.Main.Ecs;
 
-namespace YuoTools.Extend.MouseCallback
+namespace YuoTools.Extend
 {
     /// <summary>
     ///  鼠标回调 
     ///  如果不是UI,则Camera需要挂载PhysicsRaycaster或者Physics2DRaycaster,且物体需要有Collider或者Collider2D
     /// <returns></returns>
     /// </summary>
-    public class MouseCallbackComponent : YuoComponent
+    public class MouseCallbackComponent : YuoComponent, IComponentInit<Transform>
     {
         public Transform transform;
         public MouseCallback mouseCallback;
+
+        public void ComponentInit(Transform tran)
+        {
+            transform = tran;
+        }
     }
 
-    public class MouseCallbackComponentStartSystem : YuoSystem<MouseCallbackComponent>, IStart
+    public class MouseCallbackComponentAwakeSystem : YuoSystem<MouseCallbackComponent>, IAwake
     {
         public override string Group => SystemGroupConst.CallBack;
 
         public override void Run(MouseCallbackComponent component)
         {
             //检查是否有鼠标回调组件
-            if (component.transform.GetComponent<MouseCallback>() == null)
-            {
-                component.mouseCallback = component.transform.gameObject.AddComponent<MouseCallback>();
-                component.mouseCallback.callbackComponent = component;
-            }
+            component.mouseCallback ??= component.transform.GetOrAddComponent<MouseCallback>();
+            component.mouseCallback.callbackComponent = component;
         }
     }
 
@@ -73,16 +73,4 @@ namespace YuoTools.Extend.MouseCallback
     public interface IMouseRightUp : ISystemTag
     {
     }
-}
-
-public partial class SystemTagType
-{
-    public static readonly Type MouseEnter = typeof(IMouseEnter);
-    public static readonly Type MouseExit = typeof(IMouseExit);
-    public static readonly Type MouseDown = typeof(IMouseDown);
-    public static readonly Type MouseUp = typeof(IMouseUp);
-    public static readonly Type MouseClick = typeof(IMouseClick);
-    public static readonly Type MouseRightClick = typeof(IMouseRightClick);
-    public static readonly Type MouseRightDown = typeof(IMouseRightDown);
-    public static readonly Type MouseRightUp = typeof(IMouseRightUp);
 }
